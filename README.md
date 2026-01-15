@@ -1,5 +1,9 @@
 # Hytale 한글 패치
 
+[![GitHub stars](https://img.shields.io/github/stars/hellosunghyun/hytale-korean-patch?style=social)](https://github.com/hellosunghyun/hytale-korean-patch/stargazers)
+> **도움이 되셨다면 우측 상단의 ⭐️ Star 버튼을 눌러주세요!**  
+> 개발자에게 큰 힘이 됩니다. 🙇‍♂️
+
 Hytale 게임을 한국어로 플레이할 수 있게 해주는 패치입니다.
 
 ## 포함 내용
