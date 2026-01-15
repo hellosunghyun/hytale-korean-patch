@@ -1,22 +1,22 @@
-earSide = 착용 방향
+earSide = 귀 방향
 earSide.left = 왼쪽
 earSide.right = 오른쪽
 earSide.both = 양쪽
 
-pattern.skull = 해골 패턴
-pattern.star = 별 패턴
-pattern.gaia = 프리즘 나무 패턴
-pattern.cat = 고양이 패턴
-pattern.bunny = 토끼 패턴
-pattern.unicorn = 유니콘 패턴
-pattern.cat = 고양이 패턴
-pattern.play = 재생 버튼 패턴
-pattern.play_inverted = 반전된 재생 버튼 패턴
+pattern.skull = 해골 무늬
+pattern.star = 별 무늬
+pattern.gaia = 프리즘 나무 무늬
+pattern.cat = 고양이 무늬
+pattern.bunny = 토끼 무늬
+pattern.unicorn = 유니콘 무늬
+pattern.cat = 고양이 무늬
+pattern.play = 재생 버튼 무늬
+pattern.play_inverted = 반전된 재생 버튼 무늬
 
-pants.dungareesshorts = 던가리 반바지
-pants.bracedshorts = 멜빵 반바지
-pants.dungarees = 던가리
-pants.bracedpants = 멜빵 바지
+pants.dungareesshorts = 멜빵 반바지
+pants.bracedshorts = 서스펜더 반바지
+pants.dungarees = 멜빵바지
+pants.bracedpants = 서스펜더 바지
 
 default = 기본
 
@@ -24,10 +24,10 @@ overtops.Scavenger_Poncho = 해골 없음
 
 capes.no_neck = 목 장식 없음
 
-haircuts.Dreadlocks01.name = 드레드헤어 1
-haircuts.Dreadlocks02.name = 드레드헤어 2
-haircuts.Dreadlocks03.name = 드레드헤어 3
-haircuts.SlickbackCowlick.name = [TMP] 뻗친 올백 머리
+haircuts.Dreadlocks01.name = 드레드 1
+haircuts.Dreadlocks02.name = 드레드 2
+haircuts.Dreadlocks03.name = 드레드 3
+haircuts.SlickbackCowlick.name = [TMP] 뻗친 슬릭백
 
 headaccessory.Logo_Cap_Movie.name = 영화 로고
 headaccessory.Logo_Cap_Heart.name = 하트 로고
