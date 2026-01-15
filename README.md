@@ -9,7 +9,27 @@ Hytale 게임을 한국어로 플레이할 수 있게 해주는 패치입니다.
 
 ## 다운로드 및 준비
 
-먼저 패치 파일을 컴퓨터에 다운로드해야 합니다.
+가장 간편한 방법은 아래 **"원클릭 명령어"**를 사용하는 것입니다.
+
+### ⚡ 원클릭 자동 설치 (추천)
+
+터미널(맥/리눅스) 또는 PowerShell(윈도우)을 열고 아래 명령어를 복사해서 붙여넣으세요. 알아서 다운로드하고 설치까지 진행됩니다.
+
+**macOS / Linux**
+```bash
+curl -sL https://github.com/hellosunghyun/hytale-korean-patch/raw/master/setup.sh | bash
+```
+
+**Windows (PowerShell)**
+```powershell
+iwr https://github.com/hellosunghyun/hytale-korean-patch/raw/master/setup.ps1 | iex
+```
+
+---
+
+### 수동 다운로드 (고급 사용자용)
+
+만약 위 방법이 안 된다면 수동으로 다운로드하세요.
 
 ### 필수 프로그램 설치 (중요!)
 이 패치는 폰트를 직접 생성하기 위해 아래 프로그램들이 필요합니다.
