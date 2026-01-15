@@ -1,0 +1,25 @@
+setup.ps1
+  b11e7d1b5d387ae8 1-45
+setup.sh
+  b11e7d1b5d387ae8 1-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "68bd8d50a617b2def6219e40e86eafce34ddaabd",
+  "prompts": {
+    "b11e7d1b5d387ae8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_43e88c3bbffe2AZKteLTITaE3s",
+        "model": "google/gemini-3-pro-preview"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 104,
+      "total_deletions": 0,
+      "accepted_lines": 104,
+      "overriden_lines": 0
+    }
+  }
+}
