@@ -26,3 +26,5 @@ Language/ko-KR_backup/
 # VSCode / Editor
 .vscode/
 .idea/
+.serena
+.env

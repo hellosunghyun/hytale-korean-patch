@@ -187,7 +187,8 @@ assetEditor.createAssetModal.assetPack = 에셋 팩
 assetEditor.createAssetModal.assetType = 에셋 유형
 assetEditor.createAssetModal.folder = 폴더
 assetEditor.createAssetModal.assetId = 고유 에셋 ID
-assetEditor.createAssetModal.assetIdHelp = 허용 문자: A-Z 0-9 _\\\n예시: Wood_Ash_Roots, Zone3_Cloudy_Medium, Battleaxe_Swing_Left
+assetEditor.createAssetModal.assetIdHelp = 허용 문자: A-Z 0-9 _\\\n예시: Wood_Ash_Roots, Zone3_Cloudy_Medium, Battleaxe_Swing_Left\
+예시: Wood_Ash_Roots, Zone3_Cloudy_Medium, Battleaxe_Swing_Left
 assetEditor.createAssetModal.copyAsset = 에셋 복사
 assetEditor.createAssetModal.tab.properties = 속성
 assetEditor.createAssetModal.tab.source = 소스
@@ -1811,8 +1812,8 @@ settings.selectionOpacity = 선택 투명도
 settings.selectionPanelOpacity = 선택 패널 투명도
 settings.displayLegend = 조작법 표시
 settings.showToolNotifications = 도구 알림 표시
-settings.laserPointerColor = 레이저 포인터 색상
-settings.laserPointerColor.description = 레이저 포인터 도구의 기본 16진수 색상값입니다.
+settings.laserPointerColor = 기본 레이저 포인터 색상
+settings.laserPointerColor.description = 레이저 포인터 도구의 기본 16진수 색상값입니다 (예: #3CFAE6).
 settings.fullbright = 풀브라이트
 
 # Quick Settings UI
