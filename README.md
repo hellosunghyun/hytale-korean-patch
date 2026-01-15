@@ -54,6 +54,8 @@ chmod +x install_linux.sh
 ./install_linux.sh
 ```
    - Python3, npm(npx), unzip이 필요합니다. (없는 경우 자동 설치를 시도합니다)
+   - Flatpak 버전도 지원하지만, 리눅스 환경 특성상 변수가 많을 수 있습니다.
+   - **문제가 발생하면 직접 해결해보시고 PR 보내주시면 정말 감사하겠습니다!** 🐧❤️
 
 ### 특징
 
