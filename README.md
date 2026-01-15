@@ -65,17 +65,18 @@ chmod +x install_linux.sh
 ### 수동 설치
 
 1. `Fonts/` 폴더의 파일들을 아래 경로에 복사합니다:
-   ```
-   ~/Library/Application Support/Hytale/.../Shared/Fonts/
-   ```
+   - **macOS**: `~/Library/Application Support/Hytale/.../Shared/Fonts/`
+   - **Windows**: `%LOCALAPPDATA%\Hytale\install\release\package\game\latest\Client\Data\Shared\Fonts\`
+   - **Linux**: `~/.local/share/Hytale/install/release/package/game/latest/Client/Data/Shared/Fonts/`
+   
    - `Galmuri9-Final.json` → `NunitoSans-Medium.json` (이름 변경)
    - `Galmuri9-sharp.png` → `NunitoSans-Medium.png` (이름 변경)
    - 동일하게 `NunitoSans-ExtraBold`, `Lexend-Bold`, `NotoMono-Regular`도 교체
 
 2. `Language/ko-KR/` 폴더를 아래 경로에 복사합니다:
-   ```
-   ~/Library/Application Support/Hytale/.../Shared/Language/
-   ```
+   - **macOS**: `~/Library/Application Support/Hytale/.../Shared/Language/`
+   - **Windows**: `%LOCALAPPDATA%\Hytale\install\release\package\game\latest\Client\Data\Shared\Language\`
+   - **Linux**: `~/.local/share/Hytale/install/release/package/game/latest/Client/Data/Shared/Language/`
 
 ## 제거 방법
 
