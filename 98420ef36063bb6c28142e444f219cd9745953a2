@@ -1,0 +1,25 @@
+uninstall_linux.sh
+  b11e7d1b5d387ae8 1-76
+install_linux.sh
+  b11e7d1b5d387ae8 1-291
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "98420ef36063bb6c28142e444f219cd9745953a2",
+  "prompts": {
+    "b11e7d1b5d387ae8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_43e88c3bbffe2AZKteLTITaE3s",
+        "model": "google/gemini-3-pro-preview"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 367,
+      "total_deletions": 0,
+      "accepted_lines": 367,
+      "overriden_lines": 0
+    }
+  }
+}
