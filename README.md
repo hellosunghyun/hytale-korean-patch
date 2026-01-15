@@ -160,13 +160,11 @@ hytale-korean-patch/
 - 해당 글자가 자주 사용된다면 이슈로 알려주세요.
 
 ### 게임을 완전히 재설치하고 싶어요
-패치 적용 중 문제가 생겨 게임을 초기화하고 싶다면 다음 폴더를 삭제한 뒤 런처를 다시 실행하세요. (게임이 자동으로 재다운로드됩니다)
+패치 적용 중 문제가 생겨 게임을 초기화하고 싶다면 **Hytale 런처**에서 간편하게 재설치할 수 있습니다.
 
-- **macOS**: `~/Library/Application Support/Hytale/install`
-- **Windows**: `%LOCALAPPDATA%\Hytale\install` (또는 `%APPDATA%\Hytale\install`)
-- **Linux**: `~/.local/share/Hytale/install`
-
-> **주의**: `Saves` 폴더나 `Screenshots` 폴더는 건드리지 않도록 주의하세요! `install` 폴더만 지우면 됩니다.
+1. Hytale 런처를 실행합니다.
+2. **설정(Settings)** 메뉴로 이동합니다.
+3. 게임 제거(Uninstall) 또는 재설치 관련 옵션을 사용하세요.
 
 ### 폰트가 너무 작아요 / 커요
 - 현재 버전은 고정 크기입니다.
