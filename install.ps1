@@ -18,7 +18,16 @@ try {
     $null = npx --version 2>&1
 } catch {
     Write-Host "[ERROR] Node.js (npx) not found." -ForegroundColor Red
-    Write-Host "Please install Node.js from https://nodejs.org/"
+    Write-Host ""
+    Write-Host "============================================================" -ForegroundColor Yellow
+    Write-Host "[REQUIRED] Node.js is required to build the font." -ForegroundColor Yellow
+    Write-Host "Opening download page... (https://nodejs.org/)"
+    Write-Host "Please install the 'LTS' version and try again."
+    Write-Host "============================================================" -ForegroundColor Yellow
+    
+    Start-Sleep -Seconds 3
+    Start-Process "https://nodejs.org/"
+    
     Read-Host "Press Enter to exit"
     exit 1
 }
