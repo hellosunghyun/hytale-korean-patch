@@ -16,13 +16,13 @@ APPDATA = os.environ.get('APPDATA', '')
 
 # Hytale 경로 후보 (우선순위 순)
 POSSIBLE_PATHS = [
-    # 1. Local AppData (일반적인 게임 설치 위치)
-    Path(LOCAL_APPDATA) / "Hytale/install/release/package/game/latest/Client/Data/Shared",
-    Path(LOCAL_APPDATA) / "Hytale/install/release/package/game/latest/Client/Shared",
-    
-    # 2. Roaming AppData (런처 데이터 위치)
+    # 1. Roaming AppData (사용자 피드백 기반 유력 경로)
     Path(APPDATA) / "Hytale/install/release/package/game/latest/Client/Data/Shared",
     Path(APPDATA) / "Hytale/install/release/package/game/latest/Client/Shared",
+
+    # 2. Local AppData
+    Path(LOCAL_APPDATA) / "Hytale/install/release/package/game/latest/Client/Data/Shared",
+    Path(LOCAL_APPDATA) / "Hytale/install/release/package/game/latest/Client/Shared",
 ]
 
 FONT_URL = "https://quiple.dev/_astro/Galmuri9.ttf"
