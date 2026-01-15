@@ -16,9 +16,13 @@ APPDATA = os.environ.get('APPDATA', '')
 
 # Hytale 경로 후보 (우선순위 순)
 POSSIBLE_PATHS = [
+    # 1. Local AppData (일반적인 게임 설치 위치)
     Path(LOCAL_APPDATA) / "Hytale/install/release/package/game/latest/Client/Data/Shared",
     Path(LOCAL_APPDATA) / "Hytale/install/release/package/game/latest/Client/Shared",
+    
+    # 2. Roaming AppData (런처 데이터 위치)
     Path(APPDATA) / "Hytale/install/release/package/game/latest/Client/Data/Shared",
+    Path(APPDATA) / "Hytale/install/release/package/game/latest/Client/Shared",
 ]
 
 FONT_URL = "https://quiple.dev/_astro/Galmuri9.ttf"
@@ -146,16 +150,20 @@ def install_patch(game_dir):
     temp_work.mkdir()
     
     try:
-        # Extract Assets.zip
-        assets_zip = game_dir.parent.parent.parent.parent.parent / "Assets.zip"
-        # 위 경로는 .../game/latest/Client/Data/Shared 에서 5단계 위 -> .../game/latest/Assets.zip
-        # 만약 game_dir이 Client/Shared라면 4단계 위
-        if not assets_zip.exists():
-             # Fallback check
-             assets_zip = game_dir.parents[3] / "Assets.zip"
+        # Extract Assets.zip (스마트 탐색)
+        assets_zip = None
         
-        if assets_zip.exists():
-            print("   1) 원본(영어) 파일 추출 중...")
+        # Shared 폴더에서 상위로 이동하며 Assets.zip 찾기
+        current_path = game_dir
+        for _ in range(6): # 최대 6단계 상위까지 검사
+            check_path = current_path / "Assets.zip"
+            if check_path.exists():
+                assets_zip = check_path
+                break
+            current_path = current_path.parent
+            
+        if assets_zip and assets_zip.exists():
+            print(f"   1) 원본(영어) 파일 추출 중... (Found: {assets_zip.name})")
             with zipfile.ZipFile(assets_zip, 'r') as zf:
                 # Filter files to extract
                 target_files = [f for f in zf.namelist() if f.startswith("Server/Languages/en-US/") or f.startswith("Common/Languages/en-US/")]
@@ -164,7 +172,20 @@ def install_patch(game_dir):
             print("   ⚠️ Assets.zip을 찾을 수 없습니다. 원본 병합을 건너뜁니다.")
 
         # Client base files
-        client_en_dir = game_dir.parent / "en-US" # Assuming ../Language/en-US
+        # Shared 폴더의 상위/상위... 에서 en-US 폴더 찾기
+        # 보통 .../Language/en-US 또는 .../Client/Data/Shared/../Language/en-US ??
+        # macOS: Shared/Language/en-US 가 아님. Shared와 형제인 Language 폴더?
+        # macOS GameDir: .../Data/Shared
+        # Client En: .../Data/Shared/Language/en-US (X) -> 보통 ../Language/en-US 가 아니라 ko-KR처럼 Shared/Language/en-US 일수도 있음
+        
+        # macOS Install.sh 로직: CLIENT_EN_DIR="$GAME_DIR/Language/en-US"
+        # 즉 .../Shared/Language/en-US
+        
+        client_en_dir = game_dir / "Language/en-US"
+        if not client_en_dir.exists():
+             # 혹시 모를 다른 구조 대비
+             client_en_dir = game_dir.parent / "Language/en-US"
+
         if client_en_dir.exists():
             dest = temp_work / "Client"
             dest.mkdir(parents=True, exist_ok=True)

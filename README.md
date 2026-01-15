@@ -37,6 +37,23 @@ cd hytale-korean-patch
 3. 설치가 완료되면 엔터 키를 눌러 창을 닫습니다.
 4. 게임을 실행하고 **설정 > 언어 > 한국어**를 선택합니다.
 
+### Windows
+
+1. 다운로드한 폴더를 엽니다.
+2. `install.bat` 파일을 더블 클릭하여 실행합니다.
+   - Python과 Node.js가 설치되어 있어야 합니다. (설치되어 있지 않다면 스크립트가 안내합니다)
+3. 설치가 완료되면 엔터 키를 눌러 창을 닫습니다.
+
+### Linux
+
+1. 터미널을 열고 폴더로 이동합니다.
+2. 실행 권한을 부여하고 스크립트를 실행합니다:
+```bash
+chmod +x install_linux.sh
+./install_linux.sh
+```
+   - Python3, npm(npx), unzip이 필요합니다.
+
 ### 특징
 
 - **자동 병합 (Merge)**: 기존 게임 파일(영어)을 베이스로, 번역된 부분만 안전하게 교체합니다. 게임이 업데이트되어도 깨지지 않습니다.
@@ -60,8 +77,18 @@ cd hytale-korean-patch
 
 ## 제거 방법
 
+### macOS
 1. `uninstall.command` 파일을 **더블 클릭**하여 실행합니다.
 2. 완료되면 엔터 키를 눌러 창을 닫습니다.
+
+### Windows
+1. `uninstall.bat` 파일을 더블 클릭하여 실행합니다.
+
+### Linux
+1. 터미널에서 실행합니다:
+```bash
+./uninstall_linux.sh
+```
 
 ## 폰트 정보
 
