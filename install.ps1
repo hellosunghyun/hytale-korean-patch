@@ -7,6 +7,19 @@ try {
     $null = python --version 2>&1
 } catch {
     Write-Host "[ERROR] Python not found." -ForegroundColor Red
+    
+    # Try Winget
+    if (Get-Command winget -ErrorAction SilentlyContinue) {
+        Write-Host "[INFO] Attempting to install Python via Winget..." -ForegroundColor Yellow
+        winget install -e --id Python.Python.3.12
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "`n[SUCCESS] Python installed." -ForegroundColor Green
+            Write-Host "[IMPORTANT] Please RESTART this script to apply changes." -ForegroundColor Cyan
+            Read-Host "Press Enter to exit"
+            exit 0
+        }
+    }
+
     Write-Host "Please install Python from https://www.python.org/downloads/"
     Write-Host "Make sure to check 'Add Python to PATH' during installation."
     Read-Host "Press Enter to exit"
@@ -18,6 +31,19 @@ try {
     $null = npx --version 2>&1
 } catch {
     Write-Host "[ERROR] Node.js (npx) not found." -ForegroundColor Red
+    
+    # Try Winget
+    if (Get-Command winget -ErrorAction SilentlyContinue) {
+        Write-Host "[INFO] Attempting to install Node.js via Winget..." -ForegroundColor Yellow
+        winget install -e --id OpenJS.NodeJS.LTS
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host "`n[SUCCESS] Node.js installed." -ForegroundColor Green
+            Write-Host "[IMPORTANT] Please RESTART this script to apply changes." -ForegroundColor Cyan
+            Read-Host "Press Enter to exit"
+            exit 0
+        }
+    }
+
     Write-Host ""
     Write-Host "============================================================" -ForegroundColor Yellow
     Write-Host "[REQUIRED] Node.js is required to build the font." -ForegroundColor Yellow
