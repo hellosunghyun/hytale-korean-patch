@@ -1,0 +1,31 @@
+scripts/update_lang.py
+  78f2c8bcb000ad9d 1-4,6-21,23-26,29-133,136-138
+update_and_translate.sh
+  78f2c8bcb000ad9d 1-5,26,28-32,34-36,38,40-48
+README.md
+  78f2c8bcb000ad9d 16,77
+.gitignore
+  78f2c8bcb000ad9d 29
+scripts/translate_gemini.py
+  78f2c8bcb000ad9d 1-228
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "dd57c437e0db06c9e5f96e02020b21b3fb4db952",
+  "prompts": {
+    "78f2c8bcb000ad9d": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_43dc53d1affe3PK4S9Tkvo1DGP",
+        "model": "openai/gpt-5.2-codex"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 982,
+      "total_deletions": 551,
+      "accepted_lines": 423,
+      "overriden_lines": 15
+    }
+  }
+}
