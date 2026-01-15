@@ -1,0 +1,2260 @@
+# === assetEditor ===
+assetEditor.mainMenu.connection.connecting = 서버 연결 중...
+assetEditor.mainMenu.connection.authenticating = 인증 중...
+assetEditor.mainMenu.title = 에디터 열기
+assetEditor.mainMenu.cosmeticsEditor = 코스메틱
+assetEditor.mainMenu.servers = 서버
+assetEditor.mainMenu.disconnectionContainer.title = 서버 연결 끊김!
+assetEditor.mainMenu.disconnectionContainer.reconnect = 재접속
+assetEditor.mainMenu.connection.error.failedAuthentication = 서버 인증 실패
+assetEditor.mainMenu.connection.error.failedToEstablishConnection = 서버 연결 설정 실패
+assetEditor.mainMenu.settingsButton = 설정
+
+assetEditor.settings.title = 설정
+
+assetEditor.settings.setting.diagnosticMode = 진단 모드
+assetEditor.settings.setting.useSystemLanguage = 시스템 언어 사용
+assetEditor.settings.setting.language = 언어
+assetEditor.settings.setting.fullscreen = 전체 화면
+assetEditor.settings.setting.exportPath = 내보내기 폴더
+assetEditor.settings.setting.exportPath.dialogTitle = 내보내기 폴더 선택
+assetEditor.settings.setting.exportPath.dialogConfirmationButton = 내보내기 폴더로 선택
+
+assetEditor.mainMenu.errors.failedToSaveServerList = 서버 목록 저장 실패
+
+assetEditor.mainMenu.serverModal.titleAdd = 서버 추가
+assetEditor.mainMenu.serverModal.titleEdit = 서버 편집
+assetEditor.mainMenu.serverModal.errors.enterName = 이름을 입력하세요
+assetEditor.mainMenu.serverModal.errors.enterHostname = 호스트 이름을 입력하세요
+assetEditor.mainMenu.serverModal.errors.nameAlreadyInUse = 이미 사용 중인 이름입니다.
+
+assetEditor.mainMenu.removeServerModal.title = 목록에서 "{serverName}" 서버를 제거하시겠습니까?
+
+assetEditor.ipcServerConfirmation.title = 서버에 연결하시겠습니까?
+assetEditor.ipcServerConfirmation.description = 현재 서버와 연결을 끊고 "{serverName}" 서버에 연결하시겠습니까?
+
+assetEditor.assetBrowser.searchAssetsPlaceholder = 에셋 검색
+assetEditor.assetBrowser.findAsset = 에셋 찾기
+assetEditor.assetBrowser.delete = 삭제
+assetEditor.assetBrowser.rename = 이름 변경
+assetEditor.assetBrowser.duplicate = 복제
+assetEditor.assetBrowser.findInFolder = 폴더에서 찾기
+assetEditor.assetBrowser.copyPath = 경로 복사
+assetEditor.assetBrowser.showInFinder = Finder에서 보기
+assetEditor.assetBrowser.showInExplorer = 파일 탐색기에서 보기
+assetEditor.assetBrowser.createInFolder = 폴더에 {assetType} 생성
+assetEditor.assetBrowser.createAssetInFolder = 폴더에 에셋 생성
+assetEditor.assetBrowser.createFolder = 폴더 생성
+assetEditor.assetBrowser.create = {assetType} 생성
+assetEditor.assetBrowser.tabs.cosmetics = 코스메틱
+assetEditor.assetBrowser.tabs.server = 서버
+assetEditor.assetBrowser.tabs.common = 공통
+assetEditor.assetBrowser.tooltips.collapseAll = 모든 디렉터리 접기
+assetEditor.assetBrowser.tooltips.createNewAsset = 새 에셋 생성
+assetEditor.assetBrowser.tooltips.filter = 필터
+assetEditor.assetBrowser.export = 에셋 내보내기
+assetEditor.assetBrowser.exportAndDiscard = 에셋 내보내기 후 변경 사항 폐기
+assetEditor.assetBrowser.discard = 변경 사항 폐기
+
+assetEditor.changeConfirmationModal.title = 확인 필요
+assetEditor.changeConfirmationModal.text = 이 값을 변경하면 기존의 일부 속성이 삭제됩니다.
+
+assetEditor.assetReferenceOrInlineEditor.useExisting = 기존 에셋 참조
+assetEditor.assetReferenceOrInlineEditor.createEmbedded = 내장 에셋 생성
+assetEditor.assetReferenceOrInlineEditor.reference = {assetType} 참조
+
+assetEditor.assetDropdownEditor.openAssetTooltip = 새 탭에서 에셋 열기
+assetEditor.assetDropdownEditor.createAssetTooltip = 새 {assetType} 생성 및 할당
+
+assetEditor.listEditor.empty = 목록이 비어 있습니다.
+assetEditor.listEditor.header = 목록 항목 {count}개
+assetEditor.mapEditor.empty = 맵이 비어 있습니다.
+assetEditor.mapEditor.header = 맵 항목 {count}개
+
+assetEditor.jsonObjectEditor.json = JSON
+assetEditor.jsonObjectEditor.jsonParseError = JSON: 파싱 실패
+
+assetEditor.changelogModal.newVersion = 신규
+assetEditor.changelogModal.title = 업데이트 내용
+
+assetEditor.backends.local = 편집 중: 로컬 에셋
+assetEditor.backends.server = 편집 중: 서버 에셋
+assetEditor.backends.tooltip = 클릭하여 내보내기 디렉터리 열기
+
+assetEditor.mode.editor = 에디터
+assetEditor.mode.source = 소스
+
+assetEditor.editor.searchProperties = 속성 검색
+
+assetEditor.property.title = 속성 "{name}"
+assetEditor.property.remove = 제거
+assetEditor.property.renameKey = 키 이름 변경
+assetEditor.property.moveDown = 아래로 이동
+assetEditor.property.moveUp = 위로 이동
+assetEditor.property.createEmbeddedAsset = 내장 에셋으로 변환
+assetEditor.property.createDedicatedAsset = 전용 에셋으로 변환
+assetEditor.property.collapseAllEntries = 모든 항목 접기
+assetEditor.property.uncollapseAllEntries = 모든 항목 펴기
+assetEditor.property.openAssetInNewTab = 새 탭에서 에셋 열기
+assetEditor.property.copyAndReferenceAsset = 에셋 복사 및 참조
+assetEditor.property.createAndReferenceAsset = 에셋 생성 및 참조
+assetEditor.property.insertSiblingBefore = 앞에 형제 항목 삽입
+assetEditor.property.insertSiblingAfter = 뒤에 형제 항목 삽입
+assetEditor.property.list = 목록
+assetEditor.property.map = 맵
+assetEditor.property.copyValue = 값 복사
+assetEditor.property.pasteValue = 값 붙여넣기
+assetEditor.property.map.insertLabel = 삽입
+assetEditor.property.errors.keyAlreadyExists = 이미 사용 중인 키입니다.
+
+assetEditor.property.tooltip.arrayItem = 인덱스: {index}
+assetEditor.property.tooltip.mapItem = 키: {key}
+assetEditor.property.tooltip.inheritedProperty = {asset}에서 상속됨 => {value}
+assetEditor.property.tooltip.listEntries = 목록 항목 {count}개
+assetEditor.property.tooltip.objectEntries = 객체 항목 {count}개
+
+assetEditor.configEditor.button.collapseAll = 모두 접기
+assetEditor.configEditor.button.expandAll = 모두 펴기
+assetEditor.configEditor.button.showDefinedProperties = 전환: 정의된 속성만 표시
+assetEditor.configEditor.button.quickInspect = 빠른 검사
+
+assetEditor.sourceEditor.apply = 변경 사항 적용
+assetEditor.sourceEditor.discard = 변경 사항 폐기
+assetEditor.sourceEditor.unsavedChangesModal.title = 저장되지 않은 변경 사항
+assetEditor.sourceEditor.unsavedChangesModal.text = 코드 에디터에 저장되지 않은 변경 사항이 있습니다. 계속하시겠습니까?
+assetEditor.sourceEditor.unsavedChangesModal.discardChanges = 변경 사항 폐기
+
+assetEditor.assetSelector.findAsset = 에셋 찾기...
+
+assetEditor.fileSelector.placeholder = 파일 선택
+assetEditor.fileSelector.filesSelected = {count}개 파일 선택됨
+assetEditor.fileSelector.findFile = 파일 찾기...
+assetEditor.fileSelector.createDirectory = 폴더 생성
+assetEditor.fileSelector.newDirectoryNamePlaceholder = 새 폴더 이름...
+
+assetEditor.timelineEditor.insertAt = {hour}시에 값 삽입
+assetEditor.timelineEditor.updateAt = 시간: {hour}\n\
+\n\
+우클릭하여 제거
+
+assetEditor.modal.applyChangesLocally = 로컬에도 변경 사항 적용
+
+assetEditor.deleteAssetModal.title = 에셋을 삭제하시겠습니까?
+assetEditor.deleteAssetModal.text = 정말로 "{assetId}" 에셋을 삭제하시겠습니까?
+assetEditor.deleteAssetModal.confirmButton = 삭제
+
+assetEditor.deleteDirectoryModal.title = 폴더를 삭제하시겠습니까?
+assetEditor.deleteDirectoryModal.text = 정말로 "{path}" 경로를 삭제하시겠습니까?
+assetEditor.deleteDirectoryModal.confirmButton = 삭제
+
+assetEditor.keyModal.renameTitle = 키 이름 변경
+assetEditor.keyModal.insertTitle = 키 삽입
+assetEditor.keyModal.renameButton = 이름 변경
+assetEditor.keyModal.insertButton = 삽입
+assetEditor.keyModal.errors.existingKey = 이미 존재하는 키 항목입니다!
+assetEditor.keyModal.errors.invalidProperty = 잘못된 속성입니다.
+assetEditor.keyModal.errors.fieldEmpty = 새 키를 입력하세요!
+
+assetEditor.iconExporterModal.export = 아이콘 저장
+assetEditor.iconExporterModal.reset = 기본값으로 초기화
+assetEditor.iconExporterModal.previewZoom = 미리보기 확대
+assetEditor.iconExporterModal.rotationX = 회전 X
+assetEditor.iconExporterModal.rotationY = 회전 Y
+assetEditor.iconExporterModal.rotationZ = 회전 Z
+assetEditor.iconExporterModal.translationX = 위치 X
+assetEditor.iconExporterModal.translationY = 위치 Y
+assetEditor.iconExporterModal.scale = 크기
+assetEditor.iconExporterModal.errors.invalidConfig = 이 항목은 미리보기를 렌더링하도록 올바르게 설정되지 않았습니다.
+
+assetEditor.renameModal.titleAsset = 에셋 이름 변경
+assetEditor.renameModal.titleFolder = 폴더 이름 변경
+assetEditor.renameModal.renameButton = 이름 변경
+assetEditor.renameModal.newId = 새 ID
+assetEditor.renameModal.newName = 새 이름
+assetEditor.renameModal.errors.invalidId = 유효한 ID를 입력하세요. ID는 영문자, 숫자, 그리고 카테고리 구분용 언더바(_)만 포함할 수 있습니다.
+assetEditor.renameModal.warning = 경고: 에셋 이름을 변경해도 다른 JSON 파일의 참조는 변경되지 않습니다. 이 작업은 다른 에셋의 작동을 중단시킬 수 있습니다.
+
+assetEditor.idValidation.empty = ID 필드는 비워둘 수 없습니다.
+assetEditor.idValidation.minLength = ID는 최소 {count}자 이상이어야 합니다.
+assetEditor.idValidation.maxLength = ID는 최대 {count}자를 초과할 수 없습니다.
+assetEditor.idValidation.onlyLettersAndDigits = ID는 영문자와 숫자만 포함할 수 있습니다.
+assetEditor.idValidation.firstUppercase = ID의 첫 글자 또는 언더바 다음의 첫 글자는 대문자여야 합니다.
+assetEditor.idValidation.firstLetter = ID의 첫 글자 또는 언더바 다음의 첫 글자는 영문자여야 합니다.
+assetEditor.idValidation.underscoreEmpty = ID는 언더바로 시작하거나 끝날 수 없으며, 언더바가 연속될 수 없습니다.
+
+assetEditor.createAssetModal.title = 새 {assetType} 에셋 생성
+assetEditor.createAssetModal.assetPack = 에셋 팩
+assetEditor.createAssetModal.assetType = 에셋 유형
+assetEditor.createAssetModal.folder = 폴더
+assetEditor.createAssetModal.assetId = 고유 에셋 ID
+assetEditor.createAssetModal.assetIdHelp = 허용 문자: A-Z 0-9 _\\\n예시: Wood_Ash_Roots, Zone3_Cloudy_Medium, Battleaxe_Swing_Left
+assetEditor.createAssetModal.copyAsset = 에셋 복사
+assetEditor.createAssetModal.tab.properties = 속성
+assetEditor.createAssetModal.tab.source = 소스
+assetEditor.createAssetModal.createButton = 생성
+assetEditor.createAssetModal.assetPackDropdown.noEntries = 먼저 새 에셋 팩을 생성하세요.
+assetEditor.createAssetModal.errors.existingId = 이미 존재하는 ID입니다!
+assetEditor.createAssetModal.errors.invalidAssetType = 잘못된 에셋 유형
+assetEditor.createAssetModal.errors.noAssetPackSelected = 에셋을 생성할 에셋 팩을 선택해야 합니다.
+
+assetEditor.exportModal.title = 최근 편집된 에셋
+assetEditor.exportModal.deselectAllButton = 모두 선택 해제
+assetEditor.exportModal.selectAllButton = 모두 선택
+assetEditor.exportModal.exportButton = 선택 항목 내보내기
+assetEditor.exportModal.launcherAssetsWarning = 런처 에셋을 사용하는 동안에는 에셋을 내보낼 수 없습니다!
+assetEditor.exportModal.discardChangesModal.title = 변경 사항을 폐기하시겠습니까?
+assetEditor.exportModal.discardChangesModal.text = {assetId} ({assetType})의 변경 사항 폐기
+assetEditor.exportModal.discardChangesModal.confirmButton = 변경 사항 폐기
+assetEditor.exportModal.discardChangesCheckBox = 내보내기 후 서버의 변경 사항 폐기
+assetEditor.exportModal.discardChangesCheckBoxDescription = 이 옵션이 활성화되면, 선택한 에셋의 원래 상태가 서버에서 다시 로드되어 복구됩니다. 작업이 완료되어 저장소에 푸시할 준비가 된 에셋의 경우 목록에서 제거되므로 유용합니다. 서버와 클라이언트가 동일한 에셋 디렉터리를 공유하는 경우(예: 싱글 플레이어), 이 옵션은 단순히 목록에서 해당 항목을 제거하는 역할만 합니다.
+assetEditor.exportModal.discardButtonTooltip = 변경 사항 폐기
+assetEditor.exportModal.columns.file = 파일
+assetEditor.exportModal.columns.lastChangeDate = 마지막 변경
+assetEditor.exportModal.columns.lastChangeUsername = 작업자
+assetEditor.exportModal.tooltips.deleted = 에셋이 삭제되었습니다.
+assetEditor.exportModal.tooltips.new = 에셋이 생성되었습니다.
+assetEditor.exportModal.tooltips.renamed = {oldPath}에서 이름이 변경되었습니다.
+assetEditor.exportModal.tooltips.changed = 에셋이 변경되었습니다.
+
+assetEditor.filterModal.title = 에셋 유형별 필터링
+assetEditor.filterModal.searchPlaceholder = 에셋 유형 검색
+
+assetEditor.iconMassExportModal.title = 아이템 아이콘 대량 내보내기
+assetEditor.iconMassExportModal.startButton = 내보내기 시작
+assetEditor.iconMassExportModal.statusLabel = 상태:
+assetEditor.iconMassExportModal.iconSize = 아이콘 크기
+assetEditor.iconMassExportModal.starting = 시작 중...
+assetEditor.iconMassExportModal.status = {completeCount}/{totalCount} – {percentage}% - {failedCount} 실패 - {skippedCount} 건너뜀
+
+assetEditor.errors.invalidAssetsDirectory = 유효한 에셋 디렉터리에는 Server 및 Common 폴더가 포함되어야 합니다.
+assetEditor.errors.failedToFetchAsset = 에셋 "{path}"을(를) 가져오지 못했습니다.
+assetEditor.errors.failedToFetchParent = 에셋 상위 항목을 가져오는 중 오류가 발생했습니다.
+assetEditor.errors.recursiveParent = 일부 상위 에셋이 서로를 참조하고 있어(순환 참조) 에셋을 로드할 수 없습니다.
+assetEditor.errors.errorOccurredFetching = 에셋을 가져오는 중 오류가 발생했습니다.
+assetEditor.errors.assetNotFound = 해당 에셋이 존재하지 않습니다.
+assetEditor.errors.unknownAssetType = 알 수 없는 에셋 유형 "{assetType}"
+assetEditor.errors.fileFormatNotSupported = 지원되지 않는 파일 형식입니다.
+assetEditor.errors.invalidJson = 잘못된 JSON
+assetEditor.errors.invalidAssetType = 잘못된 에셋 유형
+assetEditor.errors.missingId = ID를 입력하세요.
+assetEditor.errors.failedExportErrors = 일부 에셋에 유효성 검사 오류가 있어 내보낼 수 없습니다.
+assetEditor.errors.failedToSetupAssetTypes = 에셋 유형 설정 실패
+assetEditor.errors.failedToLoadAssetFiles = 에셋 파일 로드 실패
+assetEditor.errors.failedToLoadCommonAssetFiles = 공통 에셋 파일 로드 실패
+assetEditor.errors.failedToRenameAsset = 에셋 이름 변경 실패
+assetEditor.errors.failedToDeleteAsset = 에셋 삭제 실패
+assetEditor.errors.failedToCreateAsset = 에셋 생성 실패
+assetEditor.errors.assetTypeNotSetupForEditor = 이 에셋 유형은 에디터 인터페이스에서 편집하도록 설정되지 않았습니다.
+assetEditor.errors.createDirectoryInvalidPath = 에셋 디렉터리 내에 있지 않아 디렉터리를 생성하지 못했습니다.
+assetEditor.errors.createDirectoryExists = 디렉터리가 이미 존재하여 생성하지 못했습니다.
+assetEditor.errors.createDirectoryOther = 디렉터리 생성 실패
+assetEditor.errors.renameDirectoryInvalidPath = 에셋 디렉터리 내에 있지 않아 디렉터리 이름을 변경하지 못했습니다.
+assetEditor.errors.renameDirectoryExists = 같은 이름의 디렉터리가 이미 존재하여 이름을 변경하지 못했습니다.
+assetEditor.errors.renameDirectoryMissing = 변경할 디렉터리가 존재하지 않아 이름을 변경하지 못했습니다.
+assetEditor.errors.renameDirectoryOther = 디렉터리 이름 변경 실패
+assetEditor.errors.deleteDirectoryInvalidPath = 에셋 디렉터리 내에 있지 않아 디렉터리를 삭제하지 못했습니다.
+assetEditor.errors.deleteDirectoryMissing = 디렉터리가 존재하지 않아 삭제하지 못했습니다.
+assetEditor.errors.deleteDirectoryOther = 디렉터리 삭제 실패
+assetEditor.errors.directoryInvalidCharacters = 디렉터리 이름에 \ 또는 / 같은 문자를 포함할 수 없습니다.
+assetEditor.errors.exportInProgress = 내보내기가 아직 진행 중입니다.
+assetEditor.errors.cannotRevealUnexportedAsset = 에셋을 아직 내보내지 않았으므로 파일 탐색기/Finder에서 볼 수 없습니다.
+assetEditor.errors.cannotPasteWrongType = 값을 붙여넣을 수 없음: 잘못된 유형
+
+assetEditor.messages.assetExport.success = {count}개의 에셋이 저장되었습니다.
+assetEditor.messages.assetExport.none = 저장된 에셋이 없습니다.
+assetEditor.messages.assetExport.errors = 일부 에셋에 오류가 있어 저장하지 못했습니다.
+assetEditor.messages.assetExport.failedSaving = 에셋 저장 실패
+assetEditor.messages.undoStackEmpty = 실행 취소할 작업이 없습니다.
+assetEditor.messages.redoStackEmpty = 다시 실행할 작업이 없습니다.
+assetEditor.messages.directoryDeleted = 디렉터리를 성공적으로 삭제했습니다.
+assetEditor.messages.directoryCreated = 디렉터리를 성공적으로 생성했습니다.
+
+assetEditor.unexportedAssetsModal.quitTitle = 클라이언트를 종료하시겠습니까?
+assetEditor.unexportedAssetsModal.continueTitle = 계속하시겠습니까?
+assetEditor.unexportedAssetsModal.text = 에셋 에디터에 내보내지 않은 변경 사항이 있습니다.
+assetEditor.unexportedAssetsModal.quitButton = 강제 종료
+assetEditor.unexportedAssetsModal.continueButton = 무시하고 계속
+
+assetEditor.diagnosticsTooltip.errors = 오류:
+assetEditor.diagnosticsTooltip.warnings = 경고:
+assetEditor.diagnosticsTooltip.hasChildErrors = 일부 하위 속성에 오류가 있습니다.
+assetEditor.diagnosticsTooltip.hasChildWarnings = 일부 하위 속성에 경고가 있습니다.
+
+assetEditor.configEditor.errors.failedToLoad = 에디터 로드 실패. 자세한 내용은 로그를 확인하세요.
+assetEditor.configEditor.showAllProperties = 모든 속성 표시
+
+assetEditor.tabs.popup.close = 닫기
+assetEditor.tabs.popup.closeAll = 모두 닫기
+assetEditor.tabs.popup.copyId = ID 복사
+
+assetEditor.weatherDaytimeBar.togglePauseTime = 시간 일시정지/계속
+assetEditor.weatherDaytimeBar.previousDay = 이전 날로 설정
+assetEditor.weatherDaytimeBar.nextDay = 다음 날로 설정
+assetEditor.weatherDaytimeBar.lockTimeAndWeather = 에셋 에디터를 종료한 후에도 현재 날씨와 시간을 유지하려면 클릭
+assetEditor.weatherDaytimeBar.currentDay = {day, number}일 차
+
+assetEditor.initializeButton.inactive = 객체 초기화
+assetEditor.initializeButton.active = 객체 제거
+
+assetEditor.fileSaveStatus.Saved = 변경 사항 저장됨
+assetEditor.fileSaveStatus.Saving = 변경 사항 저장 중...
+assetEditor.fileSaveStatus.Unsaved = 저장되지 않은 변경 사항
+
+assetEditor.options.title = 옵션
+assetEditor.options.disconnect = 서버 연결 해제
+assetEditor.options.exportItemIcons = 아이템 아이콘 내보내기
+assetEditor.options.settings = 설정
+
+assetEditor.tabs.tooltip = {type} 에셋\n\
+\n\
+팩: {pack}
+
+assetEditor.packModal.title.edit = 팩 편집
+assetEditor.packModal.title.add = 팩 추가
+assetEditor.packModal.readOnlyMessage = 이 팩은 읽기 전용이며 편집할 수 없습니다.
+assetEditor.packModal.editModeNote = 에셋 팩의 이름이나 그룹을 변경하면 서버를 재시작한 후에만 적용됩니다.
+assetEditor.packModal.identifierChangeWarning = 경고: 팩 식별자(이름 또는 그룹)를 변경하고 있습니다. 이 변경 사항은 즉시 적용되지만 런타임 중에 예상치 못한 동작이 발생할 수 있습니다. 이 팩을 참조하는 에셋은 서버를 재시작할 때까지 손상될 수 있습니다.
+assetEditor.packModal.field.name = 이름
+assetEditor.packModal.field.name.placeholder = 팩 이름 (팩의 고유 식별자)
+assetEditor.packModal.field.group = 그룹
+assetEditor.packModal.field.group.placeholder = 팩 그룹 (예: 작업자 이름)
+assetEditor.packModal.field.version = 버전
+assetEditor.packModal.field.version.placeholder = 1.0.0 (유의적 버전)
+assetEditor.packModal.field.website = 웹사이트
+assetEditor.packModal.field.website.placeholder = 웹사이트 URL (선택 사항)
+assetEditor.packModal.field.description = 설명
+assetEditor.packModal.field.description.placeholder = 팩 설명 (선택 사항)
+assetEditor.packModal.field.authors = 작성자
+assetEditor.packModal.authors.add = + 추가
+assetEditor.packModal.authors.empty = 추가된 작성자 없음
+assetEditor.packModal.authors.entry = 작성자
+assetEditor.packModal.authors.name.placeholder = 이름
+assetEditor.packModal.authors.email.placeholder = 이메일 (선택 사항)
+assetEditor.packModal.authors.url.placeholder = URL (선택 사항)
+assetEditor.packModal.button.save = 저장
+assetEditor.packModal.errors.nameRequired = 팩 이름이 필요합니다.
+assetEditor.packModal.errors.groupRequired = 팩 그룹이 필요합니다.
+assetEditor.packModal.errors.versionRequired = 버전 정보가 필요합니다.
+assetEditor.packModal.errors.versionInvalid = 잘못된 버전 형식입니다. 유의적 버전 관리(Semantic Versioning)를 사용하세요. (예: 1.0.0, 2.1.3-beta, 1.0.0+build123)
+
+assetEditor.readOnlyAssetBar.message = 에셋 팩이 읽기 전용이므로 이 에셋은 편집할 수 없습니다.
+assetEditor.readOnlyAssetBar.overrideButton = 에셋 덮어쓰기
+assetEditor.readOnlyAssetBar.tooltip = 에셋이 속한 팩이 읽기 전용이므로 편집할 수 없습니다.\n\
+\n\
+압축된(Zip) 에셋 팩은 편집할 수 없으며, 디렉터리 기반 에셋 팩만 편집 가능합니다.\n\
+\n\
+커스텀 에셋 팩을 통해 에셋을 덮어쓸 수 있습니다.
+
+assetEditor.inheritanceWarning.message = 경고: 이 에셋은 상위 항목(Parent)이 있으며 속성 에디터에서 상속 기능이 아직 완전히 지원되지 않습니다.
+assetEditor.inheritanceWarning.tooltip = 이 에셋은 "Parent" 속성에 지정된 다른 에셋의 속성을 상속받고 있습니다.\n\n\
+현재 속성 에디터는 상속을 완벽하게 지원하지 않으며 이 에셋에 직접 정의된 속성만 표시합니다.\n\n\
+상위 에셋의 값을 사용하는 속성은 * 표시로 구분됩니다.
+
+assetEditor.managePacksMenu.editPack = 팩 편집
+assetEditor.managePacksMenu.addPack = 팩 추가
+assetEditor.managePacksMenu.removePack = 팩 제거
+
+assetEditor.confirmationModal.typeToConfirm = 확인을 위해 "{value}"을(를) 입력하세요:
+
+assetEditor.deletePackModal.title = 에셋 팩을 삭제하시겠습니까?
+assetEditor.deletePackModal.text = 정말로 에셋 팩 "{packId}"을(를) 삭제하시겠습니까?\n\
+\n\
+경고: 이 작업은 매우 위험합니다!\n\
+\n\
+• 이 팩 내의 모든 에셋이 영구적으로 삭제됩니다.\n\
+• 런타임 중에 에셋 팩을 삭제하면 예상치 못한 동작, 충돌 또는 데이터 손상이 발생할 수 있습니다.\n\
+• 다른 팩에서 이 팩의 에셋을 참조하는 모든 참조가 손상됩니다.\n\
+• 이 작업은 취소할 수 없습니다.\n\
+\n\
+결과를 완전히 이해한 경우에만 진행하세요.
+assetEditor.deletePackModal.confirmButton = 팩 삭제
+
+assetEditor.newAssetButton.readOnlyPackTooltip = 선택한 에셋 팩이 읽기 전용이므로 새 에셋을 생성할 수 없습니다.
+# === auth ===
+auth.sessionExpired.title = 세션 만료
+auth.sessionExpired.message = 세션을 갱신할 수 없어 오프라인 모드로 전환되었습니다.\n\n계속 플레이할 수는 있지만, 게임을 재시작하기 전까지는 서버에 접속하거나 새로운 세계를 시작할 수 없습니다.
+# === bench ===
+bench.Furniture_Bench = 가구 제작대
+bench.Builders = 건설 작업대
+bench.Armor_Bench = 방어구 제작대
+bench.Weapon_Bench = 대장장이 모루
+bench.Workbench = 제작대
+bench.Farmingbench = 농사 작업대
+bench.Farmingbench_old = 농사 작업대 (구형)
+bench.Cookingbench = 요리사 화로
+bench.Loombench = 베틀
+bench.Armory = 제련소
+bench.Fieldcraft = 휴대용 제작
+bench.Arcanebench = 신비술 제작대
+bench.Alchemybench = 연금술 제작대
+bench.Template = 템플릿
+bench.ArmorBench = 방어구 제작대
+bench.Architectsbench = 건축가 제작대
+bench.Fieldcraft_Old = 휴대용 제작 (구형)
+
+# === benchCategories ===
+benchCategories.Furniture_Beds = 침대
+benchCategories.Furniture_Misc = 기타
+benchCategories.Furniture_Gothic = 고딕
+benchCategories.Furniture_Lighting = 조명
+benchCategories.Furniture_Pottery = 도자기
+benchCategories.Furniture_Textiles = 직물
+benchCategories.Furniture_Storage = 보관함
+benchCategories.Furniture_Statues = 조각상
+benchCategories.Furniture_Seasonal = 시즌
+benchCategories.Stairs = 계단
+benchCategories.Ornate = 장식용
+benchCategories.Sign = 표지판
+benchCategories.Roof = 지붕
+benchCategories.Decorative = 장식
+benchCategories.Wardrobe = 옷장
+benchCategories.Wall = 벽
+benchCategories.Pillar = 기둥
+benchCategories.Shelf = 선반
+benchCategories.Bricks = 벽돌
+benchCategories.Trapdoor = 다락문
+benchCategories.Gate = 문/게이트
+benchCategories.Smooth = 매끄러운 블록
+benchCategories.Structural-Rock = 구조용 바위
+benchCategories.Platform = 플랫폼
+benchCategories.Window = 창문
+benchCategories.Beam = 보/대들보
+benchCategories.SmoothHalfSlab = 매끄러운 반 블록
+benchCategories.HalfSlab = 반 블록
+benchCategories.Table = 탁자
+benchCategories.Stool = 등받이 없는 의자
+benchCategories.Chair = 의자
+benchCategories.Door = 문
+benchCategories.Ladder = 사다리
+benchCategories.Armor_Hands = 손
+benchCategories.Armor_Legs = 다리
+benchCategories.Armor_Head = 머리
+benchCategories.Armor_Chest = 몸통
+benchCategories.Weapon_Shield = 방패
+benchCategories.Weapon_Daggers = 단검
+benchCategories.Weapon_Sword = 검
+benchCategories.Weapon_Bow = 활
+benchCategories.Weapon_Club = 곤봉
+benchCategories.Weapon_Axe = 도끼
+benchCategories.Weapon_Mace = 메이스
+benchCategories.Weapon_Battleaxe = 배틀액스
+benchCategories.Weapon_Longsword = 롱소드
+benchCategories.Workbench_Tools = 도구
+benchCategories.Workbench_Weapons = 무기
+benchCategories.Workbench_Tinkering = 땜질
+benchCategories.Workbench_Crafting = 제작
+benchCategories.Workbench_Farming = 농사
+benchCategories.Seeds = 씨앗
+benchCategories.Other = 기타
+benchCategories.Saplings = 묘목
+benchCategories.All = 전체
+benchCategories.Prepared = 손질된 재료
+benchCategories.Baked = 구운 음식
+benchCategories.Weapons = 무기
+benchCategories.Tools = 도구
+benchCategories.Arcane_Misc = 기타
+benchCategories.Arcane_Portals = 포털
+benchCategories.Alchemy_Potions = 포션
+benchCategories.Alchemy_Bombs = 폭탄
+benchCategories.Template = 템플릿
+# === builderTools ===
+builderTools.name = 건설 도구
+builderTools.selectTool = 도구 선택
+builderTools.useTool = 도구 사용
+builderTools.canNotUse = 크리에이티브 모드 밖에서는 건설 도구를 사용할 수 없습니다!
+
+builderTools.selectATool = 인벤토리나 퀵바에서 건설 도구를 좌클릭하여 설정하세요.
+builderTools.noToolSettings = 이 도구는 설정이 필요하지 않습니다.
+
+builderTools.favorites.nameTitle = 즐겨찾기 도구 이름
+builderTools.favorites.nameDescription = 이 즐겨찾기 도구의 이름을 입력하세요.
+
+builderTools.settings.ToolReachDistance.name = 도구 도달 거리
+builderTools.settings.ToolReachDistance.description = 도구 사용 시 최대(또는 고정) 도달 거리를 지정합니다.
+builderTools.settings.ToolDelayMin.name = 최소 도구 지연 시간
+builderTools.settings.ToolDelayMin.description = 도구 사용 시 허용되는 최소 지연 시간(ms)을 지정합니다.
+builderTools.settings.EnableBrushShapeRendering.name = 브러시 모양 렌더링
+builderTools.settings.EnableBrushShapeRendering.description = 브러시 렌더링 방식을 블록 모양과 표준 와이어프레임 사이에서 전환합니다.
+builderTools.settings.BrushOpacity.name = 브러시 투명도
+builderTools.settings.BrushOpacity.description = 렌더링된 브러시 도구의 투명도를 조절합니다.
+builderTools.settings.SelectionOpacity.name = 선택 영역 투명도
+builderTools.settings.SelectionOpacity.description = 렌더링된 선택 도구의 투명도를 조절합니다.
+builderTools.settings.SelectionPanelOpacity.name = 선택 패널 투명도
+builderTools.settings.SelectionPanelOpacity.description = 드래그 가능한 선택 도구 패널의 투명도를 조절합니다.
+builderTools.settings.FlightInertia.name = 비행 관성
+builderTools.settings.FlightInertia.description = 크리에이티브 비행에 운동량과 점진적 감속을 추가합니다. (0 = 즉시 정지, 100 = 최대 관성)
+builderTools.settings.FlightMode.name = 비행 모드
+builderTools.settings.FlightMode.description = 제자리 호버링 또는 카메라 방향 비행 중에서 선택합니다.
+builderTools.settings.DisplayLegend.name = 조작법 표시
+builderTools.settings.DisplayLegend.description = 조작 힌트가 포함된 건설 도구 범례(Legend) 패널을 표시하거나 숨깁니다.
+builderTools.settings.NoClip.name = 노클립 (충돌 무시)
+builderTools.settings.NoClip.description = 비행 중에 충돌 감지를 비활성화하여 블록을 통과할 수 있게 합니다.
+builderTools.settings.AirPlacement.name = 공중 배치
+builderTools.settings.AirPlacement.description = 지지 블록 없이도 범위 내 공중에 블록을 배치할 수 있게 합니다.
+builderTools.settings.AllowNPCDetection.name = NPC 감지 허용
+builderTools.settings.AllowNPCDetection.description = 활성화하면 크리에이티브 모드 중에도 NPC가 플레이어를 감지하고 반응합니다.
+builderTools.settings.RespondToHit.name = 피격 반응
+builderTools.settings.RespondToHit.description = 활성화하면 크리에이티브 모드(무적 상태)에서도 넉백 및 기타 피격 효과를 받습니다.
+builderTools.settings.BrushShapeRendering.name = 브러시 블록 렌더링
+builderTools.settings.BrushShapeRendering.description = 브러시 미리보기 렌더링을 와이어프레임과 블록 스타일 중에서 전환합니다.
+builderTools.settings.FlightSpeedMultiplier.description = 비행 및 이동 속도를 조절합니다.
+builderTools.settings.BrushSoundsEnabled.description = 브러시 도구 사용 시 사운드 효과를 활성화하거나 비활성화합니다.
+builderTools.settings.BrushSoundVolume.description = 브러시 도구 사운드 효과의 볼륨을 조절합니다.
+builderTools.settings.HideHud.description = 모든 HUD 요소를 숨깁니다.
+builderTools.settings.HideHotbar.description = 크리에이티브 모드에서 퀵바를 숨깁니다.
+builderTools.settings.HideCompass.description = 크리에이티브 모드에서 나침반을 숨깁니다.
+builderTools.settings.HideNotifications.description = 크리에이티브 모드에서 알림을 숨깁니다.
+builderTools.settings.HideChat.description = 크리에이티브 모드에서 채팅창을 숨깁니다.
+builderTools.settings.HideHeldItem.description = 크리에이티브 모드에서 손에 들고 있는 아이템을 숨깁니다.
+builderTools.settings.ShowEntityMarkers.description = 크리에이티브 모드에서 엔티티 마커를 표시합니다.
+builderTools.settings.Fullbright.description = 조도에 관계없이 모든 블록을 밝게 표시하는 풀브라이트 모드를 활성화합니다.
+
+builderTools.panel.settings = 설정
+builderTools.panel.brushes = 브러시
+builderTools.panel.brushSettings = 브러시
+builderTools.panel.generalSettings = 일반 설정
+builderTools.panel.maskSettings = 마스크 설정
+builderTools.panel.quickSettings = 설정
+builderTools.quickSettings.title = 크리에이티브 모드 빠른 설정
+builderTools.panel.clearSelection = 선택 해제
+builderTools.panel.enableEmptyFilter = '비어 있음' 필터 활성화
+builderTools.panel.invertEntireMask = 전체 마스크 반전
+builderTools.panel.useCustomMaskCommandEntry = 커스텀 마스크 명령 입력 사용
+
+builderTools.replace.materialsToReplace = [TMP] 교체할 재료:
+builderTools.replace.replaceWith = [TMP] 교체 대상:
+
+builderTools.legend.title = 범례
+builderTools.legend.pickMaterial = 재료 선택
+builderTools.legend.setMask = 마스크로 설정
+builderTools.legend.addMask = 마스크에 추가
+builderTools.legend.changeHeight = 모양 높이 변경
+builderTools.legend.changeWidth = 모양 너비 변경
+builderTools.legend.favoriteMaterials = 즐겨찾는 재료
+builderTools.legend.selectedMaterial = 선택된 재료
+builderTools.legend.shiftFasterChange = Shift를 누르면 더 빠르게 변경
+builderTools.legend.undo = 실행 취소
+builderTools.legend.redo = 다시 실행
+builderTools.legend.addRemoveFavorite = 즐겨찾는 재료 추가/제거
+builderTools.legend.alt = Alt +
+builderTools.legend.shiftalt = Shift + Alt +
+builderTools.legend.shift = Shift +
+
+builderTools.legend.PaintBrush.Page1.Title = 기본 브러시
+builderTools.legend.PaintBrush.Page1.Description = 페인트 브러시 도구는 다양한 모양, 크기 및 재료로 블록을 배치하고 제거할 수 있게 해줍니다.
+builderTools.legend.PaintBrush.Page1.DestroyBlocks = 조준한 곳의 블록 파괴
+builderTools.legend.PaintBrush.Page1.PlaceBlocks = 설정한 재료에 따라 조준한 곳에 블록 배치
+builderTools.legend.PaintBrush.Page1.SelectTargetMaterial = 대상 재료 선택
+builderTools.legend.PaintBrush.Page1.AddTargetMaterial = 대상 재료를 멀티 재료로 추가
+builderTools.legend.PaintBrush.Page1.UndoLastBrush = 마지막 브러시 작업 취소
+builderTools.legend.PaintBrush.Page1.RedoLastUndo = 마지막으로 취소한 작업 다시 실행
+builderTools.legend.PaintBrush.Page1.EditInventoryProperties = 인벤토리에서 재료, 크기, 모양 및 기타 속성 편집
+builderTools.legend.PaintBrush.Page1.AirPlacementTitle = 공중 배치
+builderTools.legend.PaintBrush.Page1.AirPlacementHotkey = 공중 배치 타겟팅 모드 전환
+builderTools.legend.PaintBrush.Page1.AirPlacementDistanceChange = 공중 배치 거리 변경
+builderTools.legend.PaintBrush.Page2.Title = 축 고정 및 마스킹
+builderTools.legend.PaintBrush.Page2.AxisLock = 축 고정
+builderTools.legend.PaintBrush.Page2.AxisLockDescription = 브러시를 평평하고 이동 및 회전 가능한 표면에 고정합니다. 다음 단축키를 사용하여 표면 모드를 표시, 편집 및 종료할 수 있습니다.
+builderTools.legend.PaintBrush.Page2.ShowSurfaceMoveTool = 표면 이동 도구 표시
+builderTools.legend.PaintBrush.Page2.ShowSurfaceRotationTool = 표면 회전 도구 표시
+builderTools.legend.PaintBrush.Page2.UseBrush = 브러시 사용
+builderTools.legend.PaintBrush.Page2.ExitAxisLockMode = 축 고정 모드 종료
+builderTools.legend.PaintBrush.Page2.BlockMasking = 블록 마스킹
+builderTools.legend.PaintBrush.Page2.BlockMaskingDescription = 브러시에 재료를 설정하여 해당 재료와 일치하는 블록에만 변경 사항을 제한할 수 있습니다.
+builderTools.legend.PaintBrush.Page2.BrushMenuMaskingTab = 브러시 메뉴 마스킹 탭
+builderTools.legend.PaintBrush.Page2.MaskConfigDescription = 우측 상단의 연필 아이콘을 클릭하여 '마스크 설정' 패널로 전환하세요. 인벤토리의 아이템을 사용하여 더 복잡한 마스크를 만들 수 있습니다. UI 패널의 용어 위에 마우스를 올리면 더 자세한 정보를 볼 수 있습니다.
+builderTools.legend.PaintBrush.Page3.Title = 스크립트 브러시 / 공중 배치
+builderTools.legend.PaintBrush.Page3.Description = 스크립트 브러시\n\
+명령어와 에셋을 사용하여 "강 브러시", "산 브러시" 등 상상할 수 있는 모든 커스텀 블록 배치 로직을 만들 수 있습니다!
+builderTools.legend.PaintBrush.Page3.CreateBrushesDescription = 나만의 브러시를 만들려면 에셋의 Assets/MacroCommands/Brushes/ 디렉터리에 있는 샘플을 확인하세요. 인게임 /help 명령어를 사용해 사용 가능한 모든 브러시 설정 작업에 대해 배울 수 있습니다. 페인트 브러시 아이템도 생성해야 하며, Assets/Server/Item/Items/EditorTool/ScriptedBrushes/ 디렉터리의 예시를 참고하세요.
+builderTools.legend.PaintBrush.Page3.TestingBrushesTitle = 개발용 브러시 테스트
+builderTools.legend.PaintBrush.Page3.TestingBrushesDescription = '/sb load'를 사용하여 사용 가능한 모든 스크립트 브러시를 탐색하거나, '/sb load <이름>'으로 특정 브러시를 직접 로드하세요. 아이템을 먼저 만들지 않고도 브러시를 테스트할 수 있습니다. 완료 후에는 '/sb clear'로 비활성화하세요.
+
+builderTools.legend.LineBrush.Page1.Title = 라인 브러시
+builderTools.legend.LineBrush.Page1.Description = 블록으로 직선을 만들 수 있습니다.
+builderTools.legend.LineBrush.Page1.StartOrAddPoint = 시작점 또는 선의 점 추가
+builderTools.legend.LineBrush.Page1.CancelLine = 선 그리기 취소
+builderTools.legend.LineBrush.Page1.SnapToAngles = 누르고 있으면 45도 단위로 스냅 활성화
+builderTools.legend.LineBrush.Page1.EditInventoryProperties = 인벤토리에서 재료, 크기 및 기타 속성 편집
+
+builderTools.legend.MachinimaTool.Page1.Title = 시작하기
+builderTools.legend.MachinimaTool.Page1.Description = 액터, 카메라, 파티클, 사운드 등을 사용하여 키프레임 애니메이션을 만드세요! 시네마틱 및 컷신 제작에 최적화되어 있습니다.
+builderTools.legend.MachinimaTool.Page1.OpensMenu = 마시니마 에디터 UI 열기
+builderTools.legend.MachinimaTool.Page1.BaseCommand = 모든 마시니마 작업의 기본 명령어
+builderTools.legend.MachinimaTool.Page1.Scenes = 장면 (Scenes)\n\
+장면은 마시니마의 컨테이너입니다. 모든 액터, 키프레임 및 설정을 저장합니다.
+builderTools.legend.MachinimaTool.Page1.CreatingFirstScene = 첫 장면 만들기\n\
+1. 마시니마를 촬영할 좋은 장소를 찾으세요.\n\
+2. 마시니마 메뉴를 엽니다.\n\
+3. + 아이콘을 클릭하여 새 장면을 생성합니다.\n\
+4. 첫 번째 액터를 추가하세요!
+builderTools.legend.MachinimaTool.Page1.Actors = 액터 (Actors)\n\
+액터는 키프레임 애니메이션이 가능한 객체입니다. 액터 유형은 다음 페이지를 참조하세요.
+builderTools.legend.MachinimaTool.Page1.AddingCameraActor = 카메라 액터 추가하기\n\
+1. 카메라를 배치할 위치에 서세요.\n\
+2. 마시니마 메뉴를 엽니다.\n\
+3. 장면 목록 아래의 + 아이콘을 클릭합니다.\n\
+4. 드롭다운에서 "Camera"를 선택합니다.\n\
+5. 이제 카메라를 클릭해 위치를 조정하고, C 키를 눌러 카메라 뷰를 전환할 수 있습니다!
+
+builderTools.legend.MachinimaTool.Page2.Title = 액터 유형
+builderTools.legend.MachinimaTool.Page2.Description = 다양한 액터 유형은 마시니마에서 각각 다른 목적으로 사용됩니다. 모두 위치, 회전 및 기타 값을 제어할 수 있는 애니메이션 객체입니다. 액터는 마시니마 메뉴를 통해 추가됩니다.
+builderTools.legend.MachinimaTool.Page2.CameraHeader = 카메라
+builderTools.legend.MachinimaTool.Page2.CameraDesc = 경로를 따라 카메라를 이동시키고 FOV 및 속도와 같은 다양한 설정을 애니메이션화할 수 있습니다.
+builderTools.legend.MachinimaTool.Page2.EntityHeader = 엔티티
+builderTools.legend.MachinimaTool.Page2.EntityDesc = 모델이 있는 애니메이션 캐릭터입니다. 신체/머리 회전 및 애니메이션 이벤트를 지원합니다.
+builderTools.legend.MachinimaTool.Page2.PlayerHeader = 플레이어
+builderTools.legend.MachinimaTool.Page2.PlayerDesc = 엔티티와 유사하며 로컬 플레이어를 참조합니다.
+builderTools.legend.MachinimaTool.Page2.ReferenceHeader = 참조점 (Reference)
+builderTools.legend.MachinimaTool.Page2.ReferenceDesc = 보이지 않는 마커 포인트입니다. 타겟팅 및 참조 위치로 유용합니다. 점을 추적하도록 카메라 대상을 설정할 수 있습니다.
+builderTools.legend.MachinimaTool.Page2.ItemHeader = 아이템
+builderTools.legend.MachinimaTool.Page2.ItemDesc = 월드에 아이템을 표시합니다. 위치를 잡고 애니메이션화할 수 있습니다.
+builderTools.legend.MachinimaTool.Page2.AddActorCommand = 명령어: .mach actor add [유형] [이름]\n\
+유형: camera, entity, player, ref, item
+
+builderTools.legend.MachinimaTool.Page3.Title = 재생 제어
+builderTools.legend.MachinimaTool.Page3.Description = 재생 제어를 통해 키프레임 경로를 따라 모든 액터를 애니메이션화하여 장면을 미리 볼 수 있습니다. 시간을 이동하고, 키프레임 사이를 점프하며, 애니메이션을 테스트하세요. 모든 프레임은 키프레임 경로에 따라 모든 액터를 업데이트하고 애니메이션을 실행합니다.
+builderTools.legend.MachinimaTool.Page3.TogglePause = 재생 / 일시정지 전환
+builderTools.legend.MachinimaTool.Page3.ContinuousPlayback = 연속 재생 (루프) 전환
+builderTools.legend.MachinimaTool.Page3.AutoRestart = 장면 종료 시 자동 재시작 전환
+builderTools.legend.MachinimaTool.Page3.RestartScene = 장면 처음부터 다시 시작
+builderTools.legend.MachinimaTool.Page3.EndScene = 마지막 프레임으로 건너뛰기
+builderTools.legend.MachinimaTool.Page3.NavigationTitle = 프레임 탐색:
+builderTools.legend.MachinimaTool.Page3.FrameScrub = 프레임 스크러빙 (길게 누르면 연속 이동)
+builderTools.legend.MachinimaTool.Page3.JumpKeyframe = 이전 / 다음 키프레임 포인트로 점프
+builderTools.legend.MachinimaTool.Page3.SpeedModifiers = SHIFT를 누르면 2배속, ALT를 누르면 0.5배속
+
+builderTools.legend.MachinimaTool.Page4.Title = 키프레임 편집
+builderTools.legend.MachinimaTool.Page4.Description = 키프레임은 특정 시점의 액터 위치, 회전 및 설정을 정의합니다. 시스템은 키프레임 사이를 보간하여 매끄러운 애니메이션 경로를 생성합니다. 키프레임을 추가해 움직임을 만들고, 타이밍과 배치를 정밀하게 조정하세요.
+builderTools.legend.MachinimaTool.Page4.AddKeyframe = 액터 트랙 끝에 새 키프레임을 추가하여 애니메이션 확장
+builderTools.legend.MachinimaTool.Page4.AddAtCurrentFrame = 현재 재생 위치에 키프레임 삽입
+builderTools.legend.MachinimaTool.Page4.CopyKeyframe = 선택한 키프레임 설정을 복사하여 다른 액터나 프레임에 붙여넣기
+builderTools.legend.MachinimaTool.Page4.DeleteKeyframe = 마우스를 올린 키프레임 제거
+builderTools.legend.MachinimaTool.Page4.EditKeyframe = 기즈모를 열어 키프레임 위치 및 회전 조정
+builderTools.legend.MachinimaTool.Page4.MoveActor = 액터 경로 전체를 통째로 위치 변경
+builderTools.legend.MachinimaTool.Page4.EditFrameTime = 타임라인에서 이 키프레임이 발생하는 시간 변경
+builderTools.legend.MachinimaTool.Page4.AdjustFrameTime = 키프레임 타이밍을 앞뒤로 미세 조정
+
+builderTools.legend.MachinimaTool.Page5.Title = 마우스 상호작용
+builderTools.legend.MachinimaTool.Page5.Description = 월드의 키프레임 노드를 클릭하여 상호작용하세요:
+builderTools.legend.MachinimaTool.Page5.SelectKeyframe = 키프레임 선택 (자유 이동 모드 진입)
+builderTools.legend.MachinimaTool.Page5.JumpToKeyframe = 해당 키프레임을 활성화하고 프레임 이동
+builderTools.legend.MachinimaTool.Page5.GizmoTitle = 기즈모 조작:
+builderTools.legend.MachinimaTool.Page5.TranslationGizmo = 이동 기즈모 열기 (축 고정)
+builderTools.legend.MachinimaTool.Page5.RotationGizmo = 회전 기즈모 열기 (머리/신체)
+builderTools.legend.MachinimaTool.Page5.FreeMoveTitle = 자유 이동 모드:
+builderTools.legend.MachinimaTool.Page5.FreeMoveDescription = 좌클릭으로 위치 확정, 우클릭으로 취소.\n\
+SHIFT를 누르면 거리상의 표면에 스냅됩니다.\n\
+ALT를 누르면 표면 스냅을 무시합니다.
+
+builderTools.legend.MachinimaTool.Page6.Title = 선택 모드
+builderTools.legend.MachinimaTool.Page6.Description = 선택 모드는 변형 도구 사용 시 무엇을 이동할지 결정합니다. 위치를 옮기려는 대상에 맞는 모드를 선택하세요.
+builderTools.legend.MachinimaTool.Page6.CycleMode = 선택 모드 순환 전환
+builderTools.legend.MachinimaTool.Page6.KeyframeModeTitle = 키프레임 모드 (기본)
+builderTools.legend.MachinimaTool.Page6.KeyframeModeDesc = 선택한 키프레임만 이동합니다. 다른 키프레임에 영향을 주지 않고 액터 경로의 개별 포인트를 정밀하게 조정할 때 사용합니다.
+builderTools.legend.MachinimaTool.Page6.ActorModeTitle = 액터 모드
+builderTools.legend.MachinimaTool.Page6.ActorModeDesc = 선택한 액터의 모든 키프레임을 함께 이동합니다. 애니메이션의 모양을 유지하면서 경로 전체를 이동시킵니다.
+builderTools.legend.MachinimaTool.Page6.SceneModeTitle = 장면 모드
+builderTools.legend.MachinimaTool.Page6.SceneModeDesc = 전체 장면 원점을 이동시켜 모든 액터와 그들의 경로를 함께 옮깁니다. 마시니마 전체를 다른 지역으로 재배치할 때 유용합니다.
+
+builderTools.legend.MachinimaTool.Page7.Title = 표시 및 원점
+builderTools.legend.MachinimaTool.Page7.DisplayTitle = 표시 전환:
+builderTools.legend.MachinimaTool.Page7.ToggleDisplay = 에디터 오버레이 표시 전환
+builderTools.legend.MachinimaTool.Page7.TogglePathNodes = 경로 노드 가시성 전환
+builderTools.legend.MachinimaTool.Page7.ToggleCamera = 카메라 액터 켜기/끄기
+builderTools.legend.MachinimaTool.Page7.ToggleFrustum = 카메라 시야 범위(Frustum) 표시 전환
+builderTools.legend.MachinimaTool.Page7.OriginTitle = 장면 원점 조작:
+builderTools.legend.MachinimaTool.Page7.GoToOrigin = 장면 원점으로 순간이동
+builderTools.legend.MachinimaTool.Page7.SetOrigin = 플레이어 위치를 장면 원점으로 설정
+builderTools.legend.MachinimaTool.Page7.OffsetToOrigin = 전체 장면을 플레이어 위치로 오프셋 이동
+
+builderTools.legend.MachinimaTool.Page8.Title = 경로 및 곡선
+builderTools.legend.MachinimaTool.Page8.Description = 키프레임 보간 방식을 선택하세요:
+builderTools.legend.MachinimaTool.Page8.LinearHeader = 선형 (기본)
+builderTools.legend.MachinimaTool.Page8.LinearDesc = 키프레임 사이를 직선으로 연결합니다. 단순하고 예측 가능한 움직임입니다.
+builderTools.legend.MachinimaTool.Page8.BezierHeader = 베지어 (Bezier)
+builderTools.legend.MachinimaTool.Page8.BezierDesc = 조절 핸들을 드래그하여 경로의 모양을 만들 수 있는 매끄러운 곡선입니다.
+builderTools.legend.MachinimaTool.Page8.SplineHeader = 스플라인 (Spline)
+builderTools.legend.MachinimaTool.Page8.SplineDesc = 모든 키프레임을 통과하는 자동 생성 매끄러운 곡선입니다.
+builderTools.legend.MachinimaTool.Page8.BezierCommands = 경로 명령어:
+builderTools.legend.MachinimaTool.Page8.EnableBezier = 베지어 활성화
+builderTools.legend.MachinimaTool.Page8.SmoothBezier = 핸들 매끄럽게 조정
+builderTools.legend.MachinimaTool.Page8.EnableSpline = 스플라인 활성화
+
+builderTools.legend.MachinimaTool.Page9.Title = 콘솔 명령어
+builderTools.legend.MachinimaTool.Page9.SceneCommands = 장면: .mach scene [list | add | remove | save | load | copy | set | rename | rotate | clear]
+builderTools.legend.MachinimaTool.Page9.ActorCommands = 액터: .mach actor [list | add | remove | set | model | move | clone | rotate | scale | clear]
+builderTools.legend.MachinimaTool.Page9.EventCommands = 이벤트: .mach event [list | add | remove]\n\
+이벤트 유형: animation, camera, command, particle, target
+builderTools.legend.MachinimaTool.Page9.FileCommands = 파일: .mach save | load | files | zip | autosave [초]
+builderTools.legend.MachinimaTool.Page9.UtilityCommands = 유틸리티: .mach tool | fps [값] | speed [값] | align | demo [1-7] | restart
+
+builderTools.legend.PasteTool.Page1.Title = 프리팹 붙여넣기 브러시
+builderTools.legend.PasteTool.Page1.Description = 브러시를 사용하듯 프리팹을 빠르게 붙여넣을 수 있습니다. 페인트 브러시의 대부분의 기능을 지원합니다.
+builderTools.legend.PasteTool.Page1.LoadPrefabOrCopy = 프리팹 로드 또는 선택 영역 복사
+builderTools.legend.PasteTool.Page1.UseSelectionContents = 선택 영역의 내용을 사용하려면, 선택 도구로 영역을 지정하고 '/copy'를 입력한 후 다시 붙여넣기 도구로 돌아오세요.
+builderTools.legend.PasteTool.Page1.OpensPrefabList = 프리팹 목록 열기; 클릭하여 로드
+builderTools.legend.PasteTool.Page1.PastePrefab = 프리팹 붙여넣기; 누르고 있으면 브러시처럼 사용
+builderTools.legend.PasteTool.Page1.StickPrefab = 프리팹을 대상에 부착하거나 이미 부착된 경우 분리
+builderTools.legend.PasteTool.Page1.RotatePrefabY = Y축 회전
+builderTools.legend.PasteTool.Page1.RotatePrefabX = X축 회전
+builderTools.legend.PasteTool.Page1.RotatePrefabZ = Z축 회전
+builderTools.legend.PasteTool.Page1.ShowTexture = 블록 텍스처 표시 전환
+builderTools.legend.PasteTool.Page1.CycleOrigin = 원점 순환 (하단/중앙/상단)
+builderTools.legend.PasteTool.Page2.Title = 보조키
+builderTools.legend.PasteTool.Page2.ShiftPrefabLeftRight = 프리팹 좌우 이동
+builderTools.legend.PasteTool.Page2.ShiftPrefabForwardBackward = 프리팹 전후 이동
+builderTools.legend.PasteTool.Page2.ShiftPrefabUp = 프리팹 위로 이동
+builderTools.legend.PasteTool.Page2.ShiftPrefabDown = 프리팹 아래로 이동
+builderTools.legend.PasteTool.Page2.RotatePrefabLeftRight = 프리팹 좌우 회전
+builderTools.legend.PasteTool.Page2.RollPrefabLeftRight = 프리팹 좌우 롤링
+builderTools.legend.PasteTool.Page2.RollPrefabForwardBackward = 프리팹 전후 롤링
+builderTools.legend.PasteTool.Page2.ResetShifting = 위치 이동 초기화
+
+builderTools.legend.SculptBrush.Page1.Title = 조각(Sculpt) 브러시
+builderTools.legend.SculptBrush.Page1.Description = 지형을 높이거나 낮추어 더 정교하게 지형을 조각하고 모양을 섞을 수 있게 해줍니다. 페인트 브러시의 대부분의 기능을 지원합니다.
+builderTools.legend.SculptBrush.Page1.MeltAwayBlocks = 조준한 곳의 블록을 층별로 녹여 없앰
+builderTools.legend.SculptBrush.Page1.RaiseLayer = 조준한 곳에 블록 층을 쌓음
+builderTools.legend.SculptBrush.Page1.Smooth = 거친 지형을 매끄럽게 만듦
+builderTools.legend.SculptBrush.Page1.MaterialSelectedDescription = 재료가 선택되면 조준한 곳에 해당 재료 층을 배치함
+builderTools.legend.SculptBrush.Page1.SelectTargetMaterial = 대상 재료 선택
+builderTools.legend.SculptBrush.Page1.UndoLastBrush = 마지막 브러시 작업 취소
+builderTools.legend.SculptBrush.Page1.RedoLastUndo = 마지막으로 취소한 작업 다시 실행
+builderTools.legend.SculptBrush.Page1.EditInventoryProperties = 인벤토리에서 재료, 크기, 모양 및 기타 속성 편집
+
+builderTools.legend.SelectionTool.Page1.Title = 기본 선택
+builderTools.legend.SelectionTool.Page1.CreatingSelection = 선택 영역 만들기:
+builderTools.legend.SelectionTool.Page1.HoldAndDrag = 1. 첫 번째 축을 선택하려면 클릭 후 드래그한 다음 뗌
+builderTools.legend.SelectionTool.Page1.AdjustAndClick = 2. 마우스를 조정하고 다시 클릭하여 세 번째 차원을 설정
+builderTools.legend.SelectionTool.Page1.ClearSelection = 선택 해제
+builderTools.legend.SelectionTool.Page1.ClickDragPanels = 선택 패널을 클릭하고 드래그
+builderTools.legend.SelectionTool.Page1.ChangeSelectionSize = 선택 크기 변경
+builderTools.legend.SelectionTool.Page1.MoveSelection = 선택 영역 이동
+builderTools.legend.SelectionTool.Page1.ExtrudeFace = 면 돌출(Extrude)
+builderTools.legend.SelectionTool.Page1.MultipleSelections = 다중 선택:
+builderTools.legend.SelectionTool.Page1.NextSelection = 다음 선택 영역
+builderTools.legend.SelectionTool.Page1.PreviousSelection = 이전 선택 영역
+builderTools.legend.SelectionTool.Page1.SetRedPoint = 빨간색 점을 대상으로 설정
+builderTools.legend.SelectionTool.Page1.SetGreenPoint = 초록색 점을 대상으로 설정
+builderTools.legend.SelectionTool.Page2.Title = 복사 / 이동 / 회전
+builderTools.legend.SelectionTool.Page2.WithSelectionCreated = 선택 영역이 생성된 상태에서:
+builderTools.legend.SelectionTool.Page2.ShowMoveTool = 이동 도구 표시
+builderTools.legend.SelectionTool.Page2.AttachToCursor = 선택 영역을 커서에 부착
+builderTools.legend.SelectionTool.Page2.ShowRotationTool = 회전 도구 표시
+builderTools.legend.SelectionTool.Page2.PasteAndExit = 붙여넣고 종료
+builderTools.legend.SelectionTool.Page2.DuplicatePasteContinue = 복제, 붙여넣기 후 계속
+builderTools.legend.SelectionTool.Page2.CancelMovement = 이동 및 회전 취소
+builderTools.legend.SelectionTool.Page2.DuplicateSelection = 선택 영역 복제 후 이동 / 회전 모드 진입
+builderTools.legend.SelectionTool.Page2.UsingYourSelection = 선택 영역 사용하기:
+builderTools.legend.SelectionTool.Page2.CopySelection = 선택 영역 복사
+builderTools.legend.SelectionTool.Page2.CopyUsageOptions = 그다음 붙여넣기 도구(브러시 + 미리보기) 또는 '/paste' 명령어 사용
+builderTools.legend.SelectionTool.Page2.SavingPrefabs = 프리팹 저장하기:
+builderTools.legend.SelectionTool.Page2.SavePrefabCommand = 채팅 명령어로 선택 영역을 프리팹으로 저장
+builderTools.legend.SelectionTool.Page2.LoadPrefabReference = UI를 통한 프리팹 로드는 붙여넣기 도구 범례 참조
+builderTools.legend.SelectionTool.Page3.Title = 선택 명령어
+builderTools.legend.SelectionTool.Page3.BasicCommands = 기본 명령어:\n\
+- /set [선택 영역을 블록으로 채움]\n\
+- /clear [선택 영역의 모든 블록 제거]\n\
+- /walls [선택 영역에 벽 추가]\n\
+- /move [선택 영역의 내용을 바라보는 방향으로 이동]\n\
+- /undo 및 /redo [X번 실행 취소 및 다시 실행]\n\
+- /copy [선택 영역을 클립보드에 복사]\n\
+- /cut [선택 영역을 클립보드로 잘라내기]\n\
+- /paste [클립보드 내용을 현재 위치에 붙여넣기]\n\
+- /stack [선택 영역을 바라보는 방향으로 X번 쌓음]\n\
+- /replace [한 재료를 다른 재료로 교체]\n\
+- /hollow [가운데를 비운 채로 모양의 겉면만 남김]\n\
+- /flip [바라보는 방향으로 블록 반전]\n\
+- /rotate [선택 영역 회전]\n\
+- /expand [바라보는 방향으로 선택 영역 확장]\n\
+- /contract [지정된 거리만큼 선택 영역 축소]\n\
+- /deselect [선택 박스 해제]
+builderTools.legend.SelectionTool.Page3.SeeHelpMenu = 선택 영역에 사용할 수 있는 더 많은 명령어는 '/help' 메뉴를 확인하세요!
+
+builderTools.legend.RulerTool.Page1.Title = 기본 측정
+builderTools.legend.RulerTool.Page1.Description = 자 도구는 여러 개의 측정선을 지원하여 3D 공간의 여러 점 사이의 거리를 측정할 수 있게 해줍니다.
+builderTools.legend.RulerTool.Page1.PlacePoint = 대상 위치에 측정 지점 배치
+builderTools.legend.RulerTool.Page1.EndCurrentLine = 현재 측정선을 종료하고 새 선 시작
+builderTools.legend.RulerTool.Page1.SnapToAngles = 정밀한 측정을 위해 45도 각도 스냅 활성화
+builderTools.legend.RulerTool.Page1.DistanceMeasurement = 거리 측정값은 각 점과 각 선분에 표시됩니다. 선은 색상으로 구분됩니다: 빨간색(X축), 초록색(Y축), 파란색(Z축), 흰색(대각선)
+
+builderTools.legend.RulerTool.Page2.Title = 점 및 선 편집
+builderTools.legend.RulerTool.Page2.PointEditing = 기존 점 편집:
+builderTools.legend.RulerTool.Page2.MovePoint = 기존 점을 우클릭하여 집어 들고 이동
+builderTools.legend.RulerTool.Page2.DropPoint = 새 위치에서 다시 우클릭하여 점 놓기
+builderTools.legend.RulerTool.Page2.DeletePoint = 마우스를 올린 점 삭제
+builderTools.legend.RulerTool.Page2.ClearCurrentLine = 현재 선의 모든 점 제거
+builderTools.legend.RulerTool.Page2.ClearAllLines = 모든 선을 제거하고 도구 초기화
+
+builderTools.legend.RulerTool.Page3.Title = 다중 측정선
+builderTools.legend.RulerTool.Page3.Description = 자 도구는 여러 개의 독립적인 측정선을 만들고 관리할 수 있습니다. 각 선은 개별적으로 추적되고 편집될 수 있습니다.
+builderTools.legend.RulerTool.Page3.NextLine = 다음 측정선으로 전환
+builderTools.legend.RulerTool.Page3.PreviousLine = 이전 측정선으로 전환
+builderTools.legend.RulerTool.Page3.SwitchToLine = 다른 선의 점을 좌클릭하여 해당 선으로 전환
+builderTools.legend.RulerTool.Page3.WorkflowTip = 팁: 한 선에 점을 배치한 후, 좌클릭하여 종료하면 자동으로 새 선이 시작됩니다. 비활성 선은 낮은 투명도로 표시됩니다.
+
+builderTools.legend.SelectPrefabTool.Page1.Title = 프리팹 선택기
+builderTools.legend.SelectPrefabTool.Page1.Description = 프리팹 에디터는 프리팹을 편집하고 다시 저장하기 위한 임시 환경을 생성합니다. 저장하지 않고 프리팹 에디터를 나가면 변경 사항이 손실됩니다.
+builderTools.legend.SelectPrefabTool.Page1.SelectingPrefabs = 프리팹 선택:
+builderTools.legend.SelectPrefabTool.Page1.SelectPrefab = 앵커를 클릭하여 프리팹 선택
+builderTools.legend.SelectPrefabTool.Page1.UnselectPrefab = 현재 선택된 프리팹 선택 해제
+builderTools.legend.SelectPrefabTool.Page1.EditingPrefabs = 프리팹 편집:
+builderTools.legend.SelectPrefabTool.Page1.OpenSaveUI = 저장/설정 UI 열기
+builderTools.legend.SelectPrefabTool.Page1.UpdateBoundingBox = 선택한 프리팹의 바운딩 박스를 현재 선택 영역으로 업데이트
+builderTools.legend.SelectPrefabTool.Page1.TeleportToPrefab = 프리팹 순간이동 UI 열기
+builderTools.legend.SelectPrefabTool.Page1.SetAnchorTitle = 앵커 설정 도구:
+builderTools.legend.SelectPrefabTool.Page1.SetAnchorDescription = 인벤토리의 앵커 설정 도구를 사용하여 프리팹의 앵커 포인트 위치를 변경하세요. 앵커는 프리팹이 생성될 때의 기준점을 결정합니다.
+builderTools.legend.SelectPrefabTool.Page1.UsefulCommands = 유용한 명령어:
+builderTools.legend.SelectPrefabTool.Page1.KillCommand = /pedit kill - 선택한 프리팹에서 모든 엔티티 제거\n\
+/pedit exit - 변경 사항을 저장하지 않고 프리팹 에디터 종료
+
+builderTools.tools.Paste.args.Origin.name = 원점 (Origin)
+builderTools.tools.Paste.args.Origin.values.Anchor = 앵커
+builderTools.tools.Paste.args.Origin.values.Bottom = 하단
+builderTools.tools.Paste.args.Origin.values.Center = 중앙
+builderTools.tools.Paste.args.Origin.values.Top = 상단
+
+builderTools.legend.EntityTool.Page1.Title = 엔티티 도구
+builderTools.legend.EntityTool.Page1.Description = NPC 및 아이템, 블록, 생물 모델을 소환합니다. 월드의 엔티티를 선택, 이동, 회전 및 크기 조절하세요.
+builderTools.legend.EntityTool.Page1.SelectingEntities = 엔티티 선택:
+builderTools.legend.EntityTool.Page1.SelectEntity = 엔티티 선택/잡기
+builderTools.legend.EntityTool.Page1.FreeMove = 엔티티 자유 이동 (클릭 후 드래그)
+builderTools.legend.EntityTool.Page1.CancelMovement = 이동 취소 및 위치 복구
+builderTools.legend.EntityTool.Page1.AdjustDistance = 엔티티 거리 조절
+
+builderTools.legend.EntityTool.Page2.Title = 변형 모드
+builderTools.legend.EntityTool.Page2.TransformModes = 변형 모드:
+builderTools.legend.EntityTool.Page2.TranslateMode = 이동 모드 진입
+builderTools.legend.EntityTool.Page2.RotateMode = 회전 모드 진입
+builderTools.legend.EntityTool.Page2.RotateHeadMode = 머리 회전 모드 진입
+builderTools.legend.EntityTool.Page2.FreeMoveMode = 커서에 부착
+builderTools.legend.EntityTool.Page2.Scale = 선택한 엔티티 크기 조절
+
+builderTools.legend.EntityTool.Page3.Title = 액션
+builderTools.legend.EntityTool.Page3.EntityActions = 엔티티 액션:
+builderTools.legend.EntityTool.Page3.Clone = 선택한 엔티티 복제
+builderTools.legend.EntityTool.Page3.Remove = 선택한 엔티티 제거
+builderTools.legend.EntityTool.Page3.Freeze = 엔티티 고정 전환
+builderTools.legend.EntityTool.Page3.MovementOptions = 이동 옵션:
+builderTools.legend.EntityTool.Page3.SurfaceLock = 표면 고정 모드 전환
+builderTools.legend.EntityTool.Page3.SpawnUI = 소환 UI:
+builderTools.legend.EntityTool.Page3.OpenSpawnUI = 엔티티 소환 UI 열기
+
+builderTools.panel.selectedEntity = 선택된 엔티티
+builderTools.panel.entitySettings = 엔티티 도구 설정
+builderTools.panel.noSelection = 선택된 엔티티 없음
+builderTools.panel.entityType = 유형
+builderTools.panel.entityModel = 모델
+builderTools.panel.entityName = 이름
+builderTools.panel.entityPosition = 위치
+builderTools.panel.entityRotation = 회전
+builderTools.panel.entityScale = 크기
+builderTools.panel.entityAllowPickup = 획득 허용
+builderTools.panel.entityClone = 복제
+builderTools.panel.entityRemove = 제거
+builderTools.panel.entityPin = 엔티티 핀 고정
+builderTools.panel.entityUnpin = 엔티티 핀 해제
+builderTools.panel.surfaceLock = 표면에 고정
+builderTools.panel.gridSnap = 그리드 스냅
+builderTools.panel.gridSize = 그리드 크기
+
+builderTools.commands.clearEntities.description = 현재 선택 영역 내의 모든 엔티티를 제거합니다.
+
+builderTools.entityType.npc = NPC
+builderTools.entityType.item = 아이템
+builderTools.entityType.model = 모델
+builderTools.entityType.unknown = 알 수 없음
+builderTools.entityModel.fallback.npc = NPC #{id}
+builderTools.entityModel.fallback.item = 아이템 #{id}
+builderTools.entityModel.fallback.block = 블록 #{id}
+builderTools.entityModel.fallback.unknown = #{id}
+
+builderTools.panel.entityLightEnabled = 광원 활성화
+builderTools.panel.entityLightColor = 광원 색상
+builderTools.panel.entityLightRadius = 광원 반경
+builderTools.panel.npcDebug = NPC 디버그
+builderTools.panel.npcState = 상태
+builderTools.panel.npcHealth = 체력
+builderTools.panel.npcStamina = 스태미나
+builderTools.panel.npcSpeed = 속도
+builderTools.panel.npcTarget = 대상
+builderTools.panel.npcTarget.none = 없음
+# === codex ===
+codex.title = 코덱스
+
+codex.movement = 이동
+
+codex.mantling = 턱 오르기 (Mantling)
+codex.mantling.description = 플레이어보다 높은 장애물을 마주했을 때, 앞으로 이동하며 점프를 누르면 턱을 딛고 올라갑니다.
+
+codex.sliding = 슬라이딩
+codex.sliding.description = 전력 질주 중에 "앉기" 키를 누르면 슬라이딩을 합니다.
+
+codex.rolling = 낙법 (Rolling)
+codex.rolling.description = 낙하 중에 "앉기" 키를 유지하면 낙법을 하여 낙하 피해를 무효화합니다.
+# === confirmQuitOverlay ===
+confirmQuitOverlay.title = 게임 종료
+confirmQuitOverlay.text = 정말로 종료하시겠습니까?
+
+confirmQuitOverlay.buttons.returnToGame = 게임으로 돌아가기
+confirmQuitOverlay.buttons.quitToDesktop = 바탕화면으로 종료
+# === contentCreation ===
+contentCreation.pageTitle = 크리에이티브 도구
+
+contentCreation.introText = 이곳은 하이테일(Hytale) 콘텐츠 제작을 돕는 다양한 도구와 에디터에 접속할 수 있는 허브입니다.\n\
+\n\
+위의 메뉴에서 도구 중 하나를 선택하여 시작하세요.
+
+contentCreation.actionButton.toggleBlockEditingTools = 블록 편집 도구 전환
+
+contentCreation.notification.noBlockTargeted = 에셋 에디터에서 열 블록을 타겟팅해야 합니다.
+
+# Blockbench Modals
+contentCreation.modal.blockbench.installRequired.title = Blockbench 설치 필요
+contentCreation.modal.blockbench.installRequired.text = 3D 모델 편집을 위해 Blockbench를 사용합니다. 현재 시스템에 Blockbench가 설치되어 있지 않은 것 같습니다.\n\n설치 프로그램을 통해 Blockbench를 설치한 경우에만 하이테일에서 바로 실행할 수 있습니다.\n\n지금 공식 웹사이트에서 설치하시겠습니까?
+contentCreation.modal.blockbench.installRequired.confirm = Blockbench 설치
+contentCreation.modal.blockbench.pluginRequired.title = 하이테일 플러그인 필요
+contentCreation.modal.blockbench.pluginRequired.text = Blockbench가 설치되어 있지만 하이테일 플러그인이 없습니다.\n\n하이테일 플러그인을 설치해 주세요. 설치 방법은 Blockbench 웹사이트에서 확인할 수 있습니다.
+contentCreation.modal.blockbench.pluginRequired.confirm = 설치 방법 보기
+contentCreation.modal.blockbench.launchFailed.title = Blockbench 실행 실패
+contentCreation.modal.blockbench.launchFailed.text = 시스템에서 Blockbench를 찾았으나 실행할 수 없습니다.\n\n수동으로 Blockbench를 실행해 주세요.
+
+contentCreation.navigation.assets = 에셋
+
+contentCreation.navigation.assetEditor = 에셋 에디터
+contentCreation.navigation.assetEditor.tooltipTitle = 에셋 에디터 앱 실행
+contentCreation.navigation.assetEditor.tooltipDesc = 게임 설정 에셋을 실시간으로 편집할 수 있는 외부 프로그램을 실행합니다.
+contentCreation.navigation.blockbench = 모델 에디터
+contentCreation.navigation.blockbench.tooltipTitle = Blockbench 앱 실행 (모델 에디터)
+contentCreation.navigation.blockbench.tooltipDesc = 하이테일 전용 모델과 애니메이션을 직접 만듭니다.
+contentCreation.navigation.nodeeditor = 에셋 노드 에디터
+contentCreation.navigation.nodeeditor.tooltipTitle = 에셋 노드 에디터 앱 실행
+contentCreation.navigation.nodeeditor.tooltipDesc = 비주얼 스크립팅 노드 에디터를 사용하여 에셋을 편집합니다.
+contentCreation.navigation.machinima = 마시니마
+contentCreation.navigation.machinima.tooltipTitle = 마시니마 에디터 열기
+contentCreation.navigation.machinima.tooltipDesc = 마시니마 에디터를 사용하여 하이테일 안에서 나만의 영화를 만듭니다.
+contentCreation.navigation.buildertools = 건설 도구
+contentCreation.navigation.buildertools.tooltipTitle = 건설 도구 열기
+contentCreation.navigation.buildertools.tooltipDesc = 블록 편집 도구 (선택, 브러시, 조각 등)\n\
+\n\
+크리에이티브 인벤토리의 도구 탭에 있는 블록 편집 도구로 월드의 블록을 수정합니다.
+
+contentCreation.modal.nodeeditor.nonsupported.title = 지원되지 않는 플랫폼
+contentCreation.modal.nodeeditor.nonsupported.text = 노드 에디터는 현재 사용하는 플랫폼에서 지원되지 않습니다.\n\n현재는 Windows만 지원하며, 모든 PC 플랫폼으로 확장하기 위해 작업 중입니다.
+
+contentCreation.navigation.worldtools = 월드
+contentCreation.navigation.worldtools.prefabEditor = 프리팹 에디터
+contentCreation.navigation.worldtools.prefabEditor.tooltipTitle = 별도의 공간에서 프리팹을 생성하거나 편집합니다.
+contentCreation.navigation.worldtools.prefabList = 프리팹 목록
+contentCreation.navigation.worldtools.prefabList.tooltipTitle = 유저가 생성한 모든 프리팹을 나열합니다. 클릭하면 붙여넣기 도구에 로드됩니다.
+contentCreation.navigation.worldtools.spawnEntity = 엔티티 소환
+contentCreation.navigation.worldtools.spawnParticle = 파티클 소환
+contentCreation.navigation.worldtools.changeModel = 플레이어 모델 변경
+contentCreation.navigation.worldtools.tintChunk = 청크 틴트(색조) 변경
+contentCreation.navigation.worldtools.instances = 인스턴스
+contentCreation.navigation.worldtools.playSound = 사운드 재생
+contentCreation.navigation.worldtools.playSound.tooltipTitle = 사운드 이벤트를 찾아 재생합니다.
+contentCreation.navigation.worldtools.importObj = OBJ 임포트
+contentCreation.navigation.worldtools.importObj.tooltipTitle = 3D OBJ 모델을 복셀로 변환하여 클립보드에 복사합니다.
+contentCreation.navigation.worldtools.importImage = 이미지 임포트
+contentCreation.navigation.worldtools.importImage.tooltipTitle = 2D 이미지를 블록 아트로 변환하여 클립보드에 복사합니다.
+
+contentCreation.navigation.help = 도움말
+contentCreation.navigation.help.commands = 명령어
+# === controls ===
+# Timeline Control
+controls.timeline.tooltip.muteTrack = 트랙 음소거
+controls.timeline.tooltip.playPause = 재생/일시정지
+controls.timeline.tooltip.stop = 정지
+controls.timeline.tooltip.addTrack = 트랙 추가
+controls.timeline.button.autoRestart = 자동 재시작
+controls.timeline.tooltip.toggleLoop = 루프 전환
+controls.timeline.label.time = 시간: {time}s
+controls.timeline.label.frame = 프레임: {frame}
+controls.timeline.label.duration = 길이: {duration}
+controls.timeline.label.fps = FPS: {fps}
+controls.timeline.tooltip.keyframe = 프레임: {time}
+# === devTools ===
+devTools.tabs.Console = 콘솔
+devTools.tabs.GameInfo = 게임 정보
+
+devTools.options = 옵션
+
+devTools.popupMenu.copyGameInfo = 게임 정보를 클립보드에 복사
+devTools.popupMenu.createDefect = 결함 리포트 생성
+
+devTools.gameStats.popupMenu.editInAssetEditor = 에셋 에디터에서 편집
+devTools.gameStats.popupMenu.copyValue = 값 복사
+
+devTools.logEntry.popupMenu.copyMessage = 메시지 복사
+
+devTools.gameInfo.sections.Build = 빌드
+devTools.gameInfo.sections.Hardware = 하드웨어
+devTools.gameInfo.sections.World = 월드
+devTools.gameInfo.sections.Chunks = 청크
+devTools.gameInfo.sections.AtlasSizes = 아틀라스 크기
+devTools.gameInfo.sections.Assets = 에셋
+devTools.gameInfo.sections.UI = UI
+devTools.gameInfo.sections.Particles = 파티클
+devTools.gameInfo.sections.Network = 네트워크
+
+devTools.gameInfo.keys.Branch = 브랜치
+devTools.gameInfo.keys.Revision = 리비전
+devTools.gameInfo.keys.FrameworkVersion = .Net 버전
+
+devTools.gameInfo.keys.GPUVendor = GPU
+devTools.gameInfo.keys.GPURenderer = GPU 렌더러
+devTools.gameInfo.keys.GPUVersion = GPU 버전
+devTools.gameInfo.keys.WindowSize = 창 크기
+devTools.gameInfo.keys.ViewportSize = 뷰포트 크기
+devTools.gameInfo.keys.SceneSize = 장면 크기
+
+devTools.gameInfo.keys.Biome = 생물군계
+devTools.gameInfo.keys.Zone = 지역
+devTools.gameInfo.keys.Environment = 환경
+devTools.gameInfo.keys.Weather = 날씨
+devTools.gameInfo.keys.Entities = 엔티티
+devTools.gameInfo.keys.AudioEvents = 오디오 이벤트
+devTools.gameInfo.keys.SoundEffect = 사운드 효과
+devTools.gameInfo.keys.ViewDistance = 시야 거리
+devTools.gameInfo.keys.Heightmap = 높이맵
+devTools.gameInfo.keys.Tint = 색조 (Tint)
+devTools.gameInfo.keys.Light = 광원
+devTools.gameInfo.keys.Music = 음악
+devTools.gameInfo.keys.TargetBlock = 대상 블록
+devTools.gameInfo.keys.HitBox = 히트 박스
+devTools.gameInfo.keys.Orientation = 방향
+devTools.gameInfo.keys.FeetPosition = 발 위치
+devTools.gameInfo.keys.ChunkPosition = 청크 위치
+
+devTools.gameInfo.keys.MapAtlasSize = 맵
+devTools.gameInfo.keys.EntityAtlasSize = 엔티티
+devTools.gameInfo.keys.IconAtlasSize = 아이콘
+devTools.gameInfo.keys.UIAtlasSize = UI
+devTools.gameInfo.keys.CustomUIAtlasSize = 커스텀 UI
+
+devTools.gameInfo.keys.ChunksLoaded = 로드됨
+devTools.gameInfo.keys.ChunksDrawable = 렌더링 가능
+devTools.gameInfo.keys.ChunksMax = 최대
+devTools.gameInfo.keys.ChunksQueued = 대기 중
+devTools.gameInfo.keys.ChunksRebuilding = 재구축 중
+devTools.gameInfo.keys.ChunksUploadReady = 업로드 준비 완료
+devTools.gameInfo.keys.ChunksToUpdate = 업데이트 대기
+devTools.gameInfo.keys.ChunksUpToDate = 최신 상태
+
+devTools.gameInfo.keys.ActivelyReferencedAssets = 활성 참조 에셋
+devTools.gameInfo.keys.BuiltInAssets = 내장 에셋
+devTools.gameInfo.keys.CachedAssets = 캐시된 에셋
+
+devTools.gameInfo.keys.UIScale = 배율
+
+devTools.gameInfo.keys.ParticleSystems = 시스템
+devTools.gameInfo.keys.ParticleProxies = 프록시
+devTools.gameInfo.keys.ParticleBlend = 블렌드
+devTools.gameInfo.keys.ParticleDistortion = 왜곡
+devTools.gameInfo.keys.ParticleErosion = 침식
+
+devTools.gameInfo.keys.NetworkSent = 전송량
+devTools.gameInfo.keys.NetworkReceived = 수신량
+# === disconnection ===
+disconnection.title.disconnected = 서버와 연결이 끊겼습니다
+disconnection.title.failedToConnect = 서버 연결 실패
+
+disconnection.button.quitToMainMenu = 메인 메뉴로 나가기
+disconnection.button.reconnect = 재접속
+disconnection.button.reconnect.inProgress = 재접속 중...
+
+disconnection.button.tryAgain = 다시 시도
+disconnection.button.tryAgain.inProgress = 연결 중...
+
+disconnection.autoConnectingIn = {seconds}초 후 연결 시도
+
+disconnection.error.unexpectedError = 예기치 않은 오류가 발생했습니다
+disconnection.error.noConnectectionEstablished = 연결을 설정할 수 없습니다
+# === gameLoadingView ===
+gameLoadingView.hints.constructionThanks = 아직 개발 중인 게임을 플레이해 주셔서 감사합니다!
+gameLoadingView.hints.futureTipsAndTricks = 이 화면에는 나중에 모험에 도움이 될 팁과 요령이 표시될 예정입니다.
+
+gameLoadingView.status.waitingForShutdown = 서버가 종료되기를 기다리는 중...
+gameLoadingView.status.connecting = 연결 중...
+gameLoadingView.status.connectingP2P = {host}의 '{name}'에 연결 중... ({current}/{total})
+gameLoadingView.status.bootingServer = 서버 부팅 중...
+gameLoadingView.status.enterPassword = 서버 비밀번호를 입력하세요
+gameLoadingView.status.wrongPassword = 비밀번호가 틀렸습니다. 남은 시도 횟수: {attempts, plural, one {#회} other {#회}}
+
+gameLoadingView.password.title = 서버 비밀번호
+gameLoadingView.password.submit = 로그인
+# === gamePageNavigation ===
+gamePageNavigation.buttons.Inventory = 인벤토리
+gamePageNavigation.buttons.Map = 지도
+gamePageNavigation.buttons.ContentCreation = 크리에이티브 도구
+gamePageNavigation.buttons.ContentCreation.disabledTooltip = 크리에이티브 메뉴는 크리에이티브 모드에서만 사용할 수 있습니다.
+gamePageNavigation.buttons.ContentCreation.disabledTooltip.title = [TMP] 크리에이티브 모드
+gamePageNavigation.buttons.ContentCreation.disabledTooltip.description = [TMP] 크리에이티브 모드에서는 강력한 편집 도구를 사용할 수 있습니다. 크리에이티브 모드로 전환하려면 '/op self'를 입력한 후 'O' 단축키로 게임 모드를 전환하세요.
+gamePageNavigation.earlyAccess = 얼리 액세스
+# === general ===
+general.button.cancel = 취소
+general.button.confirm = 확인
+general.button.save = 저장
+general.button.ok = 확인
+general.button.saveChanges = 변경 사항 저장
+general.button.discardChanges = 변경 사항 폐기
+general.button.resetDefaults = 기본값으로 초기화
+general.button.close = 닫기
+general.button.back = 뒤로
+general.button.add = 추가
+general.button.delete = 삭제
+general.button.remove = 제거
+general.button.edit = 편집
+general.button.select = 선택
+general.button.browse = 찾아보기
+
+general.label.loading = 불러오는 중...
+
+general.searchField.placeholder = 검색
+general.filterField.placeholder = 필터
+
+general.dialog.error.title = 오류
+
+general.checkbox.on = 켜짐
+general.checkbox.off = 꺼짐
+
+general.gamemodes.adventure = 모험
+general.gamemodes.creative = 크리에이티브
+
+general.relativeTime.now = 방금 전
+general.relativeTime.lessThanAMinute = 1분 미만 전
+general.relativeTime.minute = 1분 전
+general.relativeTime.minutes = {minutes}분 전
+general.relativeTime.hour = 1시간 전
+general.relativeTime.hours = {hours}시간 전
+general.relativeTime.day = 어제
+general.relativeTime.days = {days}일 전
+general.relativeTime.month = 1개월 전
+general.relativeTime.months = {months}개월 전
+general.relativeTime.year = 1년 전
+general.relativeTime.years = {years}년 전
+
+general.chatMessage.failedToSaveScreenshot = 스크린샷 저장 실패!
+general.chatMessage.requestCancelled = 요청이 취소되었습니다
+# === hud ===
+hud.playerList.onlinePlayers = 온라인 플레이어
+hud.playerList.username = 사용자 이름
+hud.playerList.ping = 핑
+
+hud.itemSlotSelector.noItem = 아이템 없음
+hud.itemSlotSelector.empty = 비어 있음
+hud.itemSlotSelector.invalidItem = 잘못된 아이템
+
+hud.entityEffects.defaultBuffName = 버프
+hud.entityEffects.defaultDebuffName = 디버프
+
+hud.portalPanel.title = {name}
+hud.portalPanel.portalLabel = 오르비스의 파편
+hud.portalPanel.timeUntilBreach = 보이드 침식까지 남은 시간
+hud.portalPanel.timeUntilClose = 포털 폐쇄까지 남은 시간
+
+hud.inputBindings.inventory = 인벤토리
+hud.inputBindings.creationTools = 크리에이티브 도구
+hud.inputBindings.map = 지도
+hud.inputBindings.rotateBlock = 회전
+hud.inputBindings.selectBlockVariant = 블록 변형
+
+hud.networkQuality.ping.good = 짧은 지연 시간 (<50ms)
+hud.networkQuality.ping.okay = 보통 지연 시간 (50-100ms) - 약간의 렉이 느껴질 수 있습니다.
+hud.networkQuality.ping.poor = 긴 지연 시간 (100-200ms) - 렉이 발생할 수 있습니다.
+hud.networkQuality.ping.bad = 매우 긴 지연 시간 (>=200ms) - 게임 플레이가 느려지거나 반응이 없을 수 있습니다.
+hud.networkQuality.jitter.good = 낮은 지터 (<5ms)
+hud.networkQuality.jitter.okay = 보통 지터 (5-15ms) - 약간의 화면 끊김이 느껴질 수 있습니다.
+hud.networkQuality.jitter.poor = 높은 지터 (15-30ms) - 게임 플레이가 고르지 않을 수 있습니다.
+hud.networkQuality.jitter.bad = 매우 높은 지터 (>=30ms) - 잦은 렉 스파이크나 러버밴딩 현상이 발생할 수 있습니다.
+hud.networkQuality.packetLoss.good = 낮은 패킷 손실 (<0.1%)
+hud.networkQuality.packetLoss.okay = 보통 패킷 손실 (0.1-1%) - 이따금 지연되거나 동작이 누락될 수 있습니다.
+hud.networkQuality.packetLoss.poor = 높은 패킷 손실 (1-3%) - 일부 동작이나 업데이트가 등록되지 않을 수 있습니다.
+hud.networkQuality.packetLoss.bad = 매우 높은 패킷 손실 (>=3%) - 심각한 동기화 오류나 연결 끊김이 발생할 수 있습니다.
+
+hud.networkQuality.worldSaving = 월드 저장 중
+hud.networkQuality.offlineMode = 오프라인 모드 - 세션이 만료되었습니다. 다시 온라인 상태로 돌아가려면 게임을 재시작하세요.
+
+hud.sleep.awaiting = {asleep}/{total}명의 플레이어가 자는 중...
+hud.sleep.waitingOn = {who} 대기 중
+
+hud.chat.openLinkModal.title = 외부 웹사이트를 여시겠습니까?
+hud.chat.openLinkModal.text = 브라우저에서 "{url}" 웹사이트를 열려고 합니다. \n\
+\n\
+다른 플레이어가 보낸 링크를 방문할 때는 특히 주의하세요. 개인 정보를 요구할 수 있습니다.\n\
+\n\
+계속하시겠습니까?
+hud.chat.openLinkModal.confirm = 웹사이트 열기
+# === inventory ===
+inventory.chest.title = 상자
+inventory.chest.tooltip.takeAll = 모두 가져오기 - 보관함의 모든 아이템을 인벤토리로 옮깁니다.
+inventory.chest.tooltip.putAll = 모두 넣기 - 인벤토리의 모든 아이템을 보관함으로 옮깁니다.
+inventory.chest.tooltip.quickStack = 빠른 정리 - 이미 보관함에 있는 종류의 아이템만 인벤토리에서 옮깁니다.
+
+inventory.inventory.title = 인벤토리
+inventory.itemQuantityPopup.title = 나누기:
+
+inventory.itemLibrary.title = 아이템 라이브러리
+inventory.itemLibrary.options.title = 옵션
+inventory.itemLibrary.options.showVariants = 변형 모델 표시
+
+inventory.itemPreview.title = 아이템 미리보기
+
+inventory.character.tooltip.togglePocketCrafting = 휴대용 제작 전환
+inventory.character.tooltip.toggleBackpack = 배낭 전환
+inventory.character.tooltip.lockedBackpack = 배낭 업그레이드를 제작하여 잠금 해제하세요.
+inventory.character.tooltip.toggleMemories = 수집한 기억 전환
+inventory.character.tooltip.disabledMemories = [TMP] 현재 컨텍스트에서는 기억 기능을 사용할 수 없습니다.
+inventory.character.tooltip.disabledBackpack = [TMP] 현재 컨텍스트에서는 배낭 기능을 사용할 수 없습니다.
+inventory.character.tooltip.lockedMemories = 더 자세히 알아보려면 잊혀진 사원을 찾으세요.
+inventory.character.tooltip.pocketCraftingDisabled = [TMP] 현재 컨텍스트에서는 휴대용 제작을 사용할 수 없습니다.
+
+inventory.character.stats.mana = 마나
+inventory.character.stats.health = 체력
+inventory.character.stats.stamina = 스태미나
+inventory.character.stats.defense = 방어력
+inventory.character.stats.stats = 능력치
+
+inventory.crafting.title = 제작
+inventory.crafting.button.craft = 제작
+inventory.crafting.button.craft1 = 1개 제작
+inventory.crafting.button.craft10 = 10개 제작
+inventory.crafting.button.craft10.tooltip = 10개 제작
+inventory.crafting.button.craftAll = 전체
+inventory.crafting.button.craftAll.tooltip = 전체 제작
+inventory.crafting.button.craftX = {count}개 제작
+inventory.crafting.button.crafting = 제작 중...
+inventory.crafting.unknownItem = 알 수 없는 아이템
+
+inventory.crafting.unknownItem.knowledgeRequired = 아직 발견하지 못한 제작법
+inventory.crafting.unknownItem.memoriesCountRequired = <color is="#f1ba50">잊혀진 사원</color>을 찾아 {memories}개의 기억을 복구하고 이 제작법을 해제하세요!
+inventory.crafting.lockedItem.benchTierLevelRequired = {benchname} {level}단계 필요
+
+inventory.bench.tierLevelX = {level}단계
+inventory.bench.tierLevelX.requirements = {level}단계 요구 사항
+inventory.bench.tierLevelX.upgrade = {level}단계로 업그레이드
+inventory.bench.tier.button.upgrade = 업그레이드
+inventory.bench.tier.max = 최대 단계 도달
+
+inventory.crafting.ingredient.tooltip.pullingFromChests = 인벤토리에 재료가 부족합니다. 주변 상자의 아이템을 사용합니다.
+
+inventory.crafting.options.hideUnknownRecipes = 모르는 제작법 숨기기
+
+inventory.processing.button.turnOn = 켜기
+inventory.processing.button.turnOff = 끄기
+inventory.processing.panel.fuel.title = 연료
+inventory.processing.panel.output.title = 결과물
+
+inventory.panel.input.title = 입력
+
+inventory.itemInfo.title = 아이템 정보
+inventory.itemInfo.hoverInfo = 아이템 위에 마우스를 올려 자세한 정보를 확인하세요.
+inventory.itemInfo.itemSet = 아이템 세트
+
+inventory.recipesButton = 제작법
+
+inventory.recipeCataloguePopup.title = 제작법 카탈로그
+
+inventory.fieldcraft.title = 휴대용 제작
+
+inventory.storage.filterTooltips.weapons = 무기만 표시
+inventory.storage.filterTooltips.armor = 방어구만 표시
+inventory.storage.filterTooltips.blocks = 건설 재료만 표시
+
+inventory.button.autoSort.tooltip = 종류별 자동 정리
+inventory.dropdown.autoSortBy = 자동 정리 기준:
+inventory.dropdown.autoSort.types.Name = 이름
+inventory.dropdown.autoSort.types.Type = 종류
+inventory.dropdown.autoSort.types.Rarity = 희귀도
+
+inventory.memories.title = 수집한 기억
+
+inventory.action.toggleBuilderTools = 건설 도구 전환
+inventory.action.pickHalf = 절반 집기
+inventory.action.pickOne = 한 개 집기
+inventory.action.smartMove = 이동 (Smart Move)
+inventory.action.resize = 크기 조절
+inventory.action.placeOne = 한 개 놓기
+inventory.action.resizeMod = 크기 조절 x5
+# === itemTooltip ===
+itemTooltip.resourceType.name = 자원: {name}
+itemTooltip.id = ID:
+itemTooltip.utility = 도구
+itemTooltip.consumable = 소모품
+
+itemTooltip.cursed.label = 저주받음
+itemTooltip.cursed.help = 파편에서 생존하여 정화하세요
+
+itemTooltip.stats.Health = 체력
+itemTooltip.stats.Stamina = 스태미나
+itemTooltip.stats.Mana = 마나
+itemTooltip.stats.Oxygen = 산소
+itemTooltip.stats.Defense = 방어력
+itemTooltip.stats.FireResistance = 화염 저항
+itemTooltip.stats.WaterResistance = 냉기 저항
+itemTooltip.stats.EarthResistance = 대지 저항
+itemTooltip.stats.AirResistance = 전격 저항
+itemTooltip.stats.SignatureEnergy = 시그니처 에너지
+itemTooltip.stats.Ammo = 탄약
+itemTooltip.stats.SignatureCharges = 시그니처 충전 횟수
+
+itemTooltip.damageClass.unknown = 알 수 없음
+itemTooltip.damageClass.light = 약공격
+itemTooltip.damageClass.charged = 차지 공격
+itemTooltip.damageClass.signature = 시그니처 공격
+
+itemTooltip.increases = 증가
+itemTooltip.decreases = 감소
+itemTooltip.modifies = 보정
+itemTooltip.damageBy = 피해량:
+itemTooltip.resistance = 저항:
+
+itemTooltip.oneHanded = 한손 무기
+itemTooltip.twoHanded = 양손 무기
+# === machinima ===
+machinima.bindings.TogglePause = 재생/일시정지 전환
+machinima.bindings.ToggleDisplay = 표시 전환
+machinima.bindings.ToggleCamera = 카메라 전환
+machinima.bindings.RestartScene = 장면 다시 시작
+machinima.bindings.FrameDecrement = 이전 프레임
+machinima.bindings.FrameIncrement = 다음 프레임
+machinima.bindings.FrameTimeDecrease = 프레임 시간 감소
+machinima.bindings.FrameTimeIncrease = 프레임 시간 증가
+machinima.bindings.KeyframeDecrement = 이전 키프레임
+machinima.bindings.KeyframeIncrement = 다음 키프레임
+machinima.bindings.PlaybackSpeedDecrease = 재생 속도 감소
+machinima.bindings.PlaybackSpeedIncrease = 재생 속도 증가
+machinima.bindings.AddKeyframe = 키프레임 추가
+machinima.bindings.RemoveKeyframe = 키프레임 삭제
+machinima.bindings.EditKeyframe = 키프레임 편집
+machinima.bindings.OriginAction = 원점 액션
+machinima.bindings.CycleSelectionMode = 선택 모드 전환
+
+# Header
+machinima.header.placeholder.selectScene = 장면 선택
+machinima.header.button.create = 생성
+machinima.header.button.delete = 삭제
+machinima.header.button.save = 저장
+machinima.header.button.settings = 설정
+machinima.header.button.help = 도움말
+
+# Modal Titles
+machinima.modal.title.inputBindings = 입력 키 설정
+machinima.modal.title.editScene = 장면 편집
+machinima.modal.title.createScene = 새 장면 생성
+machinima.modal.title.createActor = 새 액터 생성
+machinima.modal.title.editActor = 액터 편집
+machinima.modal.title.editKeyframeEvent = 키프레임 이벤트 편집
+machinima.modal.title.addKeyframeSetting = 키프레임 설정 추가
+machinima.modal.title.addKeyframeEvent = 키프레임 이벤트 추가
+machinima.modal.title.deleteEvent = 이벤트 삭제
+machinima.modal.title.deleteScene = 장면 삭제
+
+# Modal Buttons
+machinima.modal.button.close = 닫기
+machinima.modal.button.saveChanges = 변경 사항 저장
+machinima.modal.button.createScene = 장면 생성
+machinima.modal.button.createActor = 액터 생성
+machinima.modal.button.addSetting = 설정 추가
+machinima.modal.button.addEvent = 이벤트 추가
+machinima.modal.button.delete = 삭제
+
+# Modal Messages
+machinima.modal.message.deleteEvent = '{name}' 이벤트를 삭제하시겠습니까?
+machinima.modal.message.deleteScene = '{name}' 장면을 삭제하시겠습니까?
+
+# Modal Labels
+machinima.modal.label.name = 이름
+machinima.modal.label.type = 유형
+machinima.modal.label.animationSlot = 애니메이션 슬롯
+machinima.modal.label.animationId = 애니메이션 ID
+machinima.modal.label.command = 명령어
+machinima.modal.label.particleSystem = 파티클 시스템
+machinima.modal.label.targetActor = 대상 액터
+machinima.modal.label.actorType = 액터 유형
+machinima.modal.label.item = 아이템
+machinima.modal.label.scale = 크기
+machinima.modal.label.model = 모델
+machinima.modal.label.fieldOfView = 시야각 (FOV)
+machinima.modal.label.lighting = 빛 방출
+machinima.modal.label.light = 광원 색상
+
+# Modal Checkboxes
+machinima.modal.checkbox.activateCamera = 카메라 활성화
+
+# Modal Placeholders
+machinima.modal.placeholder.actorName = 액터 이름
+machinima.modal.placeholder.selectActorType = 액터 유형 선택
+machinima.modal.placeholder.selectEvent = 이벤트 선택
+machinima.modal.placeholder.selectItem = 아이템 선택
+
+# Keyframe Editor
+machinima.keyframe.tab.settings = 설정
+machinima.keyframe.tab.events = 이벤트
+machinima.keyframe.button.addSetting = 설정 추가
+machinima.keyframe.button.addEvent = 이벤트 추가
+machinima.keyframe.button.edit = 편집
+machinima.keyframe.button.delete = 삭제
+machinima.keyframe.tooltip.deleteEvent = 이벤트 삭제
+# === mainMenu ===
+# Navigation
+
+mainMenu.navigation.quit = 종료
+mainMenu.navigation.settings = 설정
+mainMenu.navigation.worlds = 월드
+mainMenu.navigation.minigames = 미니게임
+mainMenu.navigation.servers = 서버
+mainMenu.navigation.avatar = 아바타 꾸미기
+mainMenu.navigation.shop = 상점
+
+mainMenu.discord.button.label = Discord 참여
+mainMenu.discord.button.tooltip = 외부 브라우저에서 공식 Discord 열기
+
+mainMenu.feedback.button.label = [TMP] 피드백 보내기
+
+# Minigames
+
+mainMenu.minigames.title = 미니게임
+mainMenu.minigames.title.appendix = 곧 공개됩니다!
+
+mainMenu.minigames.wip.title = 준비 중
+mainMenu.minigames.wip.text = 이 게임 모드는 추후 업데이트를 통해 제공될 예정입니다.
+
+# Shop
+
+mainMenu.shop.title = 구매 가능한 에디션
+mainMenu.shop.owned = 보유 중
+mainMenu.shop.upgrade = 업그레이드
+
+# Multiplayer
+
+mainMenu.servers.title = 서버
+
+mainMenu.servers.groups.recent = 최근 접속
+mainMenu.servers.groups.favorite = 즐겨찾기
+mainMenu.servers.groups.friends = 친구
+mainMenu.servers.groups.all = 전체 서버
+mainMenu.servers.groups.lan = 로컬 네트워크
+
+mainMenu.servers.groups.join = 서버 접속
+mainMenu.servers.groups.homepage = 서버 페이지 보기
+
+mainMenu.servers.lookingForLan = 로컬 서버를 찾는 중...
+mainMenu.servers.connectingToServer = {name}에 연결 중...
+mainMenu.servers.connect = 연결
+mainMenu.servers.connectionAddress = 연결 주소
+mainMenu.servers.connectDirectly = 직접 연결
+mainMenu.servers.joinViaCode = 코드로 참여
+mainMenu.servers.inviteCode = 초대 코드
+mainMenu.servers.inviteCodePlaceholder = 초대 코드를 여기에 붙여넣으세요...
+mainMenu.servers.join = 참여
+mainMenu.servers.joinViaCode.error.empty = 초대 코드를 입력하세요.
+mainMenu.servers.joinViaCode.error.invalidCode = 잘못된 초대 코드 형식입니다.
+mainMenu.servers.joinViaCode.error.expired = 만료된 초대 코드입니다.
+mainMenu.servers.joinViaCode.error.failedToConnect = 사용 가능한 주소로 연결하지 못했습니다.
+mainMenu.servers.joinViaCode.status.connecting = 연결 후보 주소 시도 중...
+
+mainMenu.servers.noFavoriteServers.title = 추가된 서버 없음
+mainMenu.servers.noFavoriteServers.text = 아래의 "서버 추가"를 클릭하여 서버를 목록에 추가할 수 있습니다.
+mainMenu.servers.noLanServers.title = 서버를 찾을 수 없음
+mainMenu.servers.noLanServers.text = 동일한 로컬 네트워크 내에서 탐색 가능한 서버가 여기에 표시됩니다.
+
+# Online Play Settings
+mainMenu.onlinePlay.title = 온라인 플레이
+mainMenu.onlinePlay.shareCode = 공유 코드
+mainMenu.onlinePlay.shareCode.hintActive = 친구가 서버 메뉴의 '코드로 참여'를 통해 이 월드에 접속할 수 있도록 이 코드를 공유하세요.
+mainMenu.onlinePlay.shareCode.hintInactive = '다른 플레이어 참여 허용'을 활성화하고 저장을 누르면 공유 코드가 생성됩니다.
+mainMenu.onlinePlay.shareCode.ipWarning = 경고: 이 공유 코드에는 귀하의 IP 주소가 포함되어 있습니다. 신뢰할 수 있는 사람에게만 공유하세요.
+mainMenu.onlinePlay.shareCode.placeholder = 아직 공유 코드 없음
+mainMenu.onlinePlay.shareCode.copy = 클립보드에 복사
+mainMenu.onlinePlay.setting.allowPlayers = 다른 플레이어 참여 허용
+mainMenu.onlinePlay.setting.password = 비밀번호
+mainMenu.onlinePlay.setting.password.placeholder = 비밀번호 없음
+mainMenu.onlinePlay.setting.includePasswordInCode = 공유 코드에 비밀번호 포함
+mainMenu.onlinePlay.status.copiedToClipboard = 클립보드에 복사되었습니다!
+mainMenu.onlinePlay.status.connecting = 연결 설정 중... 몇 초 정도 걸릴 수 있습니다.
+mainMenu.onlinePlay.status.connectedVia = {method} 방식으로 연결됨
+mainMenu.onlinePlay.status.failed = 연결 설정 실패. 다시 시도하거나 방화벽 설정을 확인하세요.
+mainMenu.onlinePlay.natType = NAT 유형: {type}
+mainMenu.onlinePlay.natType.Unknown = 알 수 없음
+mainMenu.onlinePlay.natType.None = NAT 없음 (직접 연결)
+mainMenu.onlinePlay.natType.NatWithUpnp = 표준 (UPnP)
+mainMenu.onlinePlay.natType.NatWithoutUpnp = 제한됨 (UPnP 없음)
+mainMenu.onlinePlay.natType.DoubleNat = 이중 NAT
+mainMenu.onlinePlay.natType.CarrierGradeNat = 통신사급 NAT (CGNAT)
+mainMenu.onlinePlay.connectionWarning = 경고: 네트워크 구성으로 인해 다른 플레이어의 접속이 원활하지 않을 수 있습니다.
+mainMenu.onlinePlay.wipWarning = 이 기능은 환경에 따라 작동 여부가 달라질 수 있는 실험적 기능입니다. 작동하지 않는 경우, <u><a href="joining-friends">{url}</a></u>의 고객지원 문서를 참조하세요.
+
+mainMenu.servers.button.joinServer = 서버 접속
+mainMenu.servers.button.editServer = 서버 편집
+mainMenu.servers.button.addServer = 서버 추가
+
+mainMenu.servers.editPopup.addServer = 서버 추가
+mainMenu.servers.editPopup.editServer = 서버 편집
+mainMenu.servers.editPopup.name = 이름
+mainMenu.servers.editPopup.error.invalidAddress = 유효한 서버 주소를 입력하세요.
+mainMenu.servers.editPopup.error.invalidName = 유효한 서버 이름을 입력하세요.
+
+mainMenu.servers.name = 이름
+mainMenu.servers.description = 설명
+mainMenu.servers.online = 온라인
+mainMenu.servers.tags = 태그
+mainMenu.servers.rating = 평점
+mainMenu.servers.ping = 핑
+
+mainMenu.servers.failedToFetch = 서버 목록을 가져오지 못했습니다.
+
+mainMenu.servers.details.host = 호스트: {host}
+mainMenu.servers.details.languages = 지원 언어: {languages}
+mainMenu.servers.details.uuid = UUID: {uuid}
+mainMenu.servers.details.online = 온라인: {online}
+mainMenu.servers.details.branch = 브랜치: {name}
+mainMenu.servers.details.favoriteYes = 즐겨찾기: 예
+mainMenu.servers.details.favoriteNo = 즐겨찾기: 아니요
+
+mainMenu.servers.offline.title = 멀티플레이 사용 불가
+mainMenu.servers.offline.description.offline = 오프라인 모드입니다.\n\
+    멀티플레이를 하려면 온라인 모드로 게임을 재시작하세요.
+mainMenu.servers.offline.description.connecting = 하이테일 서버에 연결 중입니다. 잠시 후 다시 시도하세요...
+mainMenu.servers.offline.description.unavailable = 하이테일 서버와 통신하는 데 문제가 있어 현재 멀티플레이를 사용할 수 없습니다. 나중에 다시 시도하거나 게임을 재시작하세요.
+
+# Worlds
+
+mainMenu.worldType = {worldType} 월드
+mainMenu.worldTypes.adventure = 모험
+mainMenu.worldTypes.creative = 크리에이티브
+mainMenu.worldTypes.exploration = 탐험
+
+mainMenu.worldCreation.creative.mainDescription = 강력한 크리에이티브 도구를 사용하여 당신의 아바타의 잠재력을 발휘하고 당신의 영역을 개척하세요.
+mainMenu.worlds.creativeModeDescription = 강력한 크리에이티브 도구를 사용하여 당신의 아바타의 잠재력을 발휘하고 당신의 영역을 개척하세요.
+mainMenu.worlds.selectWorld = 월드 선택
+mainMenu.worlds.selectWorldAppendix = 저장된 월드를 선택하거나 새로운 모험을 시작하세요
+mainMenu.worlds.editWorld = 월드 편집
+mainMenu.worlds.failedToDeleteWorld = 월드 삭제 실패
+mainMenu.worlds.settings = 설정
+mainMenu.worlds.worldName = 월드 이름
+mainMenu.worlds.gamemode = 게임 모드
+mainMenu.worlds.flatWorld = 평지 월드
+mainMenu.worlds.randomWorld = 무작위 월드
+mainMenu.worlds.creativeMode = 크리에이티브 모드
+mainMenu.worlds.creativeModeStandard = 표준
+mainMenu.worlds.creativeModeHub = 크리에이티브 허브
+mainMenu.worlds.creativeModeGenerated = [TMP] 생성된 월드
+mainMenu.worlds.npcSpawning = NPC 생성
+mainMenu.worlds.noNpcSpawning = NPC 생성 안 함
+mainMenu.worlds.deleteWorld = 월드 삭제
+mainMenu.worlds.deleteWorldConfirmation = 정말로 "{name}" 월드를 삭제하시겠습니까?
+mainMenu.worlds.openFolder = 폴더 열기
+mainMenu.worlds.createWorld = 월드 생성
+mainMenu.worlds.saveWorldSettings = 월드 설정 저장
+mainMenu.worlds.newWorld = 새 월드
+mainMenu.worlds.worldOptions = 월드 옵션
+mainMenu.worlds.defaultWorldName = 새 월드
+mainMenu.worlds.defaultSettings = 기본 설정
+mainMenu.worlds.customSettings = 사용자 지정 설정
+mainMenu.worlds.settings.pvp = PvP
+mainMenu.worlds.settings.enabled = 활성화
+mainMenu.worlds.settings.disabled = 비활성화
+mainMenu.worlds.settings.fallDamage = 낙하 피해
+mainMenu.worlds.settings.pauseTime = 시간 정지
+mainMenu.worlds.settings.dayNightCycle = [TMP] 낮/밤 주기
+mainMenu.worlds.settings.dayDuration = [TMP] 낮 길이 (초)
+mainMenu.worlds.settings.nightDuration = [TMP] 밤 길이 (초)
+mainMenu.worlds.settings.customTime = [TMP] 사용자 지정 시간
+mainMenu.worlds.settings.applyWorldSettings = 설정 적용
+mainMenu.worlds.settings.restoreSettings = 기본값 복구
+mainMenu.worlds.settings.deathPenalty = [TMP] 사망 시 인벤토리 페널티
+mainMenu.worlds.settings.deathPenalty.tooltip = [TMP] 플레이어 사망 시 적용할 인벤토리 페널티를 정의합니다.\n\
+<b><color is="#f1ba50">없음</color></b>: 사망 시 아이템을 떨어뜨리지 않습니다.\n\
+<b><color is="#f1ba50">모두 드롭</color></b>: 사망 시 인벤토리의 모든 아이템을 떨어뜨립니다.\n\
+<b><color is="#f1ba50">일부 드롭</color></b>: 사망 시 특정 설정된 아이템만 일정량 떨어뜨립니다.
+mainMenu.worlds.settings.resourceLoss = [TMP] 사망 시 자원 손실 %
+mainMenu.worlds.settings.durabilityLoss = [TMP] 사망 시 내구도 손실 %
+mainMenu.worlds.settings.deathPenaltyNone = [TMP] 없음
+mainMenu.worlds.settings.deathPenaltyDropAll = [TMP] 모두 드롭
+mainMenu.worlds.settings.deathPenaltyPartial = [TMP] 일부 드롭
+
+mainMenu.worlds.adventureMode.wip.text = [얼리 액세스 기간에는 사용할 수 없음]
+mainMenu.worlds.exploartionMode.wip.text = [얼리 액세스 개발 중 미리보기]
+mainMenu.worlds.explorationModeDescription = 오르비스의 메아리를 탐험하세요. 건설하고, 제작하고, 생존하며 잃어버린 것들을 복구할 방법을 찾으세요.
+mainMenu.worlds.worldDoesntExist.title = 알 수 없는 월드
+mainMenu.worlds.worldDoesntExist.message = 열려고 하는 월드가 존재하지 않습니다.
+mainMenu.worlds.noModsFound = 사용 가능한 모드 없음
+mainMenu.worlds.mods = 모드
+mainMenu.worlds.modType.pack = 팩
+mainMenu.worlds.modType.plugin = 플러그인
+
+mainMenu.assetEditor.errorModal.missingDirectory.title = 디렉터리 선택
+mainMenu.assetEditor.errorModal.missingDirectory.text = 에셋 에디터를 사용하기 전에 에셋 경로를 설정해야 합니다.
+mainMenu.assetEditor.errorModal.invalidDirectory.title = 잘못된 디렉터리
+mainMenu.assetEditor.errorModal.invalidDirectory.text = 선택한 디렉터리가 유효한 에셋 디렉터리가 아닙니다. Common 및 Server 폴더가 필수적입니다.
+mainMenu.assetEditor.errorModal.openSettingsButton = 설정 열기
+
+# Early Access Panel
+mainMenu.earlyAccessPanel.title = 얼리 액세스\n고지 사항
+mainMenu.earlyAccessPanel.text = 본 게임은 하이테일의 얼리 액세스 버전이며, 현재 활발히 개발 중입니다. 정식 출시를 향해 나아가는 과정에서 버그가 발생하거나 내용이 변경될 수 있음을 유의하시기 바랍니다.\n\n여러분의 성원에 감사드립니다!
+# === map ===
+map.title = 월드 지도
+
+map.contextMenu.teleport = 순간이동
+map.contextMenu.selectLocation = 위치 선택
+map.contextMenu.deselectLocation = 위치 선택 해제
+map.contextMenu.removeMarker = 마커 제거
+
+map.disabled = 알 수 없는 위치
+
+map.actions.placeMarker = 마커 배치
+map.actions.zoom = 확대/축소
+map.actions.playerList = 플레이어 목록
+
+map.playerList.playerCount = ({players, number}명)
+map.playerList.playerCountWithMax = ({players, number}/{maxPlayers, number}명)
+map.playerList.worldOnly = 월드 내 플레이어만
+map.playerList.titleWorld = 월드 플레이어
+map.playerList.titleServer = 서버 플레이어
+map.playerList.inWorld = 현재 월드에 있는 플레이어입니다.
+
+map.marker.localPlayer = 나
+map.marker.targetLocation = 대상 위치
+# === mediaBrowser ===
+mediaBrowser.popularVideos = 인기 동영상
+mediaBrowser.popularStreams = 인기 스트림
+mediaBrowser.search = "{query}" 검색
+mediaBrowser.currentlyPlaying = 현재 재생 중
+mediaBrowser.live = 라이브
+
+mediaBrowser.youtube.errors.unreachable = YouTube에 연결할 수 없습니다.
+mediaBrowser.youtube.errors.requestFailed = YouTube에서 데이터를 가져오지 못했습니다.
+
+# === menuOverlay ===
+menuOverlay.buttons.returnToGame = 게임으로 돌아가기
+menuOverlay.buttons.quitToDesktop = 바탕화면으로 종료
+menuOverlay.buttons.quitToMainMenu = 메인 메뉴로 나가기
+menuOverlay.buttons.codex = 코덱스
+menuOverlay.buttons.settings = 설정
+menuOverlay.buttons.feedback = 버그 제보 및 피드백
+menuOverlay.buttons.onlinePlay = 온라인 플레이
+
+# === myAvatar ===
+myAvatar.button.resetOptions = 아바타 초기화
+myAvatar.button.resetClothing = 의상 초기화
+myAvatar.button.randomize = 무작위 선택
+myAvatar.button.undo = 마지막 변경 취소
+myAvatar.button.redo = 취소한 작업 다시 실행
+myAvatar.button.playEmote = 애니메이션 재생
+
+myAvatar.playEmotePopup.title = 애니메이션 재생
+
+myAvatar.title = 아바타 꾸미기
+
+myAvatar.lockProperty = 무작위 선택 사용 시 이 속성이 변경되지 않도록 고정하려면 클릭
+myAvatar.unlockProperty = 무작위 선택 사용 시 이 속성이 변경될 수 있도록 고정 해제하려면 클릭
+
+myAvatar.synchronizeHairColor.enable = 머리카락 색상이 자동으로 일치되도록 하려면 클릭
+myAvatar.synchronizeHairColor.disable = 머리카락 색상이 자동으로 일치되지 않게 하려면 클릭
+
+myAvatar.tabs.General = 일반
+myAvatar.tabs.Head = 머리
+myAvatar.tabs.BodyCharacteristic = 신체 특징
+myAvatar.tabs.Underwear = 속옷
+myAvatar.tabs.Torso = 몸통
+myAvatar.tabs.Capes = 망토
+myAvatar.tabs.Legs = 다리
+myAvatar.tabs.FacialHair = 수염
+myAvatar.tabs.Eyebrows = 눈썹
+myAvatar.tabs.Face = 얼굴
+myAvatar.tabs.Ears = 귀
+myAvatar.tabs.Mouth = 입
+myAvatar.tabs.Eyes = 눈
+myAvatar.tabs.Haircut = 헤어스타일
+myAvatar.tabs.Pants = 바지
+myAvatar.tabs.Overpants = 덧바지
+myAvatar.tabs.Undertop = 상의 (안)
+myAvatar.tabs.Overtop = 상의 (겉)
+myAvatar.tabs.Shoes = 신발
+myAvatar.tabs.SkinFeature = 피부 특징
+myAvatar.tabs.HeadAccessory = 머리 장식
+myAvatar.tabs.FaceAccessory = 얼굴 장식
+myAvatar.tabs.EarAccessory = 귀 장식
+myAvatar.tabs.Gloves = 장갑
+myAvatar.tabs.Cape = 망토
+myAvatar.tabs.Emotes = 감정표현
+
+myAvatar.baseProperties.bodyType = 체형
+myAvatar.baseProperties.skinTone = 피부색
+myAvatar.baseProperties.options = 옵션
+
+myAvatar.baseProperties.bodyTypes.masculine = 남성형
+myAvatar.baseProperties.bodyTypes.feminine = 여성형
+
+myAvatar.color = 색상
+
+myAvatar.variant = 옵션
+
+myAvatar.dropdown.filterBy = 필터링 기준:
+
+myAvatar.lockedCosmetics = 잠긴 코스메틱
+
+myAvatar.unsavedChangesDialog.title = 저장되지 않은 변경 사항
+myAvatar.unsavedChangesDialog.text = 아바타를 변경했지만 아직 저장되지 않았습니다.
+
+myAvatar.lockedCosmeticDialog.title = 잠긴 코스메틱 선택됨
+myAvatar.lockedCosmeticDialog.text = 특별 에디션이 필요한 코스메틱을 선택하셨습니다.\n\n마지막으로 유효했던 선택으로 되돌리거나,\n편집하여 다른 코스메틱을 선택할 수 있습니다.
+myAvatar.lockedCosmeticDialog.undoButton = 선택 취소
+myAvatar.lockedCosmeticDialog.editButton = 편집 계속
+
+myAvatar.failedToSaveDialog.title = 아바타 저장 실패!
+myAvatar.failedToSaveDialog.text = 현재 아바타를 저장하는 중에 문제가 발생했습니다.\n\n나중에 다시 시도해 주세요.
+myAvatar.failedToSaveDialog.button.tryAgain = 지금 다시 시도
+myAvatar.failedToSaveDialog.button.ok = 확인
+
+myAvatar.entitlement.gameFounder.titleSuffix = 커스브레이커 에디션 전용
+myAvatar.entitlement.gameFounder.lockedMessage = 이 코스메틱을 사용하려면 커스브레이커 에디션이 필요합니다.
+myAvatar.entitlement.gameFounder.description = 이 파츠는 하이테일 커스브레이커 에디션 전용입니다. 하이테일 스토어에서 에디션을 업그레이드하여 잠금 해제하세요.
+
+myAvatar.entitlement.gameDeluxe.titleSuffix = 서포터 에디션 전용
+myAvatar.entitlement.gameDeluxe.lockedMessage = [TMP] 이 코스메틱을 사용하려면 서포터 에디션이 필요합니다.
+myAvatar.entitlement.gameDeluxe.description = 이 파츠는 하이테일 서포터 에디션 전용입니다. 하이테일 스토어에서 에디션을 업그레이드하여 잠금 해제하세요.
+
+myAvatar.entitlement.gameStandard.titleSuffix = 얼리 액세스 스탠다드 에디션 전용
+myAvatar.entitlement.gameStandard.lockedMessage = [TMP] 이 코스메틱을 사용하려면 얼리 액세스 스탠다드 에디션이 필요합니다.
+myAvatar.entitlement.gameStandard.description = 이 파츠는 하이테일 얼리 액세스 스탠다드 에디션 전용입니다. 하이테일 스토어에서 에디션을 업그레이드하여 잠금 해제하세요.
+
+myAvatar.entitlement.default.lockedMessage = 이 코스메틱은 잠겨 있어 사용할 수 없습니다.
+
+myAvatar.offline.title = 아바타 꾸미기 사용 불가
+myAvatar.offline.description.offline = 오프라인 모드입니다.\n아바타를 꾸미려면 온라인 모드로 게임을 재시작하세요.
+myAvatar.offline.description.connecting = 하이테일 서버에 연결 중입니다. 잠시 후 다시 시도하세요...
+myAvatar.offline.description.unavailable = 하이테일 서버와 통신하는 데 문제가 있어 아바타 꾸미기를 현재 사용할 수 없습니다. 나중에 다시 시도하거나 게임을 재시작하세요.
+
+# === settings ===
+settings.title = 설정
+
+settings.tabs.general = 일반
+settings.tabs.video = 비디오
+settings.tabs.audio = 오디오
+settings.tabs.mouse = 마우스
+settings.tabs.controls = 조작법
+settings.tabs.gameplay = 게임플레이
+settings.tabs.prototype = 프로토타입
+
+settings.groups.mouse = 마우스
+settings.groups.audioOutput = 출력
+settings.groups.general = 일반
+settings.groups.gameplay = 게임플레이
+settings.groups.rendering = 렌더링
+settings.groups.advancedRendering = 고급 렌더링
+settings.groups.ui = 사용자 인터페이스
+settings.groups.development = 개발
+settings.groups.language = 언어
+settings.groups.options = 옵션
+settings.groups.controls.movement = 이동
+settings.groups.controls.actions = 액션
+settings.groups.controls.creative = 크리에이티브
+settings.groups.controls.menus = 메뉴
+settings.groups.controls.blockPlacement = 블록 배치
+settings.groups.controls.builderTools = 건설 도구
+settings.groups.controls.misc = 기타
+settings.groups.controls.debug = 디버그
+settings.groups.builderTools = 건설 도구
+settings.groups.movement = 이동
+settings.groups.mantling = 턱 오르기
+settings.groups.camera = 카메라
+settings.groups.sprint = 전력 질주 가속도
+settings.groups.slide = 슬라이딩 가속도
+settings.groups.stamina = 스태미나
+settings.groups.weaponPullback = 무기 당기기 효과
+settings.groups.entityui = 엔티티 UI
+settings.groups.playselect = 재생 선택 도구
+settings.groups.playpaint = 재생 페인트 도구
+settings.groups.paint = 페인트
+settings.groups.debug = 디버그
+settings.groups.mounts = 탈것
+settings.groups.creativeMode = 크리에이티브 모드
+settings.groups.pickupLocations = 선호하는 습득 위치
+settings.groups.accessibility = 접근성
+
+settings.percentagePlayGizmoLength = 기즈모 렌더링 폭 백분율
+settings.minPlaySelectGizmoSize = 기즈모 최소 크기
+settings.maxPlaySelectGizmoSize = 기즈모 최대 크기
+
+settings.paintOperationIgnoreHistoryLength = 재생 페인트 히스토리 무시 길이
+
+# Quick Settings Categories
+settings.category.movementFlight = 이동 및 비행
+settings.category.placementSettings = 배치 설정
+settings.category.toolSettings = 도구 설정
+settings.category.brushSettings = 브러시 설정
+settings.category.soundSettings = 오디오 설정
+settings.category.selectionSettings = 선택 설정
+settings.category.uiVisibility = UI 가시성
+settings.category.displayNotifications = 표시 및 알림
+
+# Quick Settings Labels
+settings.noClip = 노클립 (충돌 무시)
+settings.flightMode = 비행 모드
+settings.flightMode.hover = 호버링
+settings.flightMode.directional = 방향성
+settings.flightInertia = 비행 관성
+settings.flightSpeedMultiplier = 이동 속도
+settings.airPlacement = 공중 배치
+settings.allowNPCDetection = NPC 감지 허용
+settings.respondToHit = 피격 반응
+settings.toolReachDistance = 도구 도달 거리
+settings.toolDelayMin = 도구 최소 지연
+settings.brushOpacity = 브러시 투명도
+settings.enableBrushShapeRendering = 브러시 모양 렌더링 활성화
+settings.brushSoundsEnabled = 브러시 사운드
+settings.brushSoundVolume = 브러시 사운드 볼륨
+settings.selectionOpacity = 선택 투명도
+settings.selectionPanelOpacity = 선택 패널 투명도
+settings.displayLegend = 조작법 표시
+settings.showToolNotifications = 도구 알림 표시
+settings.laserPointerColor = 레이저 포인터 색상
+settings.laserPointerColor.description = 레이저 포인터 도구의 기본 16진수 색상값입니다.
+settings.fullbright = 풀브라이트
+
+# Quick Settings UI
+settings.dragToReorder = 드래그하여 순서 변경
+settings.resetToDefaults = 기본값으로 초기화
+settings.resetToDefaults.tooltip = 모든 빠른 설정을 기본값으로 초기화합니다.
+
+settings.resetOptions = 옵션 초기화
+settings.useSystemLanguage = 시스템 언어 사용
+settings.language = 언어
+settings.language.description = 게임 내에 표시되는 언어를 설정합니다.
+settings.fullscreen = 전체 화면
+settings.noAuthName = 인증되지 않은 이름
+settings.resolution = 해상도
+settings.windowSize = 창 크기
+settings.windowResize = 선택하여 크기 조절
+settings.customResolution = 사용자 지정 ({size})
+settings.graphicsPreset = 그래픽 프리셋
+settings.graphicsPreset.low = 낮음
+settings.graphicsPreset.low.description = 화질보다 성능을 우선시합니다.
+settings.graphicsPreset.medium = 중간
+settings.graphicsPreset.medium.description = 화질과 성능의 균형을 맞춥니다.
+settings.graphicsPreset.high = 높음
+settings.graphicsPreset.high.description = 성능보다 화질을 우선시합니다.
+settings.graphicsPreset.epic = 최상
+settings.graphicsPreset.epic.description = 성능보다 품질을 극대화합니다.
+settings.graphicsPreset.custom = 사용자 지정
+settings.maximized = 최대화
+settings.vsync = 수직 동기화 (V-Sync)
+settings.vsync.description = 수직 동기화를 활성화하면 초당 프레임 수(FPS)가 모니터의 주사율로 제한됩니다.
+settings.fpsLimit = 최대 FPS
+settings.unlimitedFps = 제한 없음
+settings.viewDistance = 시야 거리
+settings.viewDistance.description = 시야 거리는 얼마나 멀리까지 볼 수 있는지를 결정합니다.
+settings.viewDistance.performanceWarning = 권장 사양: 64GB RAM 및 16GB VRAM.
+settings.fieldOfView = 시야각 (FOV)
+settings.sprintFovEffect = 질주 시 시야각 효과
+settings.sprintFovIntensity = 질주 시 시야각 강도
+settings.viewBobbingEffect = 화면 흔들림 효과 (View Bobbing)
+settings.viewBobbingIntensity = 화면 흔들림 강도
+settings.cameraShakeEffect = 카메라 흔들림 효과
+settings.firstPersonCameraShakeIntensity = 1인칭 카메라 흔들림 강도
+settings.thirdPersonCameraShakeIntensity = 3인칭 카메라 흔들림 강도
+settings.creativeInteractionDistance = 크리에이티브 상호작용 거리
+settings.adventureInteractionDistance = 일반 상호작용 거리
+settings.gizmoScaleMultiplier = 회전 / 이동 기즈모 UI 배율
+settings.laserPointerColor = 기본 레이저 포인터 색상
+settings.laserPointerColor.description = 레이저 포인터 도구의 기본 16진수 색상값입니다 (예: #3CFAE6).
+settings.useBlockSubfaces = 블록 하위 면(Subface) 사용
+settings.displayBlockSubfaces = 블록 하위 면 표시
+settings.displayBlockBoundaries = 블록 경계 표시
+settings.placeBlocksAtRange = 원거리 블록 배치
+settings.placeBlocksAtRangeInAdventureMode = ---> 크리에이티브 모드 이외
+settings.blockPlacementSupportValidation = 블록 배치 지지 유효성 검사
+settings.blockPlacementFluidity = 크리에이티브 블록 배치 부드러움
+settings.resetMouseSensitivityDuration = 마우스 감도 복구 시간
+settings.automaticRenderScale = 자동 렌더링 스케일
+settings.automaticRenderScale.description = GPU 성능에 따라 렌더링 배율을 자동으로 설정할지 여부를 결정합니다.
+settings.renderScale = 렌더링 스케일
+settings.renderScale.description = 게임을 렌더링할 화면 해상도의 백분율입니다.
+settings.placementPreview = 블록 배치 미리보기
+settings.placementPreview.description = 블록을 손에 들었을 때 미리보기를 표시할 블록 유형을 정의합니다.\n\
+<b><color is="#f1ba50">없음</color></b>: 미리보기를 표시하지 않습니다.\n\
+<b><color is="#f1ba50">전체</color></b>: 모든 블록에 대해 미리보기를 표시합니다.\n\
+<b><color is="#f1ba50">멀티파트</color></b>: 한 블록보다 큰 블록에 대해서만 미리보기를 표시합니다.
+settings.placementPreview.none = 없음
+settings.placementPreview.all = 전체
+settings.placementPreview.multipart = 멀티파트
+settings.displayCombatText = 데미지 수치 표시
+settings.displayCombatText.description = 서버에서 활성화한 경우 데미지 수치와 같은 요소를 표시할지 여부를 결정합니다. 서버에서 이 기능을 비활성화한 경우 이 설정과 관계없이 표시되지 않습니다.
+settings.displayEntityStatBars = 엔티티 체력 바 표시
+settings.displayEntityStatBars.description = 서버에서 활성화한 경우 엔티티 머리 위에 체력 등의 상태 표시 UI를 표시할지 여부를 결정합니다. 서버에서 이 기능을 비활성화한 경우 표시되지 않습니다.
+settings.displayNetworkQualityWarnings = 네트워크 품질 경고 표시
+settings.displayNetworkQualityWarnings.description = HUD에 네트워크 품질 경고 아이콘을 표시할지 여부를 결정합니다.
+settings.displayInputBindingsOnHud = HUD에 입력 키 표시
+settings.displayInputBindingsOnHud.description = HUD에 상황별 단축키 가이드를 표시할지 여부를 결정합니다.
+settings.hideHud = HUD 숨기기
+settings.hideHud.description = 모든 HUD 요소를 숨깁니다.
+settings.hideHotbar = 퀵바 숨기기
+settings.hideHotbar.description = 퀵바 및 관련 요소를 숨깁니다.
+settings.hideCompass = 나침반 숨기기
+settings.hideCompass.description = 나침반을 숨깁니다.
+settings.hideNotifications = 알림 숨기기
+settings.hideNotifications.description = 알림 팝업을 숨깁니다.
+settings.hideChat = 채팅 숨기기
+settings.hideChat.description = 채팅창을 숨깁니다 (메시지 수신은 계속됩니다).
+settings.hideHeldItem = 들고 있는 아이템 숨기기
+settings.hideHeldItem.description = 1인칭 시점에서 손에 들고 있는 아이템을 숨깁니다.
+settings.maxChatMessages = 최대 채팅 메시지 수
+settings.maxChatMessages.description = 채팅창에 유지할 최대 메시지 수를 결정합니다.
+settings.cameraBasedFlying = 카메라 기준 비행
+settings.cameraBasedFlying.description = 비행 조작 방식을 정의합니다.\n\
+<b><color is="#f1ba50">켜짐</color></b>: 카메라가 바라보는 방향을 기준으로 이동합니다.\n\
+<b><color is="#f1ba50">꺼짐</color></b>: 바라보는 방향과 관계없이 항상 동일한 방식으로 이동합니다.
+settings.showToolNotifications = 도구 알림 표시
+settings.cameraShoulder = 카메라 어깨 시점
+settings.cameraShoulder.left = 왼쪽
+settings.cameraShoulder.right = 오른쪽
+settings.cameraShoulder.description = 3인칭 시점에서 어느 쪽 어깨 너머로 볼지 설정합니다.
+
+settings.lod = 월드 디테일 (LOD)
+settings.lod.lowest = 매우 낮음
+settings.lod.low = 낮음
+settings.lod.medium = 중간
+settings.lod.high = 높음
+settings.lod.maximum = 최상
+settings.lod.description = 월드의 세부 묘사 수준을 제어합니다. 프리셋이 높을수록 멀리 있는 사물이 정교하게 렌더링되지만 성능 비용이 매우 큽니다.
+settings.antialiasing = 앤티앨리어싱
+settings.antialiasing.description = 지오메트리의 가장자리를 부드럽게 만들어 이미지 품질을 향상시킵니다. 낮은 렌더링 배율을 사용하는 경우 고품질 앤티앨리어싱 사용을 권장합니다.
+settings.antialiasing.off = 꺼짐
+settings.antialiasing.fxaa = 낮음 (FXAA)
+settings.antialiasing.taa = 높음 (TAA)
+settings.shaderQuality = 셰이더 품질
+settings.shaderQuality.low = 낮음
+settings.shaderQuality.medium = 중간
+settings.shaderQuality.high = 높음
+settings.shaderQuality.description = 조명 및 셰이딩 효과에 사용되는 해상도입니다.
+settings.bloomQuality = 블룸 (Bloom)
+settings.bloomQuality.off = 꺼짐
+settings.bloomQuality.low = 낮음
+settings.bloomQuality.medium = 중간
+settings.bloomQuality.high = 높음
+settings.bloomQuality.description = 강한 광원 주변에 번지는 효과를 추가합니다. 프리셋이 높을수록 효과의 품질이 좋아지지만 강도는 변하지 않습니다.
+settings.dofQuality = 피사체 심도 (DOF)
+settings.dofQuality.off = 꺼짐
+settings.dofQuality.low = 낮음
+settings.dofQuality.medium = 중간
+settings.dofQuality.high = 높음
+settings.dofQuality.description = 멀리 있는 물체에 초점을 흐리게 처리합니다.
+settings.useSunshaft = 선샤프트 (빛줄기)
+settings.useSunshaft.description = 나뭇잎 사이로 비치는 햇살을 표시합니다.
+settings.useFoliageFading = 식생 페이딩
+settings.useFoliageFading.description = 먼 거리의 식생을 서서히 사라지게 하여 성능을 개선하고 깜빡임을 줄입니다.
+settings.shadowQuality = 그림자 품질
+settings.shadowQuality.low = 낮음
+settings.shadowQuality.medium = 중간
+settings.shadowQuality.high = 높음
+settings.shadowQuality.description = 실시간 그림자의 품질과 업데이트 빈도를 제어합니다.
+settings.particleQuality = 파티클 품질
+settings.particleQuality.medium = 중간
+settings.particleQuality.high = 높음
+settings.particleQuality.description = 파티클 효과의 품질과 밀도를 제어합니다.
+settings.depthBuffer = 깊이 버퍼 정밀도
+settings.depthBuffer.low = 낮음
+settings.depthBuffer.high = 높음
+settings.depthBuffer.description = 렌더링된 이미지의 깊이 정밀도를 제어합니다. 높은 정밀도의 깊이 버퍼를 사용하면 먼 거리의 물체가 깜빡이는 현상을 줄일 수 있습니다.
+
+settings.joinCameraPref = 접속 시 카메라 시점 선호도
+settings.joinCameraPref.description = 월드에 접속할 때 선호하는 카메라 시점을 설정합니다.\n\
+서버 설정에 의해 강제로 변경될 수 있습니다!
+settings.joinCameraPref.first = 1인칭
+settings.joinCameraPref.third = 3인칭
+settings.joinCameraPref.lastUsed = 마지막 사용한 시점 기억
+
+settings.diagnosticMode = 진단 모드
+settings.diagnosticMode.description = 콘텐츠를 제작할 계획이라면 진단 모드를 활성화하는 것을 권장합니다. 진단 모드에서는 설정이 잘못된 콘텐츠에 대해 더 자세한 오류 메시지를 출력합니다.
+
+settings.useBlockyModelShaderWorkaround = 블록 모델 워크라운드
+settings.useBlockyModelShaderWorkaround.description = NVIDIA 하드웨어를 사용하는 일부 Mac에서 모델 렌더링이 매우 느려지는 현상을 수정합니다. 변경 사항을 적용하려면 게임을 재시작해야 합니다.
+
+settings.mouseRawInputMode = 로우 인풋(Raw Input) 모드
+settings.mouseInverted = 마우스 반전
+settings.mouseXSpeed = 상하 감도
+settings.mouseYSpeed = 좌우 감도
+settings.invertMouseWheelScrollDirection = 마우스 휠 스크롤 방향 반전
+settings.invertMouseWheelScrollDirection.description = 마우스 휠 스크롤 방향을 반전시킵니다 (주로 퀵바 슬롯 변경 시 적용).
+settings.outputDevice = 출력 장치
+settings.masterVolume = 마스터 볼륨
+settings.musicVolume = 음악 볼륨
+settings.sfxVolume = 효과음 볼륨
+settings.ambientVolume = 환경음 볼륨
+settings.uiVolume = UI 볼륨
+settings.outputMode = 출력 모드
+settings.outputMode.description = 오디오 출력 채널 구성을 제어합니다.\n\
+<b><color is="#f1ba50">기본값</color></b>: 선택한 출력 장치에 가장 적합한 옵션을 자동으로 선택합니다.
+settings.outputMode.default = 기본값
+settings.outputMode.stereo = 스테레오 (스피커)
+settings.outputMode.stereoHrtf = 스테레오 (헤드폰용 HRTF)
+settings.outputMode.mono = 모노
+settings.dynamicUiScaling = 동적 UI 스케일링
+settings.uiScale = UI 크기
+
+settings.defaultAudioDevice = 기본값
+
+settings.bindingPopup.bind = "{binding}" 키 지정
+settings.bindingPopup.pressKey = 아무 키나 누르세요. 취소하려면 ESC 키를 누르세요.
+settings.bindings.clear = 현재 단축키를 제거합니다.
+
+settings.bindings.MoveForwards = 앞으로 이동
+settings.bindings.MoveBackwards = 뒤로 이동
+settings.bindings.StrafeLeft = 왼쪽으로 이동
+settings.bindings.StrafeRight = 오른쪽으로 이동
+settings.bindings.Jump = 점프
+settings.bindings.Crouch = 앉기/슬라이딩/낙법
+settings.bindings.Crouch.description = <b>슬라이딩</b>: 질주 중에 이 키를 누르면 슬라이딩합니다.\n<b>낙법</b>: 낙하 중에 이 키를 유지하면 낙법을 합니다.
+settings.bindings.Sprint = 전력 질주
+settings.bindings.FlyUp = 비행 상승
+settings.bindings.FlyDown = 비행 하강
+settings.bindings.Walk = 걷기
+settings.bindings.Chat = 채팅창 전환
+settings.bindings.ShowPlayerList = 플레이어 목록 표시
+settings.bindings.OpenInventory = 인벤토리 열기
+settings.bindings.OpenMap = 지도 열기
+settings.bindings.OpenDevTools = 개발자 도구 열기
+settings.bindings.DropItem = 아이템 버리기
+settings.bindings.ShowUtilitySlotSelector = 유틸리티 슬롯 선택기 표시
+settings.bindings.ToggleBuilderToolsLegend = 건설 도구 조작법 전환
+settings.bindings.OpenToolsSettings = 크리에이티브 도구 설정 열기
+
+settings.bindings.ToolPaintBrush = 페인트 브러시 도구
+settings.bindings.ToolSculptBrush = 조각 브러시 도구
+settings.bindings.ToolSelectionTool = 선택 도구
+settings.bindings.ToolPaste = 붙여넣기 도구
+settings.bindings.ToolLine = 라인 도구
+
+settings.bindings.SwitchCameraMode = 카메라 시점 전환
+settings.bindings.ActivateCameraRotation = 카메라 회전 활성화
+settings.bindings.ToggleProfiling = 프로파일링 전환
+settings.bindings.SwitchHudVisibility = HUD 가시성 전환
+settings.bindings.ToggleFullscreen = 전체 화면 전환
+settings.bindings.Command = 명령어 입력
+settings.bindings.Command.description = 채팅창을 '/'가 입력된 상태로 열어 서버 명령어를 입력할 수 있게 합니다. 명령어 목록은 /help를 통해 확인 가능합니다.
+settings.bindings.TakeScreenshot = 스크린샷 찍기
+settings.bindings.IncreaseSpeedMultiplier = 이동 속도 배율 증가
+settings.bindings.DecreaseSpeedMultiplier = 이동 속도 배율 감소
+settings.bindings.ToggleCreativeCollision = 크리에이티브 충돌 전환
+settings.bindings.ToggleFlyCamera = 자유 시점 카메라 전환
+settings.bindings.ToggleDebugScreens = 디버그 화면 전환
+
+settings.bindings.BlockInteractAction = 블록 상호작용
+settings.bindings.RotateBlock = 블록 회전
+settings.bindings.PrimaryItemAction = 기본 액션
+settings.bindings.SecondaryItemAction = 보조 액션
+settings.bindings.TertiaryItemAction = 삼차 액션
+settings.bindings.PickBlock = 블록 선택 (Pick Block)
+settings.bindings.SwitchGameMode = 게임 모드 전환
+settings.bindings.ToggleBlockPreview = 블록 미리보기 전환
+settings.bindings.OpenMachinimaEditor = 마시니마 에디터 열기
+settings.bindings.OpenBuilderToolsUI = 건설 도구 UI 열기
+settings.bindings.HotbarSlot1 = 퀵바 슬롯 1
+settings.bindings.HotbarSlot2 = 퀵바 슬롯 2
+settings.bindings.HotbarSlot3 = 퀵바 슬롯 3
+settings.bindings.HotbarSlot4 = 퀵바 슬롯 4
+settings.bindings.HotbarSlot5 = 퀵바 슬롯 5
+settings.bindings.HotbarSlot6 = 퀵바 슬롯 6
+settings.bindings.HotbarSlot7 = 퀵바 슬롯 7
+settings.bindings.HotbarSlot8 = 퀵바 슬롯 8
+settings.bindings.HotbarSlot9 = 퀵바 슬롯 9
+settings.bindings.Ability1ItemAction = 어빌리티 1 사용
+settings.bindings.Ability2ItemAction = 어빌리티 2 사용
+settings.bindings.Ability3ItemAction = 어빌리티 3 사용
+settings.bindings.UndoItemAction = 실행 취소
+settings.bindings.RedoItemAction = 다시 실행
+settings.bindings.AddRemoveFavoriteMaterialItemAction = 즐겨찾는 재료 추가/제거
+settings.bindings.DismountAction = 탑승/하차
+settings.bindings.AlternatePlaySculptBrushModeModifier = 조각 브러시 수정자 변경
+settings.bindings.UsePaintModeForBrush = 브러시를 페인트 모드로 사용
+settings.bindings.SelectBlockFromSet = 세트에서 블록 선택
+settings.bindings.PastePreview = 붙여넣기 미리보기
+settings.bindings.ToggleFlyCameraControlTarget = 자유 시점 카메라 조작 대상 전환
+settings.bindings.ToggleFlyCameraControlTarget.description = 자유 시점 카메라가 조작하는 대상(카메라 자체 또는 플레이어)을 전환합니다.
+settings.bindings.PreviousBuilderToolsLegendPage = 조작법 - 이전 페이지
+settings.bindings.NextBuilderToolsLegendPage = 조작법 - 다음 페이지
+
+settings.autoJumpObstacle = 자동 턱 오르기
+settings.autoJumpObstacle.description = 이 설정을 활성화하면 최대 1유닛 높이의 블록을 자동으로 걸어 올라갑니다.
+settings.enableUtilityQuickSwap = 유틸리티 퀵 스왑 활성화
+settings.enableUtilityQuickSwap.description = 활성화하면 단축키를 눌러 유틸리티 휠의 다음 아이템으로 즉시 전환할 수 있습니다.
+settings.enableArachnophobiaMode = 거미 공포증 모드 활성화
+settings.enableArachnophobiaMode.description = 활성화하면 거미 모델이 다른 모델(서버 기본값은 게)로 교체됩니다.\n\n<b><color is="#b32626">이 설정을 적용하려면 메인 메뉴로 돌아가야 합니다!</color></b>
+settings.autoJumpGap = 틈새 자동 점프
+settings.builderMode = 빌더 모드
+settings.builderMode.tooltip = 활성화된 상태에서 크리에이티브 모드일 경우 일부 효과(낙하 효과, 화면 흔들림 등)를 비활성화합니다.
+
+settings.mantling = 턱 오르기 활성화/비활성화
+settings.minVelocityMantling = 턱 오르기를 위한 최소 Y축 속도
+settings.maxVelocityMantling = 턱 오르기를 위한 최대 Y축 속도
+settings.jumpForceSpeedMultiplierStep = 속도 레벨 증가당 추가되는 점프력
+settings.maxJumpForceSpeedMultiplier = 추가되는 최대 점프력 값
+settings.mantlingCameraOffsetY = 턱 오르기 카메라 오프셋 Y
+settings.mantleBlockHeight = 턱 오르기 가능 블록 높이
+
+settings.sprintForce = 전력 질주 가속도
+settings.sprintAccelerationDuration = 가속 지속 시간
+settings.sprintDecelerationDuration = 감속 지속 시간
+settings.sprintAccelerationEasingType = 가속 이징(Easing) 유형
+settings.sprintDecelerationEasingType = 감속 이징 유형
+
+settings.slideDecelerationEasingType = 슬라이딩 감속 이징 유형
+settings.slideDecelerationDuration = 슬라이딩 감속 지속 시간
+
+settings.staminaLowAlertPercent = 스태미나 부족 경고 백분율
+settings.staminaDebugInfo = 스태미나 디버그 정보 표시
+
+settings.weaponPullback = 무기 당기기 효과
+settings.itemAnimationsClipGeometry = 아이템 애니메이션 지오메트리 클리핑 (애니메이션별)
+settings.itemsClipGeometry = 아이템 지오메트리 클리핑 (아이템별)
+settings.overrideFirstPersonAnimations = 1인칭 애니메이션 오버라이드 사용
+
+settings.showEntityMarkers = 엔티티 마커 표시
+
+settings.entityUIMaxEntities = 최대 엔티티 수
+settings.entityUIMaxDistance = 최대 표시 거리
+settings.entityUIHideDelay = 숨김 지연 시간
+settings.entityUIFadeInDuration = 페이드 인 지속 시간
+settings.entityUIFadeOutDuration = 페이드 아웃 지속 시간
+
+settings.mountMinTurnRate = 최소 회전 속도
+settings.mountMinTurnRate.tooltip = 탈것이 회전할 수 있는 최소 속도(초당 도)입니다.
+settings.mountMaxTurnRate = 최대 회전 속도
+settings.mountMaxTurnRate.tooltip = 탈것이 회전할 수 있는 최대 속도(초당 도)입니다.
+settings.mountSpeedMinTurnRate = 속도별 최소 회전율
+settings.mountSpeedMinTurnRate.tooltip = 이 속도 이상일 때 최소 회전율이 적용됩니다 (속도가 높을수록 회전이 느려짐).
+settings.mountSpeedMaxTurnRate = 속도별 최대 회전율
+settings.mountSpeedMaxTurnRate.tooltip = 이 속도 이하일 때 최대 회전율이 적용됩니다 (속도가 높을수록 회전이 느려짐).
+settings.mountForwardsAccelerationEasingType = 전진 가속 이징 유형
+settings.mountForwardsAccelerationEasingType.tooltip = 전진 가속 시 사용할 이징 곡선입니다.
+settings.mountForwardsDecelerationEasingType = 전진 감속 이징 유형
+settings.mountForwardsDecelerationEasingType.tooltip = 전진 감속 시 사용할 이징 곡선입니다.
+settings.mountBackwardsAccelerationEasingType = 후진 가속 이징 유형
+settings.mountBackwardsAccelerationEasingType.tooltip = 후진 가속 시 사용할 이징 곡선입니다.
+settings.mountBackwardsDecelerationEasingType = 후진 감속 이징 유형
+settings.mountBackwardsDecelerationEasingType.tooltip = 후진 감속 시 사용할 이징 곡선입니다.
+settings.mountForwardsAccelerationDuration = 전진 가속 지속 시간
+settings.mountForwardsAccelerationDuration.tooltip = 전진 시 최대 속도에 도달하는 데 걸리는 시간입니다.
+settings.mountForwardsDecelerationDuration = 전진 감속 지속 시간
+settings.mountForwardsDecelerationDuration.tooltip = 전진 후 정지 상태에 도달하는 데 걸리는 시간입니다.
+settings.mountBackwardsAccelerationDuration = 후진 가속 지속 시간
+settings.mountBackwardsAccelerationDuration.tooltip = 후진 시 최대 속도에 도달하는 데 걸리는 시간입니다.
+settings.mountBackwardsDecelerationDuration = 후진 감속 지속 시간
+settings.mountBackwardsDecelerationDuration.tooltip = 후진 후 정지 상태에 도달하는 데 걸리는 시간입니다.
+settings.mountForcedAccelerationMultiplierSetting = 강제 가속 배율
+settings.mountForcedAccelerationMultiplierSetting.tooltip = 달리는 중 전력 질주 입력을 눌렀을 때 가속 시간을 단축하는 배율입니다.
+settings.mountForcedDecelerationMultiplierSetting = 강제 감속 배율
+settings.mountForcedDecelerationMultiplierSetting.tooltip = 현재 속도와 반대 방향의 입력을 눌렀을 때 감속 시간을 단축하는 배율입니다.
+settings.mountRequireNewInput = 강제 감속 후 새로운 입력 필요
+settings.mountRequireNewInput.tooltip = 강제 감속 후 다시 이동하려면 이동 입력을 뗐다가 다시 눌러야 하는지 여부입니다.
+settings.displayTempPrefix = 텍스트에 [TMP] 태그 표시
+
+settings.armorItemsPickupLocation = 방어구 아이템
+settings.armorItemsPickupLocation.description = 아이템 습득 시 우선적으로 보관할 위치를 정의합니다.\n\
+<b><color is="#f1ba50">퀵바</color></b>: 새 아이템이 먼저 퀵바에 들어가고, 퀵바가 가득 차면 인벤토리에 들어갑니다.\n\
+<b><color is="#f1ba50">인벤토리</color></b>: 새 아이템이 먼저 인벤토리에 들어가고, 인벤토리가 가득 차면 퀵바에 들어갑니다.
+
+settings.weaponAndToolItemsPickupLocation = 무기 및 도구 아이템
+settings.weaponAndToolItemsPickupLocation.description = 아이템 습득 시 우선적으로 보관할 위치를 정의합니다.\n\
+<b><color is="#f1ba50">퀵바</color></b>: 새 아이템이 먼저 퀵바에 들어가고, 퀵바가 가득 차면 인벤토리에 들어갑니다.\n\
+<b><color is="#f1ba50">인벤토리</color></b>: 새 아이템이 먼저 인벤토리에 들어가고, 인벤토리가 가득 차면 퀵바에 들어갑니다.
+
+settings.usableItemsPickupLocation = 소모품 및 사용 아이템
+settings.usableItemsPickupLocation.description = 아이템 습득 시 우선적으로 보관할 위치를 정의합니다.\n\
+<b><color is="#f1ba50">퀵바</color></b>: 새 아이템이 먼저 퀵바에 들어가고, 퀵바가 가득 차면 인벤토리에 들어갑니다.\n\
+<b><color is="#f1ba50">인벤토리</color></b>: 새 아이템이 먼저 인벤토리에 들어가고, 인벤토리가 가득 차면 퀵바에 들어갑니다.
+
+settings.solidBlockItemsPickupLocation = 고체 블록 아이템
+settings.solidBlockItemsPickupLocation.description = 아이템 습득 시 우선적으로 보관할 위치를 정의합니다.\n\
+<b><color is="#f1ba50">퀵바</color></b>: 새 아이템이 먼저 퀵바에 들어가고, 퀵바가 가득 차면 인벤토리에 들어갑니다.\n\
+<b><color is="#f1ba50">인벤토리</color></b>: 새 아이템이 먼저 인벤토리에 들어가고, 인벤토리가 가득 차면 퀵바에 들어갑니다.
+
+settings.miscItemsPickupLocation = 기타 아이템
+settings.miscItemsPickupLocation.description = 아이템 습득 시 우선적으로 보관할 위치를 정의합니다.\n\
+<b><color is="#f1ba50">퀵바</color></b>: 새 아이템이 먼저 퀵바에 들어가고, 퀵바가 가득 차면 인벤토리에 들어갑니다.\n\
+<b><color is="#f1ba50">인벤토리</color></b>: 새 아이템이 먼저 인벤토리에 들어가고, 인벤토리가 가득 차면 퀵바에 들어갑니다.
+
+settings.pickupLocation.hotbar = 퀵바
+settings.pickupLocation.storage = 인벤토리
+
+settings.cameraBasedClimbing = 카메라 기준 기어오르기
+settings.cameraBasedClimbing.description = 기어오르기 조작 방식을 정의합니다.\n\
+<b><color is="#f1ba50">켜짐</color></b>: 앞으로 이동할 때 카메라가 바라보는 방향을 기준으로 이동합니다.\n\
+<b><color is="#f1ba50">꺼짐</color></b>: 바라보는 방향과 관계없이 항상 동일한 방식으로 이동합니다.
+
+settings.crouchBehavior = 앉기 조작 방식
+settings.sprintBehavior = 전력 질주 조작 방식
+settings.walkBehavior = 걷기 조작 방식
+settings.inputMode.hold = 유지
+settings.inputMode.toggle = 전환 (Toggle)
+
+settings.resetToDefaultsConfirmationModal.title = 설정 초기화
+settings.resetToDefaultsConfirmationModal.text = 모든 설정을 기본값으로 초기화하시겠습니까?
+# === timeline ===
+timeline.frame = 프레임
+timeline.currentFrame = 프레임: {frame, number}
+
+timeline.tabs.properties = 속성
+timeline.tabs.events = 이벤트
+
+timeline.toolbar.addActor = 액터 추가
+timeline.toolbar.restart = 다시 시작 ({keybind})
+timeline.toolbar.togglePause = 재생/일시정지 전환 ({keybind})
+timeline.toolbar.toggleLoop = 루프 전환
+
+timeline.events.add = 이벤트 추가
+
+# === Feedback Dialog ===
+feedback.title = 버그 제보 및 피드백 보내기
+feedback.selectType = 무엇을 제출하시겠습니까?
+
+feedback.feedback.title = 피드백 보내기
+feedback.feedback.description = 하이테일을 개선할 수 있도록 의견과 제안을 공유해 주세요.
+feedback.feedback.button.label = 피드백
+feedback.feedback.button.tooltip = 피드백 제출
+
+feedback.bugreport.title = 버그 제보
+feedback.bugreport.description = 정상적으로 작동하지 않는 부분을 발견하셨나요? 수정할 수 있도록 저희에게 알려주세요.
+feedback.bugreport.button.label = 버그 제보
+feedback.bugreport.button.tooltip = 버그 제보
+feedback.bugreport.includeLogFile = 현재 로그 파일 포함
+
+feedback.type.feedback = 피드백
+feedback.type.bugreport = 버그 제보
+
+feedback.warning.abuse = 버그 제보 및 피드백 기능을 악용할 경우 계정이 정지될 수 있습니다.
+
+feedback.field.type = 유형
+feedback.field.summary = 요약
+feedback.field.summary.placeholder = 피드백이나 버그에 대한 짧은 요약
+feedback.field.description = 상세 내용
+feedback.field.description.placeholder = 피드백이나 버그 제보에 대한 자세한 정보를 입력해 주세요.
+feedback.field.attachments = 첨부 파일
+
+feedback.attachments.addScreenshot = 스크린샷 추가
+feedback.attachments.addLogFile = 추가 로그 파일 추가
+feedback.attachments.selectScreenshot = 첨부할 스크린샷 선택
+feedback.attachments.selectLogFile = 첨부할 로그 파일 선택
+
+feedback.submit = 제출
+feedback.submitting = 제출 중...
+
+feedback.error.summaryRequired = 요약을 입력해 주세요.
+feedback.error.descriptionRequired = 상세 내용을 입력해 주세요.
+feedback.error.unknown = 오류가 발생했습니다. 다시 시도해 주세요.
+feedback.error.maxAttachments = 최대 3개의 파일만 첨부할 수 있습니다.
+feedback.error.fileTooLarge = "{file}" 파일이 너무 큽니다 ({size}MB). 최대 파일 크기는 {maxSize}MB입니다.
+feedback.error.invalidFileType = "{file}"은(는) 지원되지 않는 파일 형식입니다. .jpg, .jpeg, .png, .log 파일만 허용됩니다.
+feedback.error.fileNotFound = "{file}" 파일을 찾을 수 없습니다.
+feedback.error.fileError = "{file}" 파일을 읽을 수 없습니다.
+
+feedback.success.title = 감사합니다!
+feedback.success.feedback = 피드백이 성공적으로 제출되었습니다. 소중한 의견 감사합니다!
+feedback.success.bugreport = 버그 제보가 성공적으로 제출되었습니다. 신속히 검토하겠습니다!
+feedback.success.submitMore = 더 제출하기
+
+
+bugReportButton.tooltip = 버그 제보 및 피드백

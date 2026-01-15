@@ -1,0 +1,28 @@
+# System
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Build Artifacts & Downloads
+Galmuri9.ttf
+Galmuri9.json
+Galmuri9-fixed.png
+Galmuri9-converted.json
+*.backup
+
+# Temporary Work Directories
+temp_work/
+Language/ko-KR_backup/
+
+# Generated Fonts (Optional - usually we commit the final json/png, but ignore intermediate steps)
+# Fonts/Galmuri9-Final.json (Keeping this tracked)
+# Fonts/Galmuri9-sharp.png (Keeping this tracked)
+
+# VSCode / Editor
+.vscode/
+.idea/
