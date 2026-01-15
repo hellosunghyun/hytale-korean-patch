@@ -131,6 +131,16 @@ hytale-korean-patch/
 - **폰트**: [Galmuri](https://galmuri.quiple.dev/) by Quiple
 - **번역**: Gemini API 기반 자동 번역 + 수동 검수
 
+## 기여하기
+
+Hytale 한글 패치는 오픈 소스 프로젝트입니다. 번역 개선이나 오타 수정은 언제나 환영합니다!
+
+1. 이 저장소를 **Fork** 합니다.
+2. `Assets` 또는 `Language` 폴더 내의 `.lang` 파일을 수정합니다.
+3. **Pull Request (PR)** 를 보내주세요.
+   - 여러분이 기여해주신 번역은 **1:1 대응 병합 방식** 덕분에 다음 설치 시 자동으로 반영됩니다.
+   - 새로운 게임 업데이트가 나와도 번역 키(Key)만 맞다면 즉시 적용됩니다.
+
 ## 라이선스
 
 - 폰트: OFL (Open Font License)
