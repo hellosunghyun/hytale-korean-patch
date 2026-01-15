@@ -4,7 +4,8 @@ import json
 import sys
 
 def convert_bmfont_to_hytale(input_path: str, output_path: str):
-    with open(input_path, 'r') as f:
+    # Windows 호환성을 위해 encoding='utf-8' 명시
+    with open(input_path, 'r', encoding='utf-8') as f:
         bmfont = json.load(f)
     
     info = bmfont.get('info', {})
@@ -89,7 +90,8 @@ def convert_bmfont_to_hytale(input_path: str, output_path: str):
             "advance": kern['amount'] / size
         })
     
-    with open(output_path, 'w') as f:
+    # Windows 호환성을 위해 encoding='utf-8' 명시
+    with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(hytale, f, separators=(',', ': '))
     
     print(f"Converted {len(hytale['glyphs'])} glyphs to {output_path}")

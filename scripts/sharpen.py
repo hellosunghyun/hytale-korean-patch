@@ -18,7 +18,8 @@ def sharpen_and_update(png_path, json_path, final_json_path, final_png_path):
 
     # 2. JSON Update (Metrics & Scaling)
     print(f"Updating JSON {json_path}...")
-    with open(json_path, 'r') as f:
+    # Windows 호환성을 위해 encoding='utf-8' 명시
+    with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     # Tuning for sharpness and Hytale rendering
@@ -51,7 +52,8 @@ def sharpen_and_update(png_path, json_path, final_json_path, final_png_path):
                 else:
                     glyph['advance'] *= SCALE
 
-    with open(final_json_path, 'w') as f:
+    # Windows 호환성을 위해 encoding='utf-8' 명시
+    with open(final_json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, separators=(',', ': '))
     print(f"Saved updated JSON to {final_json_path}")
 
