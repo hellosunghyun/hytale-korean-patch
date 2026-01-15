@@ -40,10 +40,9 @@ cd hytale-korean-patch
 ### Windows
 
 1. 다운로드한 폴더를 엽니다.
-2. `install.ps1` 파일을 우클릭하고 **'PowerShell에서 실행'**을 선택합니다.
+2. `install.ps1` 파일을 우클릭하고 **PowerShell에서 실행** 메뉴를 선택합니다.
    - (보안 경고가 뜰 경우 `Y`를 입력하여 실행을 허용해주세요)
    - Python과 Node.js가 설치되어 있어야 합니다. (설치되어 있지 않다면 스크립트가 안내합니다)
-   - 만약 실행이 안 된다면 `install.bat` 파일을 더블 클릭해보세요.
 3. 설치가 완료되면 엔터 키를 눌러 창을 닫습니다.
 
 ### Linux
@@ -85,7 +84,7 @@ chmod +x install_linux.sh
 2. 완료되면 엔터 키를 눌러 창을 닫습니다.
 
 ### Windows
-1. `uninstall.bat` 파일을 더블 클릭하여 실행합니다.
+1. `uninstall.ps1` 파일을 더블 클릭하여 실행합니다.
 
 ### Linux
 1. 터미널에서 실행합니다:
