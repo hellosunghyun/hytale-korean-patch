@@ -9,12 +9,15 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Linux Path Detection Logic
 # Common paths:
-# 1. ~/.local/share/Hytale/...
-# 2. Custom?
+# 1. ~/.local/share/Hytale/... (Native)
+# 2. ~/.var/app/com.hypixel.HytaleLauncher/data/Hytale/... (Flatpak)
 
 POSSIBLE_PATHS=(
     "$HOME/.local/share/Hytale/install/release/package/game/latest/Client/Data/Shared"
     "$HOME/.local/share/Hytale/install/release/package/game/latest/Client/Shared"
+    # Flatpak support
+    "$HOME/.var/app/com.hypixel.HytaleLauncher/data/Hytale/install/release/package/game/latest/Client/Data/Shared"
+    "$HOME/.var/app/com.hypixel.HytaleLauncher/data/Hytale/install/release/package/game/latest/Client/Shared"
 )
 
 GAME_DIR=""

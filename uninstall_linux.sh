@@ -5,6 +5,9 @@
 POSSIBLE_PATHS=(
     "$HOME/.local/share/Hytale/install/release/package/game/latest/Client/Data/Shared"
     "$HOME/.local/share/Hytale/install/release/package/game/latest/Client/Shared"
+    # Flatpak support
+    "$HOME/.var/app/com.hypixel.HytaleLauncher/data/Hytale/install/release/package/game/latest/Client/Data/Shared"
+    "$HOME/.var/app/com.hypixel.HytaleLauncher/data/Hytale/install/release/package/game/latest/Client/Shared"
 )
 
 GAME_DIR=""
