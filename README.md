@@ -52,7 +52,7 @@ cd hytale-korean-patch
 chmod +x install_linux.sh
 ./install_linux.sh
 ```
-   - Python3, npm(npx), unzip이 필요합니다.
+   - Python3, npm(npx), unzip이 필요합니다. (없는 경우 자동 설치를 시도합니다)
 
 ### 특징
 

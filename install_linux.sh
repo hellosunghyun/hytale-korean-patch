@@ -77,32 +77,57 @@ echo "설치 경로: $GAME_DIR"
 echo ""
 
 # ==========================================
-# 2. 필수 프로그램 확인
+# 2. 필수 프로그램 확인 및 자동 설치
 # ==========================================
 echo "🛠️  필수 프로그램 확인 중..."
 
+install_package() {
+    PACKAGE=$1
+    if command -v apt-get >/dev/null; then
+        echo "   [Debian/Ubuntu] sudo apt-get install -y $PACKAGE"
+        sudo apt-get update && sudo apt-get install -y $PACKAGE
+    elif command -v dnf >/dev/null; then
+        echo "   [Fedora/RHEL] sudo dnf install -y $PACKAGE"
+        sudo dnf install -y $PACKAGE
+    elif command -v pacman >/dev/null; then
+        echo "   [Arch] sudo pacman -S --noconfirm $PACKAGE"
+        sudo pacman -S --noconfirm $PACKAGE
+    elif command -v zypper >/dev/null; then
+        echo "   [OpenSUSE] sudo zypper install -y $PACKAGE"
+        sudo zypper install -y $PACKAGE
+    else
+        echo "❌ 패키지 매니저를 찾을 수 없습니다. 수동으로 $PACKAGE 를 설치해주세요."
+        exit 1
+    fi
+}
+
+check_and_install() {
+    CMD=$1
+    PKG=$2
+    if ! command -v $CMD >/dev/null 2>&1; then
+        echo "⚠️  $CMD 가 설치되어 있지 않습니다."
+        echo "   자동 설치를 시도합니다. (sudo 권한 필요)"
+        install_package $PKG
+        
+        # 재확인
+        if ! command -v $CMD >/dev/null 2>&1; then
+            echo "❌ 설치 실패. 수동으로 $PKG 를 설치해주세요."
+            exit 1
+        fi
+        echo "   ✓ $PKG 설치 완료"
+    else
+        echo "   ✓ $CMD 확인됨"
+    fi
+}
+
 # Python 확인
-if ! command -v python3 >/dev/null 2>&1; then
-    echo "❌ Python3가 설치되어 있지 않습니다."
-    echo "   sudo apt install python3 또는 해당 배포판의 패키지 매니저로 설치해주세요."
-    exit 1
-fi
-echo "   ✓ Python3 확인됨"
+check_and_install python3 python3
 
 # npm / npx 확인
-if ! command -v npx >/dev/null 2>&1; then
-    echo "❌ Node.js (npx)가 설치되어 있지 않습니다."
-    echo "   sudo apt install npm 또는 https://nodejs.org/ 에서 설치해주세요."
-    exit 1
-fi
-echo "   ✓ Node.js (npx) 확인됨"
+check_and_install npm npm
 
 # unzip 확인
-if ! command -v unzip >/dev/null 2>&1; then
-    echo "❌ unzip이 설치되어 있지 않습니다."
-    echo "   sudo apt install unzip"
-    exit 1
-fi
+check_and_install unzip unzip
 
 # ==========================================
 # 3. Python 환경 설정 (.venv)
@@ -140,7 +165,7 @@ CHARSET_FILE="$SCRIPT_DIR/src/charset/charset_final.txt"
 if [ ! -f "$CHARSET_FILE" ]; then
     echo "   ⚠️ 글자셋 파일이 없어 재생성합니다."
     mkdir -p "$(dirname "$CHARSET_FILE")"
-    echo " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_\`abcdefghijklmnopqrstuvwxyz{|}~가각간갇갈감갑갓갔강갖갗같갚갛개객갠갤갬갭갯갰갱" > "$CHARSET_FILE"
+    echo " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_\`abcdefghijklmnopqrstuvwxyz{|}~가각간갇갈감갑갓갔강갖갗같갚갛개객갠갤갬갭갭갰갱" > "$CHARSET_FILE"
 fi
 
 # ==========================================
