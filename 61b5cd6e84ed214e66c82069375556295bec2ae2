@@ -1,0 +1,23 @@
+uninstall.ps1
+  b11e7d1b5d387ae8 1-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.31",
+  "base_commit_sha": "61b5cd6e84ed214e66c82069375556295bec2ae2",
+  "prompts": {
+    "b11e7d1b5d387ae8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_43e88c3bbffe2AZKteLTITaE3s",
+        "model": "google/gemini-3-pro-preview"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 71,
+      "total_deletions": 0,
+      "accepted_lines": 71,
+      "overriden_lines": 0
+    }
+  }
+}
