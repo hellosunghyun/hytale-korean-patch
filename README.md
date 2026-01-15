@@ -77,6 +77,12 @@ chmod +x install_linux.sh
    - **Windows**: `%LOCALAPPDATA%\Hytale\install\release\package\game\latest\Client\Data\Shared\Language\`
    - **Linux**: `~/.local/share/Hytale/install/release/package/game/latest/Client/Data/Shared/Language/`
 
+3. **중요: 추가 번역 파일 복사 (서버/아바타)**
+   - 리포지토리의 `Assets/Server/Languages/ko-KR/` 안의 파일들(`server.lang`, `wordlists.lang`)을 게임 설치 경로의 `Language/ko-KR/` 안에 복사합니다.
+   - 리포지토리의 `Assets/Common/Languages/ko-KR/avatarCustomization/` 폴더를 통째로 게임 설치 경로의 `Language/ko-KR/` 안에 복사합니다.
+
+> **참고**: 수동 설치 시에는 자동 병합(Merge) 기능이 적용되지 않으므로, 게임 업데이트 시 새로운 문장이 번역되지 않은 채로 나오거나 키(Key) 형태로 보일 수 있습니다. 가급적 **자동 설치 스크립트** 사용을 권장합니다.
+
 ## 제거 방법
 
 ### macOS
