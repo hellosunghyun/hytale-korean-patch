@@ -60,3 +60,6 @@ fi
 echo ""
 echo "=== 제거 완료! ==="
 echo "Hytale이 초기 상태로 복구되었습니다."
+echo ""
+echo "엔터 키를 누르면 종료됩니다..."
+read -r
