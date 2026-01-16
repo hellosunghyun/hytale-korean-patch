@@ -3,9 +3,36 @@
 
 GAME_BASE="$HOME/Library/Application Support/Hytale/install/release/package/game/latest"
 GAME_DIR="$GAME_BASE/Client/Hytale.app/Contents/Resources/Data/Shared"
+
+# 게임 폴더 확인
+if [ ! -d "$GAME_DIR" ]; then
+    echo "❌ Hytale 게임 폴더를 찾을 수 없습니다."
+    echo "   예상 경로: $GAME_DIR"
+    echo ""
+    echo "설치 시 사용했던 경로를 입력해주세요 (Client/.../Data/Shared 폴더 경로):"
+    read -r CUSTOM_PATH
+    if [ -d "$CUSTOM_PATH" ]; then
+        GAME_DIR="$CUSTOM_PATH"
+        echo "   ✓ 사용자 지정 경로 확인됨: $GAME_DIR"
+    else
+        echo "❌ 유효하지 않은 경로입니다."
+        exit 1
+    fi
+fi
+
 LANG_DIR="$GAME_DIR/Language/ko-KR"
 FONTS_DIR="$GAME_DIR/Fonts"
-ASSETS_ZIP="$GAME_BASE/Assets.zip"
+
+# Assets.zip 경로 탐색
+ASSETS_ZIP=""
+CURRENT_PATH="$GAME_DIR"
+for i in {1..6}; do
+    if [ -f "$CURRENT_PATH/Assets.zip" ]; then
+        ASSETS_ZIP="$CURRENT_PATH/Assets.zip"
+        break
+    fi
+    CURRENT_PATH="$(dirname "$CURRENT_PATH")"
+done
 
 echo "=== Hytale 한글 패치 제거 ==="
 echo ""

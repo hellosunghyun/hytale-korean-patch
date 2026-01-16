@@ -23,8 +23,20 @@ foreach ($path in $possiblePaths) {
 
 if ($null -eq $gameDir) {
     Write-Host "[ERROR] Hytale game folder not found." -ForegroundColor Red
-    Read-Host "Press Enter to exit"
-    exit 1
+    Write-Host "Expected paths:" -ForegroundColor Yellow
+    foreach ($p in $possiblePaths) {
+        Write-Host "   - $p"
+    }
+    Write-Host ""
+    $customPath = Read-Host "Enter the game path manually (Client/Data/Shared folder)"
+    if ($customPath -and (Test-Path $customPath)) {
+        $gameDir = $customPath
+        Write-Host "   [OK] Custom path confirmed: $gameDir" -ForegroundColor Green
+    } else {
+        Write-Host "[ERROR] Invalid path." -ForegroundColor Red
+        Read-Host "Press Enter to exit"
+        exit 1
+    }
 }
 
 Write-Host "Found Game Dir: $gameDir"
