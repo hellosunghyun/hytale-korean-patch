@@ -128,9 +128,30 @@ echo "💾 게임 패치 적용 중..."
 
 # 게임 폴더 확인
 if [ ! -d "$GAME_DIR" ]; then
-    echo "❌ 게임 폴더를 찾을 수 없습니다."
-    echo "   경로: $GAME_DIR"
-    exit 1
+    echo "❌ Hytale 게임 폴더를 찾을 수 없습니다."
+    echo "   예상 경로: $GAME_DIR"
+    echo ""
+    echo "게임이 설치된 경로를 직접 입력해주세요 (Client/.../Data/Shared 폴더 경로):"
+    read -r CUSTOM_PATH
+    if [ -d "$CUSTOM_PATH" ]; then
+        GAME_DIR="$CUSTOM_PATH"
+        LANG_DIR="$GAME_DIR/Language/ko-KR"
+        FONTS_DIR="$GAME_DIR/Fonts"
+        # Assets.zip 경로도 다시 탐색
+        ASSETS_ZIP=""
+        CURRENT_PATH="$GAME_DIR"
+        for i in {1..6}; do
+            if [ -f "$CURRENT_PATH/Assets.zip" ]; then
+                ASSETS_ZIP="$CURRENT_PATH/Assets.zip"
+                break
+            fi
+            CURRENT_PATH="$(dirname "$CURRENT_PATH")"
+        done
+        echo "   ✓ 사용자 지정 경로 확인됨: $GAME_DIR"
+    else
+        echo "❌ 유효하지 않은 경로입니다."
+        exit 1
+    fi
 fi
 
 # 6-1. 폰트 설치
