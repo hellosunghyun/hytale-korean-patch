@@ -1,0 +1,38 @@
+install.command
+  78ea37e93e7b00b5 131-152,154
+scripts/install_windows.py
+  fb3e894610369fa9 43-55
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.34",
+  "base_commit_sha": "d59e1b1255126620d02d9e7ae97e46a7c8d4e1d1",
+  "prompts": {
+    "78ea37e93e7b00b5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_439ed56a0ffekRDLFrdt3A03Fc-da3ac6fe-b018-427a-ae87-7ed866ffc613",
+        "model": "unknown"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 24,
+      "total_deletions": 3,
+      "accepted_lines": 23,
+      "overriden_lines": 0
+    },
+    "fb3e894610369fa9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_439ed56a0ffekRDLFrdt3A03Fc-5c93e81d-e65a-4a0d-8559-9fd16a0fc93f",
+        "model": "unknown"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 13,
+      "total_deletions": 0,
+      "accepted_lines": 13,
+      "overriden_lines": 0
+    }
+  }
+}
