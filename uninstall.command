@@ -49,18 +49,7 @@ for font in NunitoSans-Medium NunitoSans-ExtraBold Lexend-Bold NotoMono-Regular;
     fi
 done
 
-# 2. Assets.zip 복원
-echo ""
-echo "📁 Assets.zip 복원 중..."
-if [ -f "$ASSETS_ZIP.backup" ]; then
-    rm "$ASSETS_ZIP"
-    mv "$ASSETS_ZIP.backup" "$ASSETS_ZIP"
-    echo "   ✓ Assets.zip 복원 완료"
-else
-    echo "   ⚠️ Assets.zip 백업 파일이 없습니다."
-fi
-
-# 3. 언어 파일 제거 및 복원
+# 2. 언어 파일 제거 및 복원
 echo ""
 echo "📁 언어 파일 제거 중..."
 

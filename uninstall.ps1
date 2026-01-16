@@ -9,9 +9,12 @@ $appData = $env:APPDATA
 # Possible Paths
 $gameDir = $null
 $possiblePaths = @(
+    # Roaming AppData (사용자 피드백 기반 유력 경로)
+    "$appData\Hytale\install\release\package\game\latest\Client\Data\Shared",
+    "$appData\Hytale\install\release\package\game\latest\Client\Shared",
+    # Local AppData
     "$localAppData\Hytale\install\release\package\game\latest\Client\Data\Shared",
-    "$localAppData\Hytale\install\release\package\game\latest\Client\Shared",
-    "$appData\Hytale\install\release\package\game\latest\Client\Data\Shared"
+    "$localAppData\Hytale\install\release\package\game\latest\Client\Shared"
 )
 
 foreach ($path in $possiblePaths) {
