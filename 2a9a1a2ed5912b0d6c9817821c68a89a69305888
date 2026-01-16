@@ -1,0 +1,38 @@
+uninstall.ps1
+  b7d20c3147ab8692 26-36,39
+uninstall.command
+  8c1c3be5a27dfd25 6-22,25-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.34",
+  "base_commit_sha": "2a9a1a2ed5912b0d6c9817821c68a89a69305888",
+  "prompts": {
+    "8c1c3be5a27dfd25": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_439ed56a0ffekRDLFrdt3A03Fc-cb0ec15a-9b0e-4f52-b3d1-ac36b446aa0e",
+        "model": "unknown"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 28,
+      "total_deletions": 1,
+      "accepted_lines": 28,
+      "overriden_lines": 0
+    },
+    "b7d20c3147ab8692": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "opencode-transcript-ses_439ed56a0ffekRDLFrdt3A03Fc-9ef12c14-25e6-425f-909b-1fd30db14944",
+        "model": "unknown"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 2,
+      "accepted_lines": 12,
+      "overriden_lines": 0
+    }
+  }
+}
