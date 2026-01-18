@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import zipfile
 import json
+import urllib.request
 from pathlib import Path
 
 # ==========================================
@@ -27,12 +28,45 @@ POSSIBLE_PATHS = [
 
 # 고해상도 폰트 설정
 FONT_NAME = "WantedSans"
-FONT_TTF = SCRIPT_DIR / "reference/WantedSans-1.0.3/ttf/WantedSans-Medium.ttf"
+FONT_URL = "https://github.com/wanteddev/wanted-sans/releases/download/v1.0.3/WantedSans-1.0.3.zip"
+FONT_DIR = SCRIPT_DIR / "reference/WantedSans-1.0.3"
+FONT_TTF = FONT_DIR / "ttf/WantedSans-Medium.ttf"
 CHARSET_FILE = SCRIPT_DIR / "src/charset/charset_full.txt"
 
 
+def download_font():
+    """폰트 다운로드"""
+    print("\n📥 폰트 다운로드 중...")
+
+    if FONT_TTF.exists():
+        print("   ✓ 폰트 이미 존재함")
+        return
+
+    reference_dir = SCRIPT_DIR / "reference"
+    reference_dir.mkdir(exist_ok=True)
+    font_zip = reference_dir / "WantedSans.zip"
+
+    try:
+        print(f"   다운로드 중: {FONT_URL}")
+        urllib.request.urlretrieve(FONT_URL, font_zip)
+
+        with zipfile.ZipFile(font_zip, 'r') as zf:
+            zf.extractall(reference_dir)
+
+        font_zip.unlink()
+
+        if FONT_TTF.exists():
+            print("   ✓ 폰트 다운로드 완료")
+        else:
+            print("❌ 폰트 다운로드 실패")
+            sys.exit(1)
+    except Exception as e:
+        print(f"❌ 폰트 다운로드 실패: {e}")
+        sys.exit(1)
+
+
 def find_game_dir():
-    print("🔍 Hytale 설치 경로 찾는 중...")
+    print("\n🔍 Hytale 설치 경로 찾는 중...")
     for path in POSSIBLE_PATHS:
         if path.exists():
             print(f"   ✓ 찾음: {path}")
@@ -419,6 +453,8 @@ def install_patch(game_dir: Path):
 
 def main():
     print("=== Hytale 한글 패치 설치 (Windows - 고해상도 폰트) ===")
+
+    download_font()
 
     game_dir = find_game_dir()
     if not game_dir:

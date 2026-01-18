@@ -19,7 +19,9 @@ PIP_BIN="$VENV_DIR/bin/pip"
 
 # 고해상도 폰트 설정
 FONT_NAME="WantedSans"
-FONT_TTF="$SCRIPT_DIR/reference/WantedSans-1.0.3/ttf/WantedSans-Medium.ttf"
+FONT_URL="https://github.com/wanteddev/wanted-sans/releases/download/v1.0.3/WantedSans-1.0.3.zip"
+FONT_DIR="$SCRIPT_DIR/reference/WantedSans-1.0.3"
+FONT_TTF="$FONT_DIR/ttf/WantedSans-Medium.ttf"
 CHARSET_FILE="$SCRIPT_DIR/src/charset/charset_full.txt"
 
 echo "=== Hytale 한글 패치 통합 설치 (고해상도 폰트) ==="
@@ -61,7 +63,41 @@ fi
 echo "   ✓ Python 환경 준비 완료"
 
 # ==========================================
-# 4. 게임 폴더 확인
+# 4. 폰트 다운로드
+# ==========================================
+echo ""
+echo "📥 폰트 다운로드 중..."
+
+if [ ! -f "$FONT_TTF" ]; then
+    mkdir -p "$SCRIPT_DIR/reference"
+    FONT_ZIP="$SCRIPT_DIR/reference/WantedSans.zip"
+
+    # curl 또는 wget으로 다운로드
+    if command -v curl >/dev/null 2>&1; then
+        curl -L -o "$FONT_ZIP" "$FONT_URL" 2>/dev/null
+    elif command -v wget >/dev/null 2>&1; then
+        wget -q -O "$FONT_ZIP" "$FONT_URL"
+    else
+        echo "❌ curl 또는 wget이 필요합니다."
+        exit 1
+    fi
+
+    # 압축 해제
+    unzip -q -o "$FONT_ZIP" -d "$SCRIPT_DIR/reference/"
+    rm -f "$FONT_ZIP"
+
+    if [ -f "$FONT_TTF" ]; then
+        echo "   ✓ 폰트 다운로드 완료"
+    else
+        echo "❌ 폰트 다운로드 실패"
+        exit 1
+    fi
+else
+    echo "   ✓ 폰트 이미 존재함"
+fi
+
+# ==========================================
+# 5. 게임 폴더 확인
 # ==========================================
 echo ""
 echo "🔍 게임 폴더 확인 중..."
@@ -97,7 +133,7 @@ else
 fi
 
 # ==========================================
-# 5. 고해상도 폰트 빌드
+# 6. 고해상도 폰트 빌드
 # ==========================================
 echo ""
 echo "🏗️  고해상도 폰트 빌드 시작..."
@@ -272,7 +308,7 @@ rm -f "$SCRIPT_DIR/${FONT_NAME}"*.json "$SCRIPT_DIR/${FONT_NAME}"*.png 2>/dev/nu
 echo "   ✓ 폰트 빌드 완료"
 
 # ==========================================
-# 6. 바이너리 패치 (텍스처 크기 512 -> 8192)
+# 7. 바이너리 패치 (텍스처 크기 512 -> 8192)
 # ==========================================
 echo ""
 echo "🔧 바이너리 패치 중..."
@@ -341,7 +377,7 @@ codesign --force --sign - "$GAME_EXE" 2>/dev/null || true
 echo "   ✓ 바이너리 패치 완료"
 
 # ==========================================
-# 7. 게임 패치 적용 (폰트 + 언어)
+# 8. 게임 패치 적용 (폰트 + 언어)
 # ==========================================
 echo ""
 echo "💾 게임 패치 적용 중..."
@@ -421,7 +457,7 @@ rm -rf "$TEMP_WORK"
 echo "   ✓ 언어 파일 설치 완료"
 
 # ==========================================
-# 8. 완료
+# 9. 완료
 # ==========================================
 echo ""
 echo "✨ 설치 완료!"
