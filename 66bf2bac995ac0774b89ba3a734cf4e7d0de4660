@@ -1,0 +1,27 @@
+install.command
+  f779a51522748582 22-24,66-100,136,311,380,460
+scripts/install_windows.py
+  f779a51522748582 12,31-33,37-67,69,457-458
+install_linux.sh
+  f779a51522748582 2,10,22-30,34,58,65,71,74,83-84,87,90,93-104,106-109,111,114-119,123,127-130,137-140,145-152,157-158,164,169-171,174,177-207,209-211,213-225,227-236,239-241,246-249,251-252,256-336,339-357,359,361-385,387,392,396-397,399-400,404,407-408,416,419,427-428,437,439,449,457,463,465-475,477
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.34",
+  "base_commit_sha": "66bf2bac995ac0774b89ba3a734cf4e7d0de4660",
+  "prompts": {
+    "f779a51522748582": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef624c23-c581-466a-a044-4cb90166daaa",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 407,
+      "total_deletions": 174,
+      "accepted_lines": 376,
+      "overriden_lines": 0
+    }
+  }
+}
