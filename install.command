@@ -1,5 +1,5 @@
 #!/bin/bash
-# Hytale 한글 패치 통합 설치 스크립트 (빌드 포함)
+# Hytale 한글 패치 통합 설치 스크립트 (고해상도 폰트 + 바이너리 패치)
 set -e
 
 # ==========================================
@@ -7,18 +7,23 @@ set -e
 # ==========================================
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 GAME_BASE="$HOME/Library/Application Support/Hytale/install/release/package/game/latest"
-GAME_DIR="$GAME_BASE/Client/Hytale.app/Contents/Resources/Data/Shared"
+HYTALE_APP="$GAME_BASE/Client/Hytale.app"
+GAME_DIR="$HYTALE_APP/Contents/Resources/Data/Shared"
+GAME_EXE="$HYTALE_APP/Contents/MacOS/HytaleClient"
 LANG_DIR="$GAME_DIR/Language/ko-KR"
 FONTS_DIR="$GAME_DIR/Fonts"
 
 VENV_DIR="$SCRIPT_DIR/.venv"
 PYTHON_BIN="$VENV_DIR/bin/python3"
 PIP_BIN="$VENV_DIR/bin/pip"
-FONT_URL="https://quiple.dev/_astro/Galmuri9.ttf"
-FONT_TTF="Galmuri9.ttf"
 
-echo "=== Hytale 한글 패치 통합 설치 (All-in-One) ==="
-echo "이 스크립트는 환경 설정, 폰트 빌드, 게임 패치를 모두 수행합니다."
+# 고해상도 폰트 설정
+FONT_NAME="WantedSans"
+FONT_TTF="$SCRIPT_DIR/reference/WantedSans-1.0.3/ttf/WantedSans-Medium.ttf"
+CHARSET_FILE="$SCRIPT_DIR/src/charset/charset_full.txt"
+
+echo "=== Hytale 한글 패치 통합 설치 (고해상도 폰트) ==="
+echo "이 스크립트는 환경 설정, 폰트 빌드, 바이너리 패치를 수행합니다."
 echo ""
 
 # ==========================================
@@ -29,7 +34,7 @@ echo "🛠️  필수 프로그램 확인 중..."
 # Python 확인
 if ! command -v python3 >/dev/null 2>&1; then
     echo "❌ Python3가 설치되어 있지 않습니다."
-    echo "   macOS: brew install python3 또는 공식 홈페이지에서 설치해주세요."
+    echo "   macOS: brew install python3"
     exit 1
 fi
 echo "   ✓ Python3 확인됨"
@@ -37,194 +42,359 @@ echo "   ✓ Python3 확인됨"
 # Node.js / npx 확인
 if ! command -v npx >/dev/null 2>&1; then
     echo "❌ Node.js (npx)가 설치되어 있지 않습니다."
-    echo "   macOS: brew install node 또는 공식 홈페이지에서 설치해주세요."
+    echo "   macOS: brew install node"
     exit 1
 fi
 echo "   ✓ Node.js (npx) 확인됨"
 
 # ==========================================
-# 3. Python 환경 설정 (.venv)
+# 3. Python 환경 설정
 # ==========================================
 echo ""
 echo "🐍 Python 가상환경 설정 중..."
 
 if [ ! -d "$VENV_DIR" ]; then
-    echo "   가상환경 생성 중 (.venv)..."
     python3 -m venv "$VENV_DIR"
 fi
 
-# 필수 라이브러리 설치 (pillow, numpy)
-echo "   필수 라이브러리 확인 및 설치..."
-"$PIP_BIN" install --disable-pip-version-check pillow numpy >/dev/null
-echo "   ✓ Python 라이브러리 준비 완료"
+"$PIP_BIN" install --disable-pip-version-check -q pillow >/dev/null 2>&1
+echo "   ✓ Python 환경 준비 완료"
 
 # ==========================================
-# 4. 리소스 준비 (폰트 다운로드 & 글자셋)
+# 4. 게임 폴더 확인
 # ==========================================
 echo ""
-echo "📥 리소스 준비 중..."
+echo "🔍 게임 폴더 확인 중..."
 
-# 폰트 다운로드
-if [ ! -f "$FONT_TTF" ]; then
-    echo "   Galmuri9.ttf 다운로드 중..."
-    curl -s -o "$FONT_TTF" "$FONT_URL"
-    echo "   ✓ 폰트 다운로드 완료"
-else
-    echo "   ✓ 폰트 파일 확인됨 ($FONT_TTF)"
-fi
-
-# 글자셋 확인 (없으면 기본 생성 - 안전장치)
-CHARSET_FILE="$SCRIPT_DIR/src/charset/charset_final.txt"
-if [ ! -f "$CHARSET_FILE" ]; then
-    echo "   ⚠️ 글자셋 파일이 없어 재생성합니다."
-    mkdir -p "$(dirname "$CHARSET_FILE")"
-    # 간단한 기본 글자셋 생성 (실제로는 더 복잡하지만, 비상용)
-    echo " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_\`abcdefghijklmnopqrstuvwxyz{|}~가각간갇갈감갑갓갔강갖갗같갚갛개객갠갤갬갭갭갰갱" > "$CHARSET_FILE"
-fi
-
-# ==========================================
-# 5. 폰트 빌드 (Generation)
-# ==========================================
-echo ""
-echo "🏗️  폰트 빌드 시작..."
-
-# 임시 파일 정리
-rm -f Galmuri9.json Galmuri9-fixed.png Galmuri9-converted.json
-
-# 5-1. MSDF 아틀라스 생성 (npx)
-echo "   1) MSDF 아틀라스 생성 (시간이 걸릴 수 있습니다)..."
-# 공백 문자 경고는 무시해도 됨
-npx msdf-bmfont-xml -f json -m 512,512 -s 10 -r 2 -t msdf -p 0 --pot --square -i "$CHARSET_FILE" -o Galmuri9-fixed "$FONT_TTF" >/dev/null 2>&1
-if [ ! -f "Galmuri9.json" ]; then
-    echo "❌ 폰트 생성 실패. msdf-bmfont-xml 실행 중 오류 발생."
-    exit 1
-fi
-
-# 5-2. 포맷 변환 (Hytale format)
-echo "   2) Hytale 포맷으로 변환..."
-"$PYTHON_BIN" "$SCRIPT_DIR/scripts/convert_font.py" Galmuri9.json Galmuri9-converted.json
-
-# 5-3. 선명화 및 최종 저장
-echo "   3) 폰트 선명화 및 최종 파일 생성..."
-mkdir -p "$SCRIPT_DIR/Fonts"
-"$PYTHON_BIN" "$SCRIPT_DIR/scripts/sharpen.py" Galmuri9-fixed.png Galmuri9-converted.json "$SCRIPT_DIR/Fonts/Galmuri9-Final.json" "$SCRIPT_DIR/Fonts/Galmuri9-sharp.png"
-
-# 빌드 결과물 확인
-if [ -f "$SCRIPT_DIR/Fonts/Galmuri9-Final.json" ]; then
-    echo "   ✓ 폰트 빌드 성공"
-else
-    echo "❌ 폰트 빌드 실패"
-    exit 1
-fi
-
-# 임시 파일 정리
-rm -f Galmuri9.json Galmuri9-fixed.png Galmuri9-converted.json
-
-# ==========================================
-# 6. 게임 패치 적용 (Installation)
-# ==========================================
-echo ""
-echo "💾 게임 패치 적용 중..."
-
-# 게임 폴더 확인
 if [ ! -d "$GAME_DIR" ]; then
     echo "❌ Hytale 게임 폴더를 찾을 수 없습니다."
     echo "   예상 경로: $GAME_DIR"
     echo ""
-    echo "게임이 설치된 경로를 직접 입력해주세요 (Client/.../Data/Shared 폴더 경로):"
+    echo "게임이 설치된 경로를 직접 입력해주세요 (Hytale.app 경로):"
     read -r CUSTOM_PATH
     if [ -d "$CUSTOM_PATH" ]; then
-        GAME_DIR="$CUSTOM_PATH"
+        HYTALE_APP="$CUSTOM_PATH"
+        GAME_DIR="$HYTALE_APP/Contents/Resources/Data/Shared"
+        GAME_EXE="$HYTALE_APP/Contents/MacOS/HytaleClient"
         LANG_DIR="$GAME_DIR/Language/ko-KR"
         FONTS_DIR="$GAME_DIR/Fonts"
-        # Assets.zip 경로도 다시 탐색
-        ASSETS_ZIP=""
+        # Assets.zip 경로 재탐색
         CURRENT_PATH="$GAME_DIR"
         for i in {1..6}; do
             if [ -f "$CURRENT_PATH/Assets.zip" ]; then
-                ASSETS_ZIP="$CURRENT_PATH/Assets.zip"
+                GAME_BASE="$CURRENT_PATH"
                 break
             fi
             CURRENT_PATH="$(dirname "$CURRENT_PATH")"
         done
-        echo "   ✓ 사용자 지정 경로 확인됨: $GAME_DIR"
+        echo "   ✓ 사용자 지정 경로 확인됨"
     else
         echo "❌ 유효하지 않은 경로입니다."
         exit 1
     fi
+else
+    echo "   ✓ 게임 폴더 확인됨"
 fi
 
-# 6-1. 폰트 설치
+# ==========================================
+# 5. 고해상도 폰트 빌드
+# ==========================================
+echo ""
+echo "🏗️  고해상도 폰트 빌드 시작..."
+
+# 글자셋 확인/생성 (msdf-bmfont-xml용: 문자 그대로 저장)
+if [ ! -f "$CHARSET_FILE" ]; then
+    echo "   글자셋 생성 중..."
+    mkdir -p "$(dirname "$CHARSET_FILE")"
+    "$PYTHON_BIN" -c "
+chars = []
+# ASCII
+for i in range(0x20, 0x7F): chars.append(chr(i))
+# Extended symbols
+for c in '°–—''\"\"•…': chars.append(c)
+# Korean Jamo
+for i in range(0x3131, 0x3164): chars.append(chr(i))
+# Korean Syllables (11,172)
+for i in range(0xAC00, 0xD7A4): chars.append(chr(i))
+with open('$CHARSET_FILE', 'w', encoding='utf-8') as f:
+    f.write(''.join(chars))
+print(f'   ✓ 글자셋 생성 완료: {len(chars)}자')
+"
+else
+    # charset_full.txt가 hex 형식이면 문자 형식으로 변환
+    if head -c 4 "$CHARSET_FILE" | grep -q "0x"; then
+        echo "   글자셋 형식 변환 중..."
+        "$PYTHON_BIN" -c "
+chars = []
+for i in range(0x20, 0x7F): chars.append(chr(i))
+for c in '°–—''\"\"•…': chars.append(c)
+for i in range(0x3131, 0x3164): chars.append(chr(i))
+for i in range(0xAC00, 0xD7A4): chars.append(chr(i))
+with open('$CHARSET_FILE', 'w', encoding='utf-8') as f:
+    f.write(''.join(chars))
+print(f'   ✓ 글자셋 변환 완료: {len(chars)}자')
+"
+    fi
+fi
+
+# MSDF 아틀라스 생성 (npx msdf-bmfont-xml 사용)
+echo "   MSDF 아틀라스 생성 중 (8192x8192, 시간이 걸릴 수 있습니다)..."
+mkdir -p "$SCRIPT_DIR/Fonts"
+
+cd "$SCRIPT_DIR"
+npx msdf-bmfont-xml \
+    -f json \
+    -m 8192,8192 \
+    -s 48 \
+    -r 8 \
+    -t msdf \
+    -p 2 \
+    --pot --square \
+    -i "$CHARSET_FILE" \
+    -o "${FONT_NAME}" \
+    "$FONT_TTF" 2>/dev/null || {
+    echo "❌ 폰트 생성 실패"
+    exit 1
+}
+
+# msdf-bmfont-xml은 폰트 이름에 따라 다른 파일명 생성
+TEMP_PNG=""
+TEMP_JSON=""
+
+# PNG 찾기
+if [ -f "$SCRIPT_DIR/${FONT_NAME}.png" ]; then
+    TEMP_PNG="$SCRIPT_DIR/${FONT_NAME}.png"
+elif [ -f "$SCRIPT_DIR/${FONT_NAME}.0.png" ]; then
+    TEMP_PNG="$SCRIPT_DIR/${FONT_NAME}.0.png"
+fi
+
+# JSON 찾기 (여러 가능한 이름 확인)
+for json_name in "${FONT_NAME}.json" "${FONT_NAME}-Medium.json" "WantedSans-Medium.json"; do
+    if [ -f "$SCRIPT_DIR/$json_name" ]; then
+        TEMP_JSON="$SCRIPT_DIR/$json_name"
+        break
+    fi
+done
+
+if [ -z "$TEMP_PNG" ] || [ ! -f "$TEMP_PNG" ]; then
+    echo "❌ 폰트 생성 실패 - PNG 파일 없음"
+    ls -la "$SCRIPT_DIR"/*.png 2>/dev/null || true
+    exit 1
+fi
+
+if [ -z "$TEMP_JSON" ] || [ ! -f "$TEMP_JSON" ]; then
+    echo "❌ 폰트 생성 실패 - JSON 파일 없음"
+    ls -la "$SCRIPT_DIR"/*.json 2>/dev/null || true
+    exit 1
+fi
+
+# Hytale 포맷으로 변환
+echo "   Hytale 포맷으로 변환 중..."
+"$PYTHON_BIN" - "$TEMP_JSON" "$SCRIPT_DIR/Fonts/${FONT_NAME}.json" << 'PYEOF'
+import json
+import sys
+
+with open(sys.argv[1], 'r', encoding='utf-8') as f:
+    bmfont = json.load(f)
+
+info = bmfont.get('info', {})
+common = bmfont.get('common', {})
+df = bmfont.get('distanceField', {})
+chars = bmfont.get('chars', [])
+
+size = info.get('size', 48)
+tex_w = common.get('scaleW', 4096)
+tex_h = common.get('scaleH', 4096)
+base = common.get('base', size)
+
+hytale = {
+    "atlas": {
+        "type": df.get('fieldType', 'msdf'),
+        "distanceRange": df.get('distanceRange', 8),
+        "distanceRangeMiddle": 0,
+        "size": size,
+        "width": tex_w,
+        "height": tex_h,
+        "yOrigin": "top"
+    },
+    "metrics": {
+        "emSize": 1,
+        "lineHeight": 1.364,
+        "ascender": -1.011,
+        "descender": 0.353,
+        "underlineY": 0.101,
+        "underlineThickness": 0.037
+    },
+    "glyphs": [],
+    "kerning": []
+}
+
+for ch in chars:
+    char_id = ch['id']
+    w = ch['width']
+    h = ch['height']
+    x = ch['x']
+    y = ch['y']
+    xoff = ch['xoffset']
+    yoff = ch['yoffset']
+    xadv = ch['xadvance']
+
+    advance = xadv / size
+    left = xoff / size
+    top = -(base - yoff) / size
+    right = (xoff + w) / size
+    bottom = -(base - yoff - h) / size
+
+    glyph = {
+        "unicode": char_id,
+        "advance": advance,
+        "planeBounds": {"left": left, "top": top, "right": right, "bottom": bottom},
+        "atlasBounds": {"left": x + 0.5, "top": y + 0.5, "right": x + w - 0.5, "bottom": y + h - 0.5}
+    }
+    hytale["glyphs"].append(glyph)
+
+for kern in bmfont.get('kernings', []):
+    hytale["kerning"].append({
+        "unicode1": kern['first'],
+        "unicode2": kern['second'],
+        "advance": kern['amount'] / size
+    })
+
+with open(sys.argv[2], 'w', encoding='utf-8') as f:
+    json.dump(hytale, f, separators=(',', ': '))
+
+print(f"   ✓ 변환 완료: {len(hytale['glyphs'])}자")
+PYEOF
+
+# 파일 이동 및 정리
+mv "$TEMP_PNG" "$SCRIPT_DIR/Fonts/${FONT_NAME}.png"
+rm -f "$SCRIPT_DIR/${FONT_NAME}"*.json "$SCRIPT_DIR/${FONT_NAME}"*.png 2>/dev/null || true
+echo "   ✓ 폰트 빌드 완료"
+
+# ==========================================
+# 6. 바이너리 패치 (텍스처 크기 512 -> 8192)
+# ==========================================
+echo ""
+echo "🔧 바이너리 패치 중..."
+
+# 바이너리 백업
+BACKUP_EXE="${GAME_EXE}.backup_original"
+if [ ! -f "$BACKUP_EXE" ]; then
+    cp "$GAME_EXE" "$BACKUP_EXE"
+    echo "   ✓ 원본 바이너리 백업됨"
+fi
+
+# Python으로 바이너리 직접 패치 (512 -> 8192)
+GAME_EXE="$GAME_EXE" "$PYTHON_BIN" << 'PATCHPY'
+import os
+
+exe_path = os.environ.get('GAME_EXE')
+
+with open(exe_path, 'rb') as f:
+    data = bytearray(f.read())
+
+# ARM64: movz w1, #0x200; movz w2, #0x200 -> movz w1, #0x2000; movz w2, #0x2000
+# x86_64: mov edx, 0x200; mov r8d, 0x200 -> mov edx, 0x2000; mov r8d, 0x2000
+
+count = 0
+i = 0
+
+# ARM64 패턴 (연속된 movz wX, #0x200 쌍)
+while i < len(data) - 8:
+    # movz wX, #0x200 = XX 40 80 52 (little-endian)
+    if (data[i+1] == 0x40 and data[i+2] == 0x80 and data[i+3] == 0x52 and
+        data[i+5] == 0x40 and data[i+6] == 0x80 and data[i+7] == 0x52):
+        # 8192로 변경: XX 40 80 52 -> XX 00 84 52
+        data[i+1] = 0x00
+        data[i+2] = 0x84
+        data[i+5] = 0x00
+        data[i+6] = 0x84
+        count += 1
+        i += 8
+    else:
+        i += 4
+
+# x86_64 패턴도 확인 (Universal binary인 경우)
+pattern_x86 = bytes([0xBA, 0x00, 0x02, 0x00, 0x00, 0x41, 0xB8, 0x00, 0x02, 0x00, 0x00])
+replacement_x86 = bytes([0xBA, 0x00, 0x20, 0x00, 0x00, 0x41, 0xB8, 0x00, 0x20, 0x00, 0x00])
+pos = 0
+while True:
+    pos = data.find(pattern_x86, pos)
+    if pos == -1:
+        break
+    data[pos:pos+11] = replacement_x86
+    count += 1
+    pos += 11
+
+with open(exe_path, 'wb') as f:
+    f.write(data)
+
+if count > 0:
+    print(f"   ✓ {count}개 패턴 패치 완료 (512 -> 8192)")
+else:
+    print("   ⚠️ 패치할 패턴을 찾지 못했습니다")
+PATCHPY
+
+# 바이너리 재서명 (ad-hoc)
+echo "   바이너리 서명 중..."
+codesign --force --sign - "$GAME_EXE" 2>/dev/null || true
+echo "   ✓ 바이너리 패치 완료"
+
+# ==========================================
+# 7. 게임 패치 적용 (폰트 + 언어)
+# ==========================================
+echo ""
+echo "💾 게임 패치 적용 중..."
+
+# 폰트 설치
 echo "   [폰트 설치]"
 for font in NunitoSans-Medium NunitoSans-ExtraBold Lexend-Bold NotoMono-Regular; do
-    # 백업 (최초 1회만)
     if [ ! -f "$FONTS_DIR/${font}.json.backup" ]; then
-        cp "$FONTS_DIR/${font}.json" "$FONTS_DIR/${font}.json.backup"
-        cp "$FONTS_DIR/${font}.png" "$FONTS_DIR/${font}.png.backup"
+        cp "$FONTS_DIR/${font}.json" "$FONTS_DIR/${font}.json.backup" 2>/dev/null || true
+        cp "$FONTS_DIR/${font}.png" "$FONTS_DIR/${font}.png.backup" 2>/dev/null || true
     fi
-    
-    # 설치
-    cp "$SCRIPT_DIR/Fonts/Galmuri9-Final.json" "$FONTS_DIR/${font}.json"
-    cp "$SCRIPT_DIR/Fonts/Galmuri9-sharp.png" "$FONTS_DIR/${font}.png"
+    cp "$SCRIPT_DIR/Fonts/${FONT_NAME}.json" "$FONTS_DIR/${font}.json"
+    cp "$SCRIPT_DIR/Fonts/${FONT_NAME}.png" "$FONTS_DIR/${font}.png"
 done
 echo "   ✓ 폰트 파일 교체 완료"
 
-# 6-2. 언어 파일 설치
+# 언어 파일 설치
 echo "   [언어 파일 설치]"
 
-# 기존 언어 폴더 백업
-if [ -d "$LANG_DIR" ]; then
-    if [ ! -d "${LANG_DIR}_backup" ]; then
-        cp -r "$LANG_DIR" "${LANG_DIR}_backup"
-        echo "   ✓ 기존 언어 폴더 백업됨"
-    fi
+if [ -d "$LANG_DIR" ] && [ ! -d "${LANG_DIR}_backup" ]; then
+    cp -r "$LANG_DIR" "${LANG_DIR}_backup"
 fi
 
-# 임시 작업 공간 생성
 TEMP_WORK="$SCRIPT_DIR/temp_work"
 rm -rf "$TEMP_WORK"
 mkdir -p "$TEMP_WORK"
 
-echo "   1) 원본(영어) 파일 추출 중..."
-
-# 1. Assets.zip에서 서버/공용 언어 파일 추출 (Assets.zip은 수정하지 않음)
 ASSETS_ZIP="$GAME_BASE/Assets.zip"
 if [ -f "$ASSETS_ZIP" ]; then
-    # unzip이 없으면 설치 확인 필요하지만, macOS는 기본 내장
-    unzip -q "$ASSETS_ZIP" "Server/Languages/en-US/*" "Common/Languages/en-US/*" -d "$TEMP_WORK" 2>/dev/null || echo "      ⚠️ Assets.zip 추출 중 일부 경고 발생 (무시 가능)"
-else
-    echo "❌ Assets.zip을 찾을 수 없습니다. 게임이 설치되어 있나요?"
-    exit 1
+    unzip -q "$ASSETS_ZIP" "Server/Languages/en-US/*" "Common/Languages/en-US/*" -d "$TEMP_WORK" 2>/dev/null || true
 fi
 
-# 2. 클라이언트 언어 파일 가져오기 (게임 폴더 내)
 CLIENT_EN_DIR="$GAME_DIR/Language/en-US"
 if [ -d "$CLIENT_EN_DIR" ]; then
     mkdir -p "$TEMP_WORK/Client"
     cp "$CLIENT_EN_DIR/"*.lang "$TEMP_WORK/Client/" 2>/dev/null || true
-else
-    echo "⚠️ 클라이언트 영어 폴더(en-US)를 찾을 수 없습니다. 패치 파일만 사용합니다."
 fi
 
-echo "   2) 한국어 번역 병합 (Merge) 중..."
 mkdir -p "$LANG_DIR/avatarCustomization"
 
-# A. Client 파일 병합 (client.lang)
-# 베이스가 없으면 빈 파일 생성 (안전장치)
+# Client 병합
+mkdir -p "$TEMP_WORK/Client"
 if [ ! -f "$TEMP_WORK/Client/client.lang" ]; then touch "$TEMP_WORK/Client/client.lang"; fi
 "$PYTHON_BIN" "$SCRIPT_DIR/scripts/merge_lang.py" \
     "$TEMP_WORK/Client/client.lang" \
     "$SCRIPT_DIR/Language/ko-KR/client.lang" \
     "$LANG_DIR/client.lang"
 
-# meta.lang은 병합이 아니라 그냥 복사 (한국어 설정 파일이므로)
 cp "$SCRIPT_DIR/Language/ko-KR/meta.lang" "$LANG_DIR/"
 
-# B. Server 파일 병합 (server.lang, wordlists.lang)
-# 베이스 경로: temp_work/Server/Languages/en-US/
+# Server 병합
 SERVER_BASE="$TEMP_WORK/Server/Languages/en-US"
-if [ ! -d "$SERVER_BASE" ]; then mkdir -p "$SERVER_BASE"; fi
-
+[ ! -d "$SERVER_BASE" ] && mkdir -p "$SERVER_BASE"
 for file in server.lang wordlists.lang; do
     if [ -f "$SERVER_BASE/$file" ]; then
         "$PYTHON_BIN" "$SCRIPT_DIR/scripts/merge_lang.py" \
@@ -234,38 +404,35 @@ for file in server.lang wordlists.lang; do
     fi
 done
 
-# C. Avatar 커스터마이징 파일 병합
-# 베이스 경로: temp_work/Common/Languages/en-US/avatarCustomization/
+# Avatar 병합
 AVATAR_BASE="$TEMP_WORK/Common/Languages/en-US/avatarCustomization"
 AVATAR_PATCH="$SCRIPT_DIR/Assets/Common/Languages/ko-KR/avatarCustomization"
-
 if [ -d "$AVATAR_BASE" ] && [ -d "$AVATAR_PATCH" ]; then
     for file in "$AVATAR_BASE"/*.lang; do
         filename=$(basename "$file")
         if [ -f "$AVATAR_PATCH/$filename" ]; then
             "$PYTHON_BIN" "$SCRIPT_DIR/scripts/merge_lang.py" \
-                "$file" \
-                "$AVATAR_PATCH/$filename" \
-                "$LANG_DIR/avatarCustomization/$filename"
+                "$file" "$AVATAR_PATCH/$filename" "$LANG_DIR/avatarCustomization/$filename"
         fi
     done
 fi
 
-# 임시 폴더 정리
 rm -rf "$TEMP_WORK"
-
-echo "   ✓ 언어 파일 병합 및 설치 완료 (최신 버전 호환)"
+echo "   ✓ 언어 파일 설치 완료"
 
 # ==========================================
-# 7. 완료
+# 8. 완료
 # ==========================================
 echo ""
-echo "✨ 모든 작업이 완료되었습니다!"
-echo "   1. Python 환경 설정 및 라이브러리 설치"
-echo "   2. 최신 폰트 다운로드 및 빌드 (글자셋 적용)"
-echo "   3. 게임 리소스(폰트, 언어) 패치"
+echo "✨ 설치 완료!"
 echo ""
-echo "이제 게임을 실행하고 설정 > 언어 > 한국어를 선택하세요."
+echo "📌 중요 안내:"
+echo "   1. 기본 런처로 게임을 실행하세요."
+echo ""
+echo "   2. 게임 업데이트 후에는 이 스크립트를 다시 실행하세요."
+echo "      (바이너리가 원본으로 복원되기 때문)"
+echo ""
+echo "   3. 게임 설정에서 언어 > 한국어를 선택하세요."
 echo ""
 echo "엔터 키를 누르면 종료됩니다..."
 read -r
