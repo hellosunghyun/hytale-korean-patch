@@ -1,0 +1,54 @@
+patcher/windows/README.md
+  f779a51522748582 1-35
+patcher/macos/README.md
+  f779a51522748582 1-50
+scripts/install_windows.py
+  f779a51522748582 1-5,11,28-32,40,44,52-153,156-160,162,165,167-172,174,177-179,181,184,187,190-191,194-206,209-214,217-319,321,325-329,335,339-341,344,346,349,354,356,365,380,385,396,413,421-422,427,434-439,448-456
+uninstall.command
+  f779a51522748582 2,5-7,14,17-20,33-65,77,89-95
+patcher/windows/src/dllmain.cpp
+  f779a51522748582 1-86
+scripts/generate_hires_font.py
+  f779a51522748582 1-250
+uninstall.ps1
+  f779a51522748582 2-4,27-28,33,36,38-39,44,47-81,83-85,98-100,104,106,112,117,119,123-125
+patcher/macos/Makefile
+  f779a51522748582 1-29
+patcher/macos/src/fontpatch.c
+  f779a51522748582 1-8,10-143
+install.command
+  f779a51522748582 2,10-12,20-26,37,45,60-61,64,67,73,76-78,81,85,90,96,100,103,105-138,140-156,158-168,171-177,179-183,185-187,191-194,196-272,275,278,280-284,287-347,353-354,356-357,364,374,386,397,421,424,427-430,432-433,435
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.34",
+  "base_commit_sha": "df11895967f64bc1de7f5bc3b88e6bd4d0beeac8",
+  "prompts": {
+    "bbf16b489f9919c3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a9a14423-0021-4ee2-b756-f97735dde82e",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 1746,
+      "total_deletions": 17,
+      "accepted_lines": 1730,
+      "overriden_lines": 0
+    },
+    "f779a51522748582": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ef624c23-c581-466a-a044-4cb90166daaa",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 1807,
+      "total_deletions": 811,
+      "accepted_lines": 1314,
+      "overriden_lines": 1
+    }
+  }
+}
