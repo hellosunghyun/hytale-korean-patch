@@ -1,0 +1,29 @@
+install_linux.sh
+  e741c31a123e03de 22,24-25,82,85,87-93,96,206,218-219,285
+install.command
+  e741c31a123e03de 20,22-23,55,58,60-66,69,177,189-190,257
+install.ps1
+  e741c31a123e03de 35,38,40
+scripts/install_windows.py
+  e741c31a123e03de 28,30-31,34-36,38-43,46,175-176,272
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.0.34",
+  "base_commit_sha": "500ac9dda3d08d718dd65d4a3afca4b9e0d0a417",
+  "prompts": {
+    "e741c31a123e03de": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d4abb7ca-2f7a-40e7-bb28-69523d258cf5",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Sunghyun Kim <hello@sunghyun.me>",
+      "messages": [],
+      "total_additions": 64,
+      "total_deletions": 672,
+      "accepted_lines": 58,
+      "overriden_lines": 0
+    }
+  }
+}
