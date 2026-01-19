@@ -9,7 +9,6 @@ import shutil
 import subprocess
 import zipfile
 import json
-import urllib.request
 from pathlib import Path
 
 # ==========================================
@@ -26,43 +25,25 @@ POSSIBLE_PATHS = [
     Path(LOCAL_APPDATA) / "Hytale/install/release/package/game/latest/Client/Shared",
 ]
 
-# 고해상도 폰트 설정
+# 폰트 설정 (레포에 포함된 빌드 완료 폰트 사용)
 FONT_NAME = "WantedSans"
-FONT_URL = "https://github.com/wanteddev/wanted-sans/releases/download/v1.0.3/WantedSans-1.0.3.zip"
-FONT_DIR = SCRIPT_DIR / "reference/WantedSans-1.0.3"
-FONT_TTF = FONT_DIR / "ttf/WantedSans-Medium.ttf"
-CHARSET_FILE = SCRIPT_DIR / "src/charset/charset_full.txt"
+FONT_JSON = SCRIPT_DIR / "Fonts" / f"{FONT_NAME}.json"
+FONT_PNG = SCRIPT_DIR / "Fonts" / f"{FONT_NAME}.png"
 
 
-def download_font():
-    """폰트 다운로드"""
-    print("\n📥 폰트 다운로드 중...")
+def check_font():
+    """레포에 포함된 폰트 파일 확인"""
+    print("\n📦 폰트 파일 확인 중...")
 
-    if FONT_TTF.exists():
-        print("   ✓ 폰트 이미 존재함")
-        return
-
-    reference_dir = SCRIPT_DIR / "reference"
-    reference_dir.mkdir(exist_ok=True)
-    font_zip = reference_dir / "WantedSans.zip"
-
-    try:
-        print(f"   다운로드 중: {FONT_URL}")
-        urllib.request.urlretrieve(FONT_URL, font_zip)
-
-        with zipfile.ZipFile(font_zip, 'r') as zf:
-            zf.extractall(reference_dir)
-
-        font_zip.unlink()
-
-        if FONT_TTF.exists():
-            print("   ✓ 폰트 다운로드 완료")
-        else:
-            print("❌ 폰트 다운로드 실패")
-            sys.exit(1)
-    except Exception as e:
-        print(f"❌ 폰트 다운로드 실패: {e}")
+    if not FONT_JSON.exists() or not FONT_PNG.exists():
+        print("❌ 폰트 파일이 없습니다.")
+        print(f"   필요한 파일:")
+        print(f"   - {FONT_JSON}")
+        print(f"   - {FONT_PNG}")
+        print("\n   git pull로 최신 버전을 받아주세요.")
         sys.exit(1)
+
+    print("   ✓ 폰트 파일 확인됨")
 
 
 def find_game_dir():
@@ -82,172 +63,6 @@ def find_game_dir():
             return custom_path
         print(f"❌ 유효하지 않은 경로입니다: {custom_path}")
     return None
-
-
-def generate_charset():
-    """글자셋 파일 생성 (문자 형식)"""
-    if CHARSET_FILE.exists():
-        # hex 형식인지 확인
-        with open(CHARSET_FILE, 'r', encoding='utf-8') as f:
-            content = f.read(10)
-            if not content.startswith('0x'):
-                print("   ✓ 글자셋 파일 확인됨")
-                return
-
-    print("   글자셋 생성 중...")
-    CHARSET_FILE.parent.mkdir(parents=True, exist_ok=True)
-
-    chars = []
-    for i in range(0x20, 0x7F):
-        chars.append(chr(i))
-    for c in "°–—''\"\"•…":
-        chars.append(c)
-    for i in range(0x3131, 0x3164):
-        chars.append(chr(i))
-    for i in range(0xAC00, 0xD7A4):
-        chars.append(chr(i))
-
-    with open(CHARSET_FILE, 'w', encoding='utf-8') as f:
-        f.write(''.join(chars))
-    print(f"   ✓ 글자셋 생성 완료: {len(chars)}자")
-
-
-def convert_to_hytale_format(bmfont_json: Path, output_json: Path):
-    """msdf-bmfont-xml 출력을 Hytale 포맷으로 변환"""
-    with open(bmfont_json, 'r', encoding='utf-8') as f:
-        bmfont = json.load(f)
-
-    info = bmfont.get('info', {})
-    common = bmfont.get('common', {})
-    df = bmfont.get('distanceField', {})
-    chars = bmfont.get('chars', [])
-
-    size = info.get('size', 48)
-    tex_w = common.get('scaleW', 8192)
-    tex_h = common.get('scaleH', 8192)
-    base = common.get('base', size)
-
-    hytale = {
-        "atlas": {
-            "type": df.get('fieldType', 'msdf'),
-            "distanceRange": df.get('distanceRange', 8),
-            "distanceRangeMiddle": 0,
-            "size": size,
-            "width": tex_w,
-            "height": tex_h,
-            "yOrigin": "top"
-        },
-        "metrics": {
-            "emSize": 1,
-            "lineHeight": 1.364,
-            "ascender": -1.011,
-            "descender": 0.353,
-            "underlineY": 0.101,
-            "underlineThickness": 0.037
-        },
-        "glyphs": [],
-        "kerning": []
-    }
-
-    for ch in chars:
-        char_id = ch['id']
-        w = ch['width']
-        h = ch['height']
-        x = ch['x']
-        y = ch['y']
-        xoff = ch['xoffset']
-        yoff = ch['yoffset']
-        xadv = ch['xadvance']
-
-        advance = xadv / size
-        left = xoff / size
-        top = -(base - yoff) / size
-        right = (xoff + w) / size
-        bottom = -(base - yoff - h) / size
-
-        glyph = {
-            "unicode": char_id,
-            "advance": advance,
-            "planeBounds": {"left": left, "top": top, "right": right, "bottom": bottom},
-            "atlasBounds": {"left": x + 0.5, "top": y + 0.5, "right": x + w - 0.5, "bottom": y + h - 0.5}
-        }
-        hytale["glyphs"].append(glyph)
-
-    for kern in bmfont.get('kernings', []):
-        hytale["kerning"].append({
-            "unicode1": kern['first'],
-            "unicode2": kern['second'],
-            "advance": kern['amount'] / size
-        })
-
-    with open(output_json, 'w', encoding='utf-8') as f:
-        json.dump(hytale, f, separators=(',', ': '))
-
-    print(f"   ✓ 변환 완료: {len(hytale['glyphs'])}자")
-
-
-def build_font():
-    print("\n🏗️  고해상도 폰트 빌드 시작...")
-
-    # npx 확인
-    npx_cmd = "npx.cmd" if os.name == 'nt' else "npx"
-    if shutil.which(npx_cmd) is None and shutil.which("npx") is None:
-        print("❌ Node.js (npx)가 설치되어 있지 않습니다.")
-        print("   https://nodejs.org/ 에서 Node.js를 설치하세요.")
-        sys.exit(1)
-
-    generate_charset()
-
-    fonts_out = SCRIPT_DIR / "Fonts"
-    fonts_out.mkdir(exist_ok=True)
-
-    print("   MSDF 아틀라스 생성 중 (8192x8192, 시간이 걸립니다)...")
-
-    # msdf-bmfont-xml 실행
-    cmd = [
-        npx_cmd if shutil.which(npx_cmd) else "npx",
-        "msdf-bmfont-xml",
-        "-f", "json",
-        "-m", "8192,8192",
-        "-s", "48",
-        "-r", "8",
-        "-t", "msdf",
-        "-p", "2",
-        "--pot", "--square",
-        "-i", str(CHARSET_FILE),
-        "-o", FONT_NAME,
-        str(FONT_TTF)
-    ]
-
-    try:
-        subprocess.run(cmd, check=True, cwd=SCRIPT_DIR, shell=(os.name == 'nt'))
-    except subprocess.CalledProcessError as e:
-        print(f"❌ 폰트 생성 실패: {e}")
-        sys.exit(1)
-
-    # msdf-bmfont-xml은 폰트 이름에 따라 다른 파일명 생성할 수 있음
-    temp_json = SCRIPT_DIR / f"{FONT_NAME}.json"
-    temp_png = SCRIPT_DIR / f"{FONT_NAME}.png"
-
-    if not temp_png.exists():
-        # 대체 파일명 확인
-        alt_png = SCRIPT_DIR / f"{FONT_NAME}.0.png"
-        alt_json = SCRIPT_DIR / f"{FONT_NAME}-Medium.json"
-        if alt_png.exists():
-            temp_png = alt_png
-            temp_json = alt_json
-        else:
-            print("❌ 폰트 생성 실패 - PNG 파일 없음")
-            sys.exit(1)
-
-    print("   Hytale 포맷으로 변환 중...")
-    convert_to_hytale_format(temp_json, fonts_out / f"{FONT_NAME}.json")
-
-    # 파일 이동 및 정리
-    shutil.move(str(temp_png), str(fonts_out / f"{FONT_NAME}.png"))
-    temp_json.unlink(missing_ok=True)
-
-    print("   ✓ 폰트 빌드 성공")
 
 
 def patch_binary(game_dir: Path):
@@ -357,8 +172,8 @@ def install_patch(game_dir: Path):
     lang_dir = game_dir / "Language/ko-KR"
     lang_dir_backup = game_dir / "Language/ko-KR_backup"
 
-    font_json = SCRIPT_DIR / "Fonts" / f"{FONT_NAME}.json"
-    font_png = SCRIPT_DIR / "Fonts" / f"{FONT_NAME}.png"
+    font_json = FONT_JSON
+    font_png = FONT_PNG
 
     # 폰트 설치
     print("   [폰트 설치]")
@@ -454,17 +269,10 @@ def install_patch(game_dir: Path):
 def main():
     print("=== Hytale 한글 패치 설치 (Windows - 고해상도 폰트) ===")
 
-    download_font()
+    check_font()
 
     game_dir = find_game_dir()
     if not game_dir:
-        input("엔터를 누르면 종료합니다...")
-        sys.exit(1)
-
-    try:
-        build_font()
-    except Exception as e:
-        print(f"❌ 폰트 빌드 중 오류 발생: {e}")
         input("엔터를 누르면 종료합니다...")
         sys.exit(1)
 
