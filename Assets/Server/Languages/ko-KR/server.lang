@@ -692,9 +692,9 @@ builderTools.copycut.noSelection = 선택된 항목이 없습니다!
 builderTools.commands.clearEntities.desc = 현재 선택 영역 내의 모든 엔티티를 제거합니다.
 builderTools.commands.clearEntities.noSelection = 선택된 항목이 없습니다!
 builderTools.commands.clearEntities.cleared = 선택 영역에서 {count, plural, one {엔티티 1개} other {엔티티 {count, number}개}}를 제거했습니다.
-commands.clearEntities.desc = Remove all entities within the current selection
-commands.clearEntities.noSelection = You don't have anything selected!
-commands.clearEntities.cleared = Removed {count, plural, one {1 entity} other {{count, number} entities}} from selection
+commands.clearEntities.desc = 현재 선택 영역 내의 모든 엔티티를 제거합니다.
+commands.clearEntities.noSelection = 선택된 항목이 없습니다!
+commands.clearEntities.cleared = 선택 영역에서 {count, plural, one {1개의 엔티티를} other {{count, number}개의 엔티티를}} 제거했습니다.
 builderTools.edit.invalidBlockId = 유효하지 않은 블록 ID: {id}
 builderTools.environment.envNotFound = 다음 이름의 환경을 찾을 수 없습니다: {name}
 builderTools.invalidBlockType = {name} '{key}'은(는) 유효한 블록 유형이 아닙니다!
@@ -1600,16 +1600,16 @@ commands.kill.success = {username} 님을 처치했습니다.
 commands.kill.success.self = [TMP] 스스로 목숨을 끊었습니다.
 commands.kill.success.other = [TMP] {username} 님을 처치했습니다.
 commands.maxviewradius.info = 시야 반경은 {radius, plural,\
-    one {1 chunk}\
-    other {{radius, number} chunks}} (클라이언트: {clientRadius, plural,\
-    one {1 chunk}\
-    other {{clientRadius, number} chunks}}).
+    one {1청크}\
+    other {{radius, number}청크}}입니다 (클라이언트: {clientRadius, plural,\
+    one {1청크}\
+    other {{clientRadius, number}청크}}).
 commands.maxviewradius.noHigherThan = 최대 시야 반경을 {radius, plural,\
-    one {1 chunk}\
-    other {{radius, number} chunks}}
+    one {1청크}\
+    other {{radius, number}청크}}보다 높게 설정할 수 없습니다.
 commands.maxviewradius.changed = 서버 최대 청크 시야 반경이 {radius, plural,\
-    one {1 chunk}\
-    other {{radius, number} chunks}}
+    one {1청크}\
+    other {{radius, number}청크}}로 설정되었습니다.
 commands.player.viewradius.desc = 플레이어 시야 반경 관리 명령어
 commands.player.viewradius.get.desc = 플레이어의 현재 시야 반경을 확인합니다.
 commands.player.viewradius.set.desc = 플레이어의 시야 반경을 설정합니다.
@@ -1617,17 +1617,17 @@ commands.player.viewradius.set.radius.desc = 시야 반경 값 (숫자 또는 "d
 commands.player.viewradius.set.blocks.desc = 반경을 청크 대신 블록 단위로 지정합니다.
 commands.player.viewradius.set.bypass.desc = 최대 시야 반경 제한을 무시합니다.
 commands.player.viewradius.info = 시야 반경: {radius, plural,\
-    one {1 chunk}\
-    other {{radius, number} chunks}} (클라이언트: {clientRadius, plural,\
-    one {1 chunk}\
-    other {{clientRadius, number} chunks}}) ({radiusBlocks, number} blocks)
+    one {1청크}\
+    other {{radius, number}청크}} (클라이언트: {clientRadius, plural,\
+    one {1청크}\
+    other {{clientRadius, number}청크}}) ({radiusBlocks, number}블록)
 commands.player.viewradius.set.invalidNumber = 잘못된 숫자입니다: {value}
 commands.player.viewradius.set.noHigherThan = --bypass 플래그 없이는 시야 반경을 {radius, plural,\
-    one {1 chunk}\
-    other {{radius, number} chunks}}보다 높게 설정할 수 없습니다.
+    one {1청크}\
+    other {{radius, number}청크}}보다 높게 설정할 수 없습니다.
 commands.player.viewradius.set.success = 시야 반경이 {radius, plural,\
-    one {1 chunk}\
-    other {{radius, number} chunks}} ({radiusBlocks, number} 블록)
+    one {1청크}\
+    other {{radius, number}청크}}로 설정되었습니다 ({radiusBlocks, number}블록).
 commands.stat.success = {name} 값을 {value}(으)로 설정했습니다.
 commands.sudo.invalidusage = 잘못된 사용법입니다! 올바른 사용법: /su 플레이어 명령어
 commands.sudo.player.desc = 명령어를 실행할 주체 플레이어 (또는 모든 플레이어의 경우 "*")
@@ -1667,11 +1667,11 @@ commands.kick.success = {username} 님을 추방했습니다!
 commands.version.response = HytaleServer v{version} ({patchline})
 commands.version.response.withEnvironment = HytaleServer v{version} ({patchline}, {environment})
 commands.maxplayers.get = 최대 플레이어 수: {maxPlayers, plural,\
-    one {infinite}\
-    other {maxPlayers, number}}
+    one {무제한}\
+    other {{maxPlayers, number}명}}
 commands.maxplayers.set = 최대 플레이어 수가 {maxPlayers, plural,\
-    one {infinite}\
-    other {maxPlayers, number}}(으)로 설정되었습니다.
+    one {무제한}\
+    other {{maxPlayers, number}명}}(으)로 설정되었습니다.
 commands.maxplayers.amount.desc = 서버에 허용되는 최대 플레이어 수
 commands.stop.success = 서버를 종료합니다!
 commands.stop.crash.desc = 정상 종료 대신 서버 충돌을 유발합니다.
@@ -1684,8 +1684,8 @@ commands.help.exact = {command} 도움말:\n\
     설명: {description}\n
 commands.help.fileGenerated = {file} 파일이 생성되었습니다!
 commands.toggleexplosives.success = 이제 폭발물이 {state, select,\
-    true {on}\
-    false {off}}되었습니다.
+    true {활성화}\
+    false {비활성화}}되었습니다.
 commands.auth.dump.failed = 인증서 덤프 실패: {message}
 commands.auth.refresh = 새로 고침됨: {success}
 commands.auth.reload = 리로드됨
@@ -2115,7 +2115,7 @@ commands.update.disabled = [TMP] 서버 호스트가 업데이트 명령어를 �
 
 # Auto-apply messages
 update.notify_players = [TMP] 서버 업데이트 {version}을(를) 사용할 수 있습니다. 관리자는 '/update download'를 실행하여 적용 대기시킬 수 있습니다.
-update.auto_apply_warning = [TMP] 업데이트 {version}이(가) {minutes, plural, one {1 minute} other {{minutes}minute}} 후에 자동으로 적용됩니다. 진행 상황을 저장해 주세요.
+update.auto_apply_warning = [TMP] 업데이트 {version}이(가) {minutes, plural, one {1 분} other {{minutes}분}} 후에 자동으로 적용됩니다. 진행 상황을 저장해 주세요.
 update.auto_apply_now = [TMP] 지금 업데이트 {version}을(를) 적용하고 있습니다. 서버가 재시작됩니다...
 
 commands.prefabspawner.desc = 프리팹 소환기 블록의 속성을 확인하고 편집합니다
@@ -2792,8 +2792,8 @@ commands.networkChunkSending.noComponent = 플레이어에게 ChunkTracker 컴�
 commands.networkChunkSending.set = {username}에 대한 청크 네트워크 전송 설정: {enabled}
 commands.inventory.backpack.size = 배낭 용량이 {capacity, number}(으)로 증가했습니다!
 commands.inventory.backpack.resized = 배낭 용량이 {capacity, number} (으)로 변경되었습니다. ({dropped, plural,\
-    one {1 item}\
-    other {{dropped, number} items}}개 드롭됨)
+    one {아이템 1개}\
+    other {아이템 {dropped, number} 개}}가 드롭됨)
 commands.inventory.item.noItemInHand = 플레이어가 아이템을 들고 있어야 합니다.
 commands.inventory.item.noContainerOnItem = 아이템에 보관함(Container)이 없습니다.
 commands.entityTracker.summary = 엔티티:\n\
