@@ -1070,8 +1070,15 @@ disconnection.button.tryAgain.inProgress = 연결 중...
 
 disconnection.autoConnectingIn = {seconds}초 후 연결 시도
 
-disconnection.error.unexpectedError = 예기치 않은 오류가 발생했습니다
-disconnection.error.noConnectectionEstablished = 연결을 설정할 수 없습니다
+disconnection.error.unexpectedError = 예기치 않은 오류가 발생했습니다.
+disconnection.error.noConnectectionEstablished = 연결을 설정할 수 없습니다.
+disconnection.error.rateLimited = 요청 횟수가 초과하였습니다. 잠시 후에 다시 시도해주세요.
+disconnection.error.authFailed = 인증에 실패했습니다. 게임을 종료하고 다시 실행해주세요.
+disconnection.error.notAuthenticated = 멀티플레이 서버에 접속하려면 로그인이 필요합니다.
+disconnection.error.timeout = 연결 시간이 초가되었습니다. 네트워크 상태를 확인 후 다시 시도해주세요.
+disconnection.error.versionMismatch = 클라이언트와 서버의 버전이 일치하지 않아 접속할 수 없습니다.
+disconnection.error.clientOutdated = 클라이언트가 최신 버전이 아닙니다. 서버에 접속하려면 업데이트해 주세요.
+disconnection.error.serverOutdated = 서버가 구버전이므로 연결할 수 없습니다.
 # === gameLoadingView ===
 gameLoadingView.hints.constructionThanks = 아직 개발 중인 게임을 플레이해 주셔서 감사합니다!
 gameLoadingView.hints.futureTipsAndTricks = 이 화면에는 나중에 모험에 도움이 될 팁과 요령이 표시될 예정입니다.
@@ -1210,6 +1217,10 @@ inventory.character.tooltip.disabledMemories = [TMP] 현재 컨텍스트에서�
 inventory.character.tooltip.disabledBackpack = [TMP] 현재 컨텍스트에서는 배낭 기능을 사용할 수 없습니다.
 inventory.character.tooltip.lockedMemories = 더 자세히 알아보려면 잊혀진 사원을 찾으세요.
 inventory.character.tooltip.pocketCraftingDisabled = [TMP] 현재 컨텍스트에서는 휴대용 제작을 사용할 수 없습니다.
+inventory.character.tooltip.toggleHelmVisibility = [TMP] 투구 표시
+inventory.character.tooltip.toggleCuirassVisibility = [TMP] 갑옷 표시
+inventory.character.tooltip.toggleGauntletsVisibility = [TMP] 장갑 표시
+inventory.character.tooltip.togglePantsVisibility = [TMP] 하의 표시
 
 inventory.character.stats.mana = 마나
 inventory.character.stats.health = 체력
@@ -1237,6 +1248,8 @@ inventory.bench.tierLevelX.requirements = {level}단계 요구 사항
 inventory.bench.tierLevelX.upgrade = {level}단계로 업그레이드
 inventory.bench.tier.button.upgrade = 업그레이드
 inventory.bench.tier.max = 최대 단계 도달
+inventory.bench.chestInfo = [TMP] 작업대는 반경 {horizontalRadius, number}/{verticalRadius, number} 범위 내의 상자와 연결할 수 있습니다. 한 작업대에 최대 {maxChests, number}개까지 연결됩니다.
+inventory.bench.chestLimitReached = [TMP] 이 작업대에 연결된 상자가 최대 한도에 도달했습니다.
 
 inventory.crafting.ingredient.tooltip.pullingFromChests = 인벤토리에 재료가 부족합니다. 주변 상자의 아이템을 사용합니다.
 
@@ -1616,6 +1629,9 @@ map.playerList.titleWorld = 월드 플레이어
 map.playerList.titleServer = 서버 플레이어
 map.playerList.inWorld = 현재 월드에 있는 플레이어입니다.
 
+map.playerListEntry.tooltip.compass = [TMP] 나침반에 표시
+map.playerListEntry.tooltip.map = [TMP] 맵에 표시
+
 map.marker.localPlayer = 나
 map.marker.targetLocation = 대상 위치
 # === mediaBrowser ===
@@ -1758,6 +1774,7 @@ settings.groups.controls.blockPlacement = 블록 배치
 settings.groups.controls.builderTools = 건설 도구
 settings.groups.controls.misc = 기타
 settings.groups.controls.debug = 디버그
+settings.groups.controls.inventory = [TMP] 인벤토리
 settings.groups.builderTools = 건설 도구
 settings.groups.movement = 이동
 settings.groups.mantling = 턱 오르기
@@ -1902,6 +1919,11 @@ settings.hideChat = 채팅 숨기기
 settings.hideChat.description = 채팅창을 숨깁니다 (메시지 수신은 계속됩니다).
 settings.hideHeldItem = 들고 있는 아이템 숨기기
 settings.hideHeldItem.description = 1인칭 시점에서 손에 들고 있는 아이템을 숨깁니다.
+settings.showFpsOverlay = FPS 표시
+settings.showFpsOverlay.description = 화면 우측 상단에 FPS(초당 프레임)를 항상 표시합니다.
+settings.showFpsOverlay.off = 꺼짐
+settings.showFpsOverlay.colorCoded = 켜짐 (색상 구분)
+settings.showFpsOverlay.monochrome = 켜짐 (단색)
 settings.maxChatMessages = 최대 채팅 메시지 수
 settings.maxChatMessages.description = 채팅창에 유지할 최대 메시지 수를 결정합니다.
 settings.cameraBasedFlying = 카메라 기준 비행
@@ -2078,12 +2100,21 @@ settings.bindings.ToggleFlyCameraControlTarget.description = 자유 시점 카�
 settings.bindings.PreviousBuilderToolsLegendPage = 조작법 - 이전 페이지
 settings.bindings.NextBuilderToolsLegendPage = 조작법 - 다음 페이지
 
+settings.bindings.ContainerTakeAll = [TMP] 보관함: 모두 가져오기
+settings.bindings.ContainerPutAll = [TMP] 보관함: 모두 넣기
+settings.bindings.ContainerQuickStack = [TMP] 보관함: 빠른 합치기
+settings.bindings.ContainerSort = [TMP] 보관함: 아이템 정렬
+
 settings.autoJumpObstacle = 자동 턱 오르기
 settings.autoJumpObstacle.description = 이 설정을 활성화하면 최대 1유닛 높이의 블록을 자동으로 걸어 올라갑니다.
+settings.autoCrouchDownObstacle = [TMP] 앉기 중 자동 내려가기
+settings.autoCrouchDownObstacle.description = [TMP] 이 설정을 활성화하면 앉기 상태에서 높이 1칸 이하의 블록은 자동으로 내려갑니다.
 settings.enableUtilityQuickSwap = 유틸리티 퀵 스왑 활성화
 settings.enableUtilityQuickSwap.description = 활성화하면 단축키를 눌러 유틸리티 휠의 다음 아이템으로 즉시 전환할 수 있습니다.
 settings.enableArachnophobiaMode = 거미 공포증 모드 활성화
 settings.enableArachnophobiaMode.description = 활성화하면 거미 모델이 다른 모델(서버 기본값은 게)로 교체됩니다.\n\n<b><color is="#b32626">이 설정을 적용하려면 메인 메뉴로 돌아가야 합니다!</color></b>
+settings.enableOphidiophobiaMode = [TMP] 뱀 공포증 모드 활성화
+settings.enableOphidiophobiaMode.description = [TMP] 활성화하면 뱀 모델이 다른 모델(서버 기본값은 지렁이)로 교체됩니다.\n\n<b><color is="#b32626">이 설정을 적용하려면 메인 메뉴로 돌아가야 합니다!</color></b>
 settings.autoJumpGap = 틈새 자동 점프
 settings.builderMode = 빌더 모드
 settings.builderMode.tooltip = 활성화된 상태에서 크리에이티브 모드일 경우 일부 효과(낙하 효과, 화면 흔들림 등)를 비활성화합니다.
@@ -2259,3 +2290,97 @@ feedback.success.submitMore = 더 제출하기
 
 
 bugReportButton.tooltip = 버그 제보 및 피드백
+# === patchline ===
+# Patchlines allow early release of content to help players test new features
+
+patchline.launchNotification.title = 프리릴리즈 패치라인
+patchline.launchNotification.text = 프리릴리즈 패치라인 하이테일을 실행중입니다.\n\n\
+    이 버전에는 실험적인 기능과 버그가 포함되어 있을 수 있습니다.\n\n\
+    여러분의 피드백은 게임을 개선하는데 큰 도움이 됩니다!
+
+patchline.worldWarning.title = 패치라인 경고
+patchline.worldWarning.text = 다른 패치라인으로 월드를 열려고 합니다.\n\n\
+    이 월드를 열면 저장 데이터에 영향을 줄 수 있는 변경사항이 발생할 수 있습니다.\n\n\
+    계속 진행하기 전에 백업을 진행하시기를 권장합니다.
+patchline.worldWarning.openAnyway = 그래도 열기
+patchline.worldWarning.duplicateWorld = 월드 복제
+
+# === cosmetics ===
+cosmetics.color.skinTone = 피부 톤
+
+# Hair Gradients
+cosmetics.color.PitchBlack = 칠흑색
+cosmetics.color.Black = 검정색
+cosmetics.color.BrownDarker = 아주 짙은 갈색
+cosmetics.color.BrownDark = 짙은 갈색
+cosmetics.color.BrownSemiDark = 약같 짙은 갈색
+cosmetics.color.Brown = 갈색
+cosmetics.color.BrownSemiLight = 약간 밝은 갈색
+cosmetics.color.BrownLight = 밝은 갈색
+cosmetics.color.Blond = 금발
+cosmetics.color.BlondPlatinum = 백금발
+cosmetics.color.BlondSand = 모래 금발
+cosmetics.color.BlondCaramel = 카라멜 금발
+cosmetics.color.Copper = 구리색
+cosmetics.color.Red = 빨간색
+cosmetics.color.RedDark = 짙은 빨간색
+cosmetics.color.Pink = 분홍색
+cosmetics.color.PinkBerry = 베리 핑크
+cosmetics.color.Bubblegum = 풍선껌
+cosmetics.color.Purple = 보라색
+cosmetics.color.Lavender = 라벤더
+cosmetics.color.BlueDark = 짙은 파랑색
+cosmetics.color.Blue = 파랑색
+cosmetics.color.BlueLight = 밝은 파락색
+cosmetics.color.Turquoise = 청록섹
+cosmetics.color.Green = 초록색
+cosmetics.color.White = 흰색
+cosmetics.color.GreyAsh = 애쉬 그레이
+cosmetics.color.Grey = 회색
+cosmetics.color.GreyPurple = 보라빛 회색
+cosmetics.color.Blue_Anthracite = 안트라사이트 블루
+
+# Shiny_Fabric Gradients
+cosmetics.color.Lime = 라임
+cosmetics.color.Orange = 오렌지
+cosmetics.color.Yellow = 노랑
+cosmetics.color.Violet = 보라
+
+# Jean_Generic Gradients
+cosmetics.color.BluePastel = 파스텔 블루
+cosmetics.color.GreyDark = 어두운 회색
+cosmetics.color.GreyLight = 밝은 회색
+cosmetics.color.GreyBlue = 청회색
+cosmetics.color.Marine_Blue = 마린 블루
+cosmetics.color.Maroon = 적갈색
+cosmetics.color.Blue_Night = 나이트 블루
+cosmetics.color.Turquoise_Dark = 짙은 청록색
+
+# Faded_Leather Gradients
+cosmetics.color.Orange_Tan = 탠 오렌지
+
+# Flashy_Synthetic Gradients
+cosmetics.color.OrangePastel = 파스텔 오렌지
+cosmetics.color.PinkPastel = 파스텔 핑크
+
+# Colored_Cotton Gradients
+cosmetics.color.Cream = 크림
+cosmetics.color.Charcoal = 숯
+
+# Pastel_Cotton Gradients
+cosmetics.color.Carmin = 선홍색
+cosmetics.color.PurplePastel = 파스텔 퍼플
+
+# Fantasy_Cotton Gradients
+cosmetics.color.Beige = 베이지
+
+# Eyes Gradients
+cosmetics.color.Honey = 꿀
+cosmetics.color.GreenLight = 연두
+
+# Ornamented_Metal Gradients
+cosmetics.color.Gold_Red = 금
+cosmetics.color.Silver_Blue = 은
+cosmetics.color.Copper_Green = 구리
+cosmetics.color.Brass_Purple = 놋쇠
+cosmetics.color.Iron_Black = 철
